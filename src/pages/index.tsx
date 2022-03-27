@@ -5,6 +5,10 @@ import SEO from '../components/seo'
 import Logo from '../../public/400x400px_EL_01.jpg'
 import styled from 'styled-components'
 
+const ProjectContainer = styled.div`
+  margin: 60px 0;
+`
+
 const StyledFigure = styled.figure`
   max-width: 200px;
   min-width: 200px;
@@ -29,7 +33,11 @@ const Home: NextPage = () => {
           </StyledFigure>
           <div>
             <h1>{COMPANY_TITLE1}<span style={{ fontWeight: '600' }}>{COMPANY_TITLE2}</span></h1>
-            <h2>{SUB_TITLE}</h2>
+            <p>{SUB_TITLE}</p>
+            <ProjectContainer>
+              <h2>Our latest project</h2>
+              <a href="https://github.com/Elysium-Labs-EU"><strong>Juno</strong></a>
+            </ProjectContainer>
           </div>
         </div>
       </div>
