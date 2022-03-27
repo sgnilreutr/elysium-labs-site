@@ -15,12 +15,16 @@ const StyledFigure = styled.figure`
   padding: 0;
   margin: 0;
   margin-bottom: 40px;
-  span{box-shadow: 0 3px 6px rgba(0,0,0,.14);}
+  span {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.14);
+  }
 `
 
 const COMPANY_TITLE1 = 'Elysium '
 const COMPANY_TITLE2 = 'Labs;'
 const SUB_TITLE = 'Preparing to support your dreams'
+
+const PROJECT_HEADER = 'Our latest project'
 
 const Home: NextPage = () => {
   return (
@@ -32,11 +36,16 @@ const Home: NextPage = () => {
             <Image src={Logo} alt="Elysium Labs" />
           </StyledFigure>
           <div>
-            <h1>{COMPANY_TITLE1}<span style={{ fontWeight: '600' }}>{COMPANY_TITLE2}</span></h1>
+            <h1>
+              {COMPANY_TITLE1}
+              <span style={{ fontWeight: '600' }}>{COMPANY_TITLE2}</span>
+            </h1>
             <p>{SUB_TITLE}</p>
             <ProjectContainer>
-              <h2>Our latest project</h2>
-              <a href="https://github.com/Elysium-Labs-EU"><strong>Juno</strong></a>
+              <h2>{PROJECT_HEADER}</h2>
+              <a href="https://github.com/Elysium-Labs-EU">
+                <strong>Juno</strong>
+              </a>
             </ProjectContainer>
           </div>
         </div>
