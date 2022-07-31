@@ -1,11 +1,11 @@
-import Footer from "./footer"
-import Menu from "./menu"
+import Footer from './footer'
+import Header from './header'
 
 const Layout = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
   return (
-    <div className="flex flex-col h-full w-full">
-      <header><Menu /></header>
-      <main className="flex flex-col flex-auto">{children}</main>
+    <div className="flex flex-col h-full w-full bg-gray-100">
+      <Header />
+      <main className="flex flex-col flex-auto mt-20">{children}</main>
       <Footer />
     </div>
   )

@@ -3,7 +3,11 @@ import Layout from '../components/layout'
 
 const Juno = () => {
     return (
-        <Layout><p>Juno</p></Layout>
+        <Layout>
+            <div className="w-full max-w-7xl mx-auto">
+                <p>Juno</p>
+            </div>
+        </Layout>
     )
 }
 
