@@ -3,10 +3,10 @@ import Image from 'next/image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Link from 'next/link'
-import Logo from '../../public/images/100x100px_EL_01.jpg'
+// import Logo from '../../public/images/100x100px_EL_01.jpg'
 import JunoLogo from '../../public/images/Juno_logo.png'
 import useHasScrolled from '../hooks/useHasScrolled'
-import useHover from '../hooks/useHover'
+import Label from '../components/elements/label'
 
 const COMPANY_TITLE1 = 'Elysium '
 const COMPANY_TITLE2 = 'Labs'
@@ -19,26 +19,20 @@ const PROJECT_HEADER = 'Featured'
 
 const Home: NextPage = () => {
   const { scrollY } = useHasScrolled()
-  const [hoverRef, isHovered] = useHover<HTMLDivElement>()
 
   return (
     <Layout>
       <SEO title="Home" />
       <div className="flex flex-row p-12">
-        <div className="max-w-7xl flex flex-row justify-center flex-wrap items-center w-full mx-auto h-96" ref={hoverRef}>
-          {!isHovered ? <h1
-            className={`text-8xl ${ scrollY > 0 && 'text-gray-200'
-              } transition-all duration-1000`}
+        <div className="max-w-7xl flex flex-row justify-center flex-wrap items-center w-full mx-auto h-96 select-none">
+          <h1
+            className={`text-8xl ${
+              scrollY > 0 && 'text-gray-200'
+            } transition-all duration-1000`}
           >
             {COMPANY_TITLE1}
             <span className="font-semibold">{COMPANY_TITLE2}</span>
-          </h1> :
-            <Image
-              src={Logo}
-              alt="Elysium Labs"
-              style={{ borderRadius: '0.75rem' }}
-            />}
-
+          </h1>
         </div>
       </div>
       <div className="py-20 w-full">
@@ -49,9 +43,14 @@ const Home: NextPage = () => {
               <Link href="/principals">
                 <div className="flex flex-row justify-center cursor-pointer">
                   <p className="mx-1 hover:underline decoration-gray-500">
-                    {POWERFUL}</p>
-                  <p className="mx-1 hover:underline decoration-gray-100">{EASY_TO_GRASP}</p>
-                  <p className="mx-1 hover:underline decoration-orange-500">{OPEN_SOURCE}</p>
+                    {POWERFUL}
+                  </p>
+                  <p className="mx-1 hover:underline decoration-gray-100">
+                    {EASY_TO_GRASP}
+                  </p>
+                  <p className="mx-1 hover:underline decoration-orange-500">
+                    {OPEN_SOURCE}
+                  </p>
                 </div>
               </Link>
             </div>
@@ -59,8 +58,9 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div
-        className={`max-w-7xl mx-auto w-full ${ scrollY > 0 ? 'opacity-100' : 'opacity-30'
-          } transition-all duration-1000`}
+        className={`max-w-7xl mx-auto w-full ${
+          scrollY > 0 ? 'opacity-100' : 'opacity-30'
+        } transition-all duration-1000`}
       >
         <h2 className="mt-20">{PROJECT_HEADER}</h2>
         <div className=" border-2 p-6 rounded-lg my-6">
@@ -70,16 +70,21 @@ const Home: NextPage = () => {
           <div className="flex flex-row justify-between">
             <div>
               <div className="flex flex-col max-w-max">
-                <div className="rounded-md py-1.5 px-3 border border-dashed border-gray-900 flex items-center space-x-2  mt-4 sm:mt-10 z-20">
+                <Label>
                   <p>
                     Juno is now in{' '}
                     <span className="font-semibold">Private Beta</span>
                   </p>
-                </div>
+                </Label>
               </div>
-              <p className="mt-6">The open-source Email Manager for Gmail. The goal of Juno is to spend as little time as possible in the mailbox.</p>
+              <p className="mt-6">
+                The open-source Email Manager for Gmail. The goal of Juno is to
+                spend as little time as possible in the mailbox.
+              </p>
               <Link href="/juno">
-                <span className="text-orange-600 cursor-pointer">read more...</span>
+                <span className="text-orange-600 cursor-pointer">
+                  read more...
+                </span>
               </Link>
             </div>
             <Image src={JunoLogo} alt="Juno Email Manager" />

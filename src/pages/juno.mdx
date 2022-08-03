@@ -1,0 +1,45 @@
+import React from 'react'
+import Label from '../components/elements/label'
+import Layout from '../components/layout'
+
+## Why it is built
+
+The application is built as open-source to enable developers, project managers, and other people to go through their list of emails in the most efficient way possible.
+
+<br />
+The system is based on the core principles of the Tempo Email client, consider the
+project an hommage - unfortunately, the Tempo project is no longer actively developed.
+
+## What to solve
+
+The goal of Juno is to spend as little time as possible in the mailbox.
+
+<br />
+A clear list of to-dos will serve as a focus for your email processing. Going through
+the list of to-do or inbox items should be easy for both regular users and power
+users
+<br />
+'Files sent via email are considered as valuable as the email text, both the text
+and files should never be lost and presented clearly.'
+
+## The development
+
+The goal of Juno is to spend as little time as possible in the mailbox.
+
+export default ({ children }) => (
+  <Layout>
+    <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+      <h1>Juno</h1>
+      <h4 className="text-gray-500">
+        The open-source Email Manager for Gmail.
+      </h4>
+      <Label>
+        <p>
+          Juno is now in <span className="font-semibold">Private Beta</span>
+        </p>
+      </Label>
+      <div className="border-gray-300 h-[1px]" />
+      <div className="max-w-prose my-10">{children}</div>
+    </div>
+  </Layout>
+)

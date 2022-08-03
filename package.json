@@ -8,12 +8,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx,mdx}\"",
     "update-deps": "yarn upgrade-interactive --latest",
     "typecheck": "tsc --incremental --noEmit"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.1.2",
+    "@mdx-js/react": "^2.1.2",
     "@next/mdx": "^12.2.3",
     "next": "12.2.3",
     "next-seo": "5.5.0",
