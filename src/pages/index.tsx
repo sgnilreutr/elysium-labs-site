@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Link from 'next/link'
-// import Logo from '../../public/images/100x100px_EL_01.jpg'
 import JunoLogo from '../../public/images/Juno_logo.png'
 import useHasScrolled from '../hooks/useHasScrolled'
 import Label from '../components/elements/label'
@@ -77,17 +76,25 @@ const Home: NextPage = () => {
                   </p>
                 </Label>
               </div>
-              <p className="mt-6">
-                The open-source Email Manager for Gmail. The goal of Juno is to
-                spend as little time as possible in the mailbox.
-              </p>
+              <Link href="/juno">
+                <p className="mt-6 cursor-pointer">
+                  The open-source Email Manager for Gmail. The goal of Juno is
+                  to spend as little time as possible in the mailbox.
+                </p>
+              </Link>
               <Link href="/juno">
                 <span className="text-orange-600 cursor-pointer">
                   read more...
                 </span>
               </Link>
             </div>
-            <Image src={JunoLogo} alt="Juno Email Manager" />
+            <Link href="/juno">
+              <Image
+                src={JunoLogo}
+                alt="Juno Email Manager"
+                className="cursor-pointer"
+              />
+            </Link>
           </div>
         </div>
       </div>

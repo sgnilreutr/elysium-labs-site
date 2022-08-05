@@ -1,44 +1,59 @@
 import React from 'react'
 import Layout from '../components/layout'
+import useHasScrolled from '../hooks/useHasScrolled'
 
+<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
 ## Powerful
 
-Producing software capable of doing what most people require, with a fine - grained level of control over the data.
+Producing software capable of doing what most people require, with a fine-grained level of control over the data.
 
 <br />
-If you as a user find something lacking, reach out to us.
+If you as a user find something lacking, [reach out to us](mailto:robbert@elysiumlabs.io).
 
 <br />
+</div>
 
+<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
 ## Easy-to-grasp
 
-Call it a no - brainer or intuitive, the goal of the software design is to be understandable for everyone with minimal effort.
+Call it a no-brainer or intuitive, the goal of the software design is to be understandable for everyone with minimal effort.
 
 <br />
 This is achieved via effective graphical designs and a fine balance of possible options
 to use.
 
 <br />
+</div>
 
+<div style={{paddingTop: '100px', paddingBottom: '100px'}}>
 ## Open-source
 
-Open - source means that anyone can see the source code of the application.And it is the case of Juno, also to contribute to it.
+Open-source means that anyone can see the source code of the application. And it is the case of Juno, also to contribute to it.
 
 <br />
 You can contribute by adding or updating code, or by simply voicing your thoughts
 on the latest version of Juno.
 
-export default ({ children }) => (
+</div>
+
+export default ({ children }) => {
+    const { scrollY } = useHasScrolled()
+    
+  return (
   <Layout>
     <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+      <div className={`${scrollY > 0 && 'opacity-30'} transition-all duration-1000`}>
             <h1>Principals</h1>
       <h4 className="text-gray-500">
         We aim to make software according to our core principals.
       </h4>
-      <div className="max-w-prose my-10">
+      </div>
+      <div className={`max-w-prose my-10 ${
+          scrollY > 0 ? 'opacity-100' : 'opacity-30'
+        } transition-all duration-1000`}>
         {children}
         </div>
     </div>
   </Layout>
 
-)
+)}

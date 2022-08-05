@@ -1,8 +1,13 @@
 import React from 'react'
 import Label from '../components/elements/label'
 import Layout from '../components/layout'
+import Package from '../components/package'
+import BetaAccessForm from '../components/betaAccessForm'
+import useHasScrolled from '../hooks/useHasScrolled'
 
-## Why it is built
+<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
+
+## Why we build it
 
 The application is built as open-source to enable developers, project managers, and other people to go through their list of emails in the most efficient way possible.
 
@@ -10,7 +15,10 @@ The application is built as open-source to enable developers, project managers, 
 The system is based on the core principles of the Tempo Email client, consider the
 project an hommage - unfortunately, the Tempo project is no longer actively developed.
 
-## What to solve
+</div>
+<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
+
+## What we solve
 
 The goal of Juno is to spend as little time as possible in the mailbox.
 
@@ -19,16 +27,34 @@ A clear list of to-dos will serve as a focus for your email processing. Going th
 the list of to-do or inbox items should be easy for both regular users and power
 users
 <br />
-'Files sent via email are considered as valuable as the email text, both the text
-and files should never be lost and presented clearly.'
+Files sent via email are considered as valuable as the email text, both the text
+and files should never be lost and presented clearly.
 
-## The development
+</div>
+<div style={{paddingTop: '100px'}}>
 
-The goal of Juno is to spend as little time as possible in the mailbox.
+## Development
 
-export default ({ children }) => (
-  <Layout>
-    <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+Juno is developed as an open-source application. All the [source code](https://github.com/Elysium-Labs-EU/juno-core/tree/main) is open and available to be read by anyone. You can start contributing right away, follow the instructions on the [README.md](https://github.com/Elysium-Labs-EU/juno-core/tree/main#readme) file on the source code.
+
+<br />
+On its turn Juno is applying the great work of other people who create the dependencies
+to make it all run smoothly. The current version of Juno contains these dependencies.
+
+</div>
+
+export default ({ children }) => {
+  const { scrollY } = useHasScrolled()
+
+return (
+
+<Layout>
+  <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+    <div
+      className={`my-10 ${
+        scrollY > 0 && 'opacity-30'
+      } transition-all duration-1000`}
+    >
       <h1>Juno</h1>
       <h4 className="text-gray-500">
         The open-source Email Manager for Gmail.
@@ -38,8 +64,17 @@ export default ({ children }) => (
           Juno is now in <span className="font-semibold">Private Beta</span>
         </p>
       </Label>
-      <div className="border-gray-300 h-[1px]" />
-      <div className="max-w-prose my-10">{children}</div>
     </div>
-  </Layout>
-)
+    <BetaAccessForm scrollY={scrollY} />
+    <div className="border-gray-300 h-[1px]" />
+    <div
+      className={`max-w-prose my-10 ${
+        scrollY > 0 ? 'opacity-100' : 'opacity-30'
+      } transition-all duration-1000`}
+    >
+      {children}
+    </div>
+    <Package />
+  </div>
+</Layout>
+) }

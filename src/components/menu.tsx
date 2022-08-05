@@ -3,12 +3,14 @@ import Image from 'next/image'
 import Logo from '../../public/images/30x30_EL_01.jpg'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { FaGithub } from 'react-icons/fa'
 
 const MENU_ITEMS = [
   { name: 'Juno', link: '/juno' },
   { name: 'Principals', link: '/principals' },
   { name: 'For developers', link: '/developers' },
   { name: 'About', link: '/about' },
+  { name: <FaGithub />, link: 'https://github.com/Elysium-Labs-EU' },
 ]
 
 const MenuItems = () => {
@@ -18,7 +20,7 @@ const MenuItems = () => {
       {MENU_ITEMS.map((item) => (
         <li
           key={item.link}
-          className={`mx-2 ${
+          className={`mx-2 flex items-center cursor-pointer ${
             asPath === item.link ? 'font-bold' : 'font-normal'
           }`}
         >

@@ -1,5 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Image from 'next/image'
+import Logo from '../../public/images/400x400px_EL_01.jpg'
+import useHasScrolled from '../hooks/useHasScrolled'
 
 Elysium Labs started as an open-source organization that aims to solve everyday productivity problems with powerful and easy-to-grasp software.
 
@@ -8,17 +11,28 @@ The goal is to have as many volunteering developers as possible working on the s
 we provide. Ideally, giving them, and you, the best experience possible within the
 aspect the application covers.
 
-export default ({ children }) => (
-  <Layout>
-    <div className="max-w-7xl w-full mx-auto flex flex-col items-center">
-            <h1>About Elysium Labs</h1>
-      <div className="max-w-prose my-10">
-      {children}
-      </div>
-    <div className="max-w-prose mt-20">
-      <p>Contact Robbert Tuerlings if you want to partake in this organization</p>
+export default ({ children }) => {
+      const { scrollY } = useHasScrolled()
+
+return (
+
+<Layout>
+  <div className="max-w-7xl w-full mx-auto flex flex-col items-center">
+    <div
+      className={`${scrollY > 0 && 'opacity-30'} transition-all duration-1000`}
+    >
+      <h1>About Elysium Labs</h1>
+      <div className="my-10">
+        <Image src={Logo} style={{ borderRadius: '2rem' }} />
       </div>
     </div>
-  </Layout>
+    <div className="max-w-prose my-10">{children}</div>
+    <div className="max-w-prose mt-20">
+      <a href="mailto:robbert@elysiumlabs.io?subject=I would like to participate">
+        Contact Robbert Tuerlings if you want to partake in this organization
+      </a>
+    </div>
+  </div>
+</Layout>
 
-)
+)}
