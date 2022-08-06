@@ -3,14 +3,23 @@ import Image from 'next/image'
 import Logo from '../../public/images/30x30_EL_01.jpg'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub, FaSlack } from 'react-icons/fa'
 
 const MENU_ITEMS = [
   { name: 'Juno', link: '/juno' },
   { name: 'Principals', link: '/principals' },
   { name: 'For developers', link: '/developers' },
   { name: 'About', link: '/about' },
-  { name: <FaGithub />, link: 'https://github.com/Elysium-Labs-EU' },
+  {
+    name: <FaGithub />,
+    link: 'https://github.com/Elysium-Labs-EU',
+    title: 'Github',
+  },
+  {
+    name: <FaSlack />,
+    link: 'https://join.slack.com/t/slack-pfs5354/shared_invite/zt-1dnnwr9wn-njkaaxES_sUWywV2~JANjg',
+    title: 'Slack',
+  },
 ]
 
 const MenuItems = () => {
@@ -23,8 +32,13 @@ const MenuItems = () => {
           className={`mx-2 flex items-center cursor-pointer ${
             asPath === item.link ? 'font-bold' : 'font-normal'
           }`}
+          title={item?.title ?? item.name}
         >
-          <Link href={item.link}>{item.name}</Link>
+          {item.link.includes('https') ? (
+            <a href={item.link}>{item.name}</a>
+          ) : (
+            <Link href={item.link}>{item.name}</Link>
+          )}
         </li>
       ))}
     </ul>

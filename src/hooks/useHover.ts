@@ -1,5 +1,11 @@
 import { useState, useRef, useEffect, MutableRefObject } from 'react'
 
+/**
+ * @function useHover
+ * The hook is configured by adding a ref to the object on the component to which it connects.
+ * @returns the ref of the object and a boolean indicating whether the object is hovered or not.
+ */
+
 export default function useHover<T>(): [MutableRefObject<T>, boolean] {
   const [value, setValue] = useState<boolean>(false)
 
