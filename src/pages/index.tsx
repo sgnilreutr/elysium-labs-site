@@ -6,6 +6,7 @@ import Link from 'next/link'
 import JunoLogo from '../../public/images/Juno_logo.png'
 import useHasScrolled from '../hooks/useHasScrolled'
 import Label from '../components/elements/label'
+import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
 
 const COMPANY_TITLE1 = 'Elysium '
 const COMPANY_TITLE2 = 'Labs'
@@ -15,18 +16,20 @@ const EASY_TO_GRASP = 'easy-to-grasp,'
 const OPEN_SOURCE = 'and open-source'
 
 const PROJECT_HEADER = 'Featured'
+const PROJECT_SUB_HEADER = 'We are currently focusing on this project'
 
 const Home: NextPage = () => {
   const { scrollY } = useHasScrolled()
+  const { hasVerticalScroll } = useHasVerticalScroll()
 
   return (
     <Layout>
-      <SEO />
+      <SEO title="Software organization" />
       <div className="flex flex-row p-12">
         <div className="max-w-7xl flex flex-row justify-center flex-wrap items-center w-full mx-auto h-96 select-none">
           <h1
             className={`text-8xl ${
-              scrollY > 0 && 'text-gray-200'
+              hasVerticalScroll && scrollY > 0 && 'text-gray-200'
             } transition-all duration-1000`}
           >
             {COMPANY_TITLE1}
@@ -58,10 +61,11 @@ const Home: NextPage = () => {
       </div>
       <div
         className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${
-          scrollY > 0 ? 'opacity-100' : 'opacity-30'
+          hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
         } transition-all duration-1000`}
       >
         <h2 className="mt-20">{PROJECT_HEADER}</h2>
+        <h4 className="text-gray-500">{PROJECT_SUB_HEADER}</h4>
         <div className=" border-2 p-6 rounded-lg my-6">
           <Link href="/juno">
             <a className="text-2xl font-semibold">Juno</a>

@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Image from 'next/image'
 import Logo from '../../public/images/100x100px_EL_01.jpg'
 import useHasScrolled from '../hooks/useHasScrolled'
+import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
 import GithubContributors from '../components/githubContributors'
 import SEO from '../components/seo'
 
@@ -15,6 +16,7 @@ aspect the application covers.
 
 export default ({ children }) => {
   const { scrollY } = useHasScrolled()
+  const { hasVerticalScroll } = useHasVerticalScroll()
   return (
     <Layout>
       <SEO
@@ -24,7 +26,7 @@ export default ({ children }) => {
       <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
         <div
           className={`${
-            scrollY > 0 && 'opacity-30'
+            hasVerticalScroll && scrollY > 0 && 'opacity-30'
           } transition-all duration-1000`}
         >
           <h1>About Elysium Labs</h1>
