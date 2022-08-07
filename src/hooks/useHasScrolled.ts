@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react'
 
+/**
+ * @function useHasScrolled
+ * Adds an event listener to the window
+ * @returns 0 or 1 - based on the scroll position of the user.
+ */
+
 export default function useHasScrolled() {
   const [scrollY, setScrollY] = useState(0)
 
