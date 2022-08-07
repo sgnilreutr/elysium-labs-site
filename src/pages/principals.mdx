@@ -5,7 +5,7 @@ import { FaBrain } from 'react-icons/fa'
 import { FiEye } from 'react-icons/fi'
 import { ImPower } from 'react-icons/im'
 
-<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
+<div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px'}}>
 ## Powerful
 <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '2rem'}}>
   <ImPower size={20}/>
@@ -18,7 +18,7 @@ If you as a user find something lacking, [reach out to us](mailto:robbert@elysiu
 <br />
 </div>
 
-<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
+<div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px'}}>
 ## Easy-to-grasp
 <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '2rem'}}>
   <FaBrain size={20} />
@@ -32,7 +32,7 @@ to use.
 <br />
 </div>
 
-<div style={{paddingTop: '100px', paddingBottom: '100px'}}>
+<div style={{paddingTop: '12.5%', paddingBottom: '12.5%'}}>
 ## Open-source
 <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '2rem'}}>
   <FiEye size={20}/>
@@ -49,7 +49,7 @@ export default ({ children }) => {
   const { scrollY } = useHasScrolled()
   return (
     <Layout>
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+      <div className="mx-4 sm:mx-auto sm:w-full max-w-7xl flex flex-col items-center">
         <div
           className={`${
             scrollY > 0 && 'opacity-30'

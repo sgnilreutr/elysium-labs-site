@@ -6,7 +6,7 @@ import BetaAccessForm from '../components/betaAccessForm'
 import UspGrid from '../components/uspGrid'
 import useHasScrolled from '../hooks/useHasScrolled'
 
-<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px', maxWidth: '65ch'}}>
+<div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px', maxWidth: '65ch'}}>
 
 ## Why we build it
 
@@ -17,7 +17,7 @@ The system is based on the core principles of the Tempo Email client, consider t
 project an hommage - unfortunately, the Tempo project is no longer actively developed.
 
 </div>
-<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px', display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+<div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px', display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
 <div style={{maxWidth: '65ch'}}>
 ## What we solve
 
@@ -34,7 +34,7 @@ and files should never be lost and presented clearly.
 <UspGrid />
 
 </div>
-<div style={{paddingTop: '100px', maxWidth: '65ch'}}>
+<div style={{paddingTop: '12.5%', maxWidth: '65ch'}}>
 
 ## Development
 
@@ -50,7 +50,7 @@ export default ({ children }) => {
   const { scrollY } = useHasScrolled()
   return (
     <Layout>
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+      <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
         <div
           className={`my-10 ${
             scrollY > 0 && 'opacity-30'

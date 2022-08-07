@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import useHasScrolled from '../hooks/useHasScrolled'
 import GithubRepositories from '../components/githubRepositories'
 
-<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
+<div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px'}}>
 If you are a developer and wish to contribute to open-source software that you can use for learning, or for your own daily application, join Elysium Labs.
 
 <br />
@@ -12,7 +12,7 @@ any value back. We do appreciate contributions in terms of code or feedback, thi
 would be mutually beneficial. Reach out to us via [email](mailto:robbert@elysiumlabs.io)
 or [Slack](https://join.slack.com/t/slack-pfs5354/shared_invite/zt-1dnnwr9wn-njkaaxES_sUWywV2~JANjg).
 </div>
-<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
+<div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px'}}>
 ## Tech stack
 
 The used tech stack for the projects is as of writing focused around [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [Redux](https://redux-toolkit.js.org/), and [MUI (formerly known as Material UI)](https://mui.com/).
@@ -30,7 +30,7 @@ export default ({ children }) => {
   const { scrollY } = useHasScrolled()
   return (
     <Layout>
-      <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+      <div className="mx-4 sm:mx-auto sm:w-full max-w-7xl flex flex-col items-center">
         <div
           className={`${
             scrollY > 0 && 'opacity-30'

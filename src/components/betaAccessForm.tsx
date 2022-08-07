@@ -15,22 +15,18 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
   const onSubmit = async (e: any) => {
     e.preventDefault()
     try {
-      console.log(message)
-      console.log(FORMSPARK_FORM_ID)
-      const response = await submit({ message })
-      console.log(response)
+      await submit({ message })
       setComplete(true)
     } catch (err) {
       setError(true)
     }
-    // alert('Form submitted')
   }
 
   return (
     <>
       <form
         onSubmit={onSubmit}
-        className={`flex flex-row w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${
+        className={`flex sm:flex-row mx-4 sm:w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${
           !complete ? 'justify-between' : 'justify-center'
         } ${
           scrollY > 0 && 'shadow-lg md:sticky top-16 md:z-50'

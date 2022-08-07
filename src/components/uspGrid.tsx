@@ -38,7 +38,7 @@ const UspItem = ({
   body: string
 }) => {
   return (
-    <div className="max-w-md flex flex-col items-center bg-black text-white rounded-xl p-8 drop-shadow-2xl m-4 text-center">
+    <div className="max-w-md flex flex-col items-center bg-black text-white rounded-xl p-8 drop-shadow-2xl my-4 md:m-4 text-center">
       <div>{icon}</div>
       <h4 className="mt-3 mb-1 font-light text-xl">{header}</h4>
       <span className="text-gray-300">{body}</span>

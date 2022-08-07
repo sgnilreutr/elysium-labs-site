@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Octokit } from '@octokit/core'
 import { decodeBase64 } from '../utils/decodeBase64'
 import { octokit } from '../pages/_app'
 
@@ -13,7 +12,7 @@ const PackageBodySection = ({
   subTitle: string
 }) => {
   return (
-    <div className="w-screen max-w-prose py-6">
+    <div className="sm:w-screen max-w-prose py-6">
       <p className="font-bold">{title}</p>
       <p className="text-gray-500 mb-2">{subTitle}</p>
       <div className="bg-black text-white mb-10 p-4 rounded-lg">

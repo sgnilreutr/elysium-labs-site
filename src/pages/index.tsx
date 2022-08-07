@@ -35,12 +35,12 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="py-20 w-full">
-        <div className="max-w-7xl mx-auto text-white bg-black rounded-xl p-8 drop-shadow-2xl">
+        <div className="max-w-7xl mx-4 sm:mx-auto text-white bg-black rounded-xl p-8 drop-shadow-2xl">
           <div className="my-10 text-3xl text-center">
             <p className="font-semibold">{SUB_TITLE}</p>
             <div className="mt-6">
               <Link href="/principals">
-                <div className="flex flex-row justify-center cursor-pointer">
+                <div className="flex flex-row justify-center cursor-pointer flex-wrap">
                   <p className="mx-1 hover:underline decoration-gray-500">
                     {POWERFUL}
                   </p>
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div
-        className={`max-w-7xl mx-auto w-full ${
+        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${
           scrollY > 0 ? 'opacity-100' : 'opacity-30'
         } transition-all duration-1000`}
       >

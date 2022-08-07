@@ -95,13 +95,15 @@ const RepoContainer = ({ item }: any) => {
           </h4>
           <span className="text-gray-500">{item?.description}</span>
         </div>
-        <Image
-          src={Logo}
-          alt={item?.full_name}
-          width="100px"
-          height="100px"
-          style={{ borderRadius: '1rem' }}
-        />
+        <div className="hidden sm:block">
+          <Image
+            src={Logo}
+            alt={item?.full_name}
+            width="100px"
+            height="100px"
+            style={{ borderRadius: '1rem' }}
+          />
+        </div>
       </div>
       <div className="flex flex-row justify-between pt-6 max-w-md">
         {contributors ? (

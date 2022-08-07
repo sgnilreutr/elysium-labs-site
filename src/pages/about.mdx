@@ -16,7 +16,7 @@ export default ({ children }) => {
   const { scrollY } = useHasScrolled()
   return (
     <Layout>
-      <div className="max-w-7xl w-full mx-auto flex flex-col items-center">
+      <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
         <div
           className={`${
             scrollY > 0 && 'opacity-30'
