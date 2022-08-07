@@ -5,9 +5,10 @@ const DEFAULT_META_DESC =
   'Building powerful, easy-to-grasp, and open-source software'
 
 export default function SEO(seo: any) {
+  console.log(seo)
   const fullSeo = {
     ...seo,
-    metaTitle: `${SITE_NAME} ${seo?.title && `| ${seo.title}`}`,
+    metaTitle: `${ SITE_NAME } ${ seo?.title && `| ${ seo.title }` }`,
     metaDescription: seo?.description ?? DEFAULT_META_DESC,
     shareImage: seo?.image,
   }
@@ -16,9 +17,9 @@ export default function SEO(seo: any) {
     <NextSeo
       title={fullSeo.metaTitle}
       openGraph={{
-        url: `${fullSeo.url}`,
-        title: `${fullSeo.metaTitle}`,
-        description: `${fullSeo.metaDescription}`,
+        url: `${ fullSeo.url }`,
+        title: `${ fullSeo.metaTitle }`,
+        description: `${ fullSeo.metaDescription }`,
         images: [
           { url: fullSeo.shareImage },
           // {
