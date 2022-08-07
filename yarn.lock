@@ -39,7 +39,7 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@formspark/use-formspark@^0.1.39":
+"@formspark/use-formspark@0.1.39":
   version "0.1.39"
   resolved "https://registry.yarnpkg.com/@formspark/use-formspark/-/use-formspark-0.1.39.tgz#155af2f5f587d754e1541519e3d69691823770a8"
   integrity sha512-3bIhw3z1eUzMXStgM3/WNNkjYuodk0PSrgrR3cQpCYifGmzkgRuy6mduCetqYK4vsTEaQO2RWFjNOK0eUEDGOQ==
@@ -65,7 +65,7 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@mdx-js/loader@^2.1.2":
+"@mdx-js/loader@2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-2.1.2.tgz#fe7631bbef1e6546f4289f7adaef60083c22063a"
   integrity sha512-P7CWhrqE5rZ3ewBngZ9t/zQPbSq42iuty78K3zJ8Bl518qnOX1d106c+n7I/zHODPAmw9JfYMQdbv9WrrHa0DA==
@@ -96,7 +96,7 @@
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
-"@mdx-js/react@^2.1.2":
+"@mdx-js/react@2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-2.1.2.tgz#02972f170cd3ad9113ce448245c5f636bb3e750d"
   integrity sha512-52e3DTJBrjsw3U51ZCdZ3N1IBaqnbzLIngCSXpKtiYiGr7PIqp3/P/+kym0MPTwBL/y9ZBmCieD8FyrXuEDrRw==
@@ -116,7 +116,7 @@
   dependencies:
     glob "7.1.7"
 
-"@next/mdx@^12.2.4":
+"@next/mdx@12.2.4":
   version "12.2.4"
   resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-12.2.4.tgz#a94d2e6eef91a4da1298e3a802563aad66cd7826"
   integrity sha512-3Bj8gS6T0ZeAzoZQ66oNIXpgWeaYyiHB/mb8pJwDkgZiCUpaacxkfZ5HFqMdndAMJSCkKWcjhWaoGo7pUP88pg==
@@ -214,7 +214,7 @@
   dependencies:
     "@octokit/types" "^6.0.3"
 
-"@octokit/core@^4.0.4":
+"@octokit/core@4.0.4":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@octokit/core/-/core-4.0.4.tgz#335d9b377691e3264ce57a9e5a1f6cda783e5838"
   integrity sha512-sUpR/hc4Gc7K34o60bWC7WUH6Q7T6ftZ2dUmepSyJr9PRF76/qqkWjE2SOEzCqLA5W83SaISymwKtxks+96hPQ==
@@ -588,7 +588,7 @@ astring@^1.6.0:
   resolved "https://registry.yarnpkg.com/astring/-/astring-1.8.3.tgz#1a0ae738c7cc558f8e5ddc8e3120636f5cebcb85"
   integrity sha512-sRpyiNrx2dEYIMmUXprS8nlpRg2Drs8m9ElX9vVEXaCB4XEAJhKfs7IcX0IwShjuOAjLR6wzIrgoptz1n19i1A==
 
-autoprefixer@^10.4.8:
+autoprefixer@10.4.8:
   version "10.4.8"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.8.tgz#92c7a0199e1cfb2ad5d9427bd585a3d75895b9e5"
   integrity sha512-75Jr6Q/XpTqEf6D2ltS5uMewJIx5irCU1oBYJrWjFenq/m12WRRrz6g15L1EIoYvPLXTbEry7rDOwrcYNj77xw==
@@ -620,7 +620,7 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-base64url@^3.0.1:
+base64url@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/base64url/-/base64url-3.0.1.tgz#6399d572e2bc3f90a9a8b22d5dbb0a32d33f788d"
   integrity sha512-ir1UPr3dkwexU7FdV8qBBbNDRUhMmIekYMFZfi+C/sLNnRESKPl23nB9b2pltqfOQNnGzsDdId90AEtG5tCx4A==
@@ -2608,7 +2608,7 @@ postcss@8.4.14, postcss@^8.4.14:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-postcss@^8.4.16:
+postcss@8.4.16:
   version "8.4.16"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.16.tgz#33a1d675fac39941f5f445db0de4db2b6e01d43c"
   integrity sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==
@@ -2664,7 +2664,7 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-icons@^4.4.0:
+react-icons@4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.4.0.tgz#a13a8a20c254854e1ec9aecef28a95cdf24ef703"
   integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
@@ -2972,7 +2972,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tailwindcss@^3.1.8:
+tailwindcss@3.1.8:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.1.8.tgz#4f8520550d67a835d32f2f4021580f9fddb7b741"
   integrity sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==
