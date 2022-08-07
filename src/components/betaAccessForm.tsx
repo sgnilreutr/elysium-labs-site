@@ -20,8 +20,7 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
       const response = await submit({ message })
       console.log(response)
       setComplete(true)
-    }
-    catch (err) {
+    } catch (err) {
       setError(true)
     }
     // alert('Form submitted')
@@ -31,7 +30,8 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
     <>
       <form
         onSubmit={onSubmit}
-        className={`flex flex-row w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${ !complete ? 'justify-between' : 'justify-center' } ${ scrollY > 0 && 'shadow-lg sticky top-16 z-50'
+        className={`flex flex-row w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${ !complete ? 'justify-between' : 'justify-center'
+          } ${ scrollY > 0 && 'shadow-lg md:sticky top-16 md:z-50'
           } transition-all duration-1000`}
       >
         {!complete && (
@@ -53,9 +53,24 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
             </button>
           </>
         )}
-        {complete && <div className="flex flex-row items-center h-14"><FiCheck size={20} /><span className="ml-4">You will be contacted shortly</span></div>}
+        {complete && (
+          <div className="flex flex-row items-center h-14">
+            <FiCheck size={20} />
+            <span className="ml-4">You will be contacted shortly</span>
+          </div>
+        )}
       </form>
-      {error && <span className="text-orange-600 mb-4">Something went wrong, reach out to us on <a href="https://join.slack.com/t/slack-pfs5354/shared_invite/zt-1dnnwr9wn-njkaaxES_sUWywV2~JANjg" className="underline">Slack</a></span>}
+      {error && (
+        <span className="text-orange-600 mb-4">
+          Something went wrong, reach out to us on{' '}
+          <a
+            href="https://join.slack.com/t/slack-pfs5354/shared_invite/zt-1dnnwr9wn-njkaaxES_sUWywV2~JANjg"
+            className="underline"
+          >
+            Slack
+          </a>
+        </span>
+      )}
     </>
   )
 }

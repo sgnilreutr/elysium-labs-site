@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import useHasScrolled from '../hooks/useHasScrolled'
-import Menu from './menu'
+import Menu from './menu/menu'
 
 const Header = () => {
   const { scrollY } = useHasScrolled()

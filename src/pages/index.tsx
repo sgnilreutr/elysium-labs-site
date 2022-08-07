@@ -25,8 +25,9 @@ const Home: NextPage = () => {
       <div className="flex flex-row p-12">
         <div className="max-w-7xl flex flex-row justify-center flex-wrap items-center w-full mx-auto h-96 select-none">
           <h1
-            className={`text-8xl ${ scrollY > 0 && 'text-gray-200'
-              } transition-all duration-1000`}
+            className={`text-8xl ${
+              scrollY > 0 && 'text-gray-200'
+            } transition-all duration-1000`}
           >
             {COMPANY_TITLE1}
             <span className="font-semibold">{COMPANY_TITLE2}</span>
@@ -56,15 +57,16 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div
-        className={`max-w-7xl mx-auto w-full ${ scrollY > 0 ? 'opacity-100' : 'opacity-30'
-          } transition-all duration-1000`}
+        className={`max-w-7xl mx-auto w-full ${
+          scrollY > 0 ? 'opacity-100' : 'opacity-30'
+        } transition-all duration-1000`}
       >
         <h2 className="mt-20">{PROJECT_HEADER}</h2>
         <div className=" border-2 p-6 rounded-lg my-6">
           <Link href="/juno">
             <a className="text-2xl font-semibold">Juno</a>
           </Link>
-          <div className="flex flex-row justify-between">
+          <div className="flex flex-col-reverse justify-between sm:flex-row sm:items-center">
             <div>
               <div className="flex flex-col max-w-max">
                 <Label>
@@ -86,13 +88,15 @@ const Home: NextPage = () => {
                 </span>
               </Link>
             </div>
-            <Link href="/juno">
-              <Image
-                src={JunoLogo}
-                alt="Juno Email Manager"
-                className="cursor-pointer invert"
-              />
-            </Link>
+            <div className="my-4 mx-auto sm:mx-4">
+              <Link href="/juno">
+                <Image
+                  src={JunoLogo}
+                  alt="Juno Email Manager"
+                  className="cursor-pointer invert"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
