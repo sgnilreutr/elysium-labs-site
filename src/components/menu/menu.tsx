@@ -17,8 +17,9 @@ const MenuItems = () => {
       {MENU_ITEMS.map((item) => (
         <li
           key={item.link}
-          className={`mx-2 flex items-center cursor-pointer ${ asPath === item.link ? 'font-bold' : 'font-normal'
-            }`}
+          className={`mx-2 flex items-center cursor-pointer ${
+            asPath === item.link ? 'font-bold' : 'font-normal'
+          }`}
           title={item.name}
         >
           <Link href={item.link}>{item.name}</Link>
@@ -44,7 +45,6 @@ const ExternalItems = () => {
   )
 }
 
-
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false)
 
@@ -59,12 +59,13 @@ const Menu = () => {
         <div className="flex flex-row items-center">
           <MenuItems />
           <ExternalItems />
-          <div className="sm:hidden flex place-content-center ml-2"><button type="button" onClick={handleToggleMenu}>
-            <FiMenu
-              size={ICON_SIZE}
-              style={{ color: '#0F0E40', marginRight: '1rem' }}
-            />
-          </button>
+          <div className="sm:hidden flex place-content-center ml-2">
+            <button type="button" onClick={handleToggleMenu}>
+              <FiMenu
+                size={ICON_SIZE}
+                style={{ color: '#0F0E40', marginRight: '1rem' }}
+              />
+            </button>
           </div>
           <SideMenu handleToggleMenu={handleToggleMenu} showMenu={showMenu} />
         </div>

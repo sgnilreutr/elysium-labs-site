@@ -30,9 +30,11 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
     <>
       <form
         onSubmit={onSubmit}
-        className={`flex flex-row w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${ !complete ? 'justify-between' : 'justify-center'
-          } ${ scrollY > 0 && 'shadow-lg md:sticky top-16 md:z-50'
-          } transition-all duration-1000`}
+        className={`flex flex-row w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${
+          !complete ? 'justify-between' : 'justify-center'
+        } ${
+          scrollY > 0 && 'shadow-lg md:sticky top-16 md:z-50'
+        } transition-all duration-1000`}
       >
         {!complete && (
           <>
