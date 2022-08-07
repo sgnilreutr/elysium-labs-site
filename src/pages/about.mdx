@@ -1,0 +1,41 @@
+import React from 'react'
+import Layout from '../components/layout'
+import Image from 'next/image'
+import Logo from '../../public/images/100x100px_EL_01.jpg'
+import useHasScrolled from '../hooks/useHasScrolled'
+import GithubContributors from '../components/githubContributors'
+
+Elysium Labs started as an open-source organization that aims to solve everyday productivity problems with powerful and easy-to-grasp software.
+
+<br />
+The goal is to have as many volunteering developers as possible working on the solutions
+we provide. Ideally, giving them and you the best experience possible within the
+aspect the application covers.
+
+export default ({ children }) => {
+  const { scrollY } = useHasScrolled()
+  return (
+    <Layout>
+      <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
+        <div
+          className={`${
+            scrollY > 0 && 'opacity-30'
+          } transition-all duration-1000`}
+        >
+          <h1>About Elysium Labs</h1>
+          <div className="my-10 flex items-center justify-center">
+            <Image src={Logo} style={{ borderRadius: '1rem' }} />
+          </div>
+          <div className="max-w-prose mt-20">
+            <a href="mailto:robbert@elysiumlabs.io?subject=I would like to participate">
+              Contact Robbert Tuerlings if you want to partake in this
+              organization
+            </a>
+          </div>
+        </div>
+        <div className="max-w-prose my-10">{children}</div>
+        {/* <GithubContributors /> */}
+      </div>
+    </Layout>
+  )
+}

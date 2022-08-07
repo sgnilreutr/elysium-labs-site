@@ -1,23 +1,13 @@
-import styled from 'styled-components'
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-`
+import Footer from './footer'
+import Header from './header'
 
 const Layout = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
   return (
-    <Wrapper>
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Elysium Labs
-        {` `}
-      </footer>
-    </Wrapper>
+    <div className="flex flex-col h-full w-full bg-gray-100 leading-normal">
+      <Header />
+      <main className="flex flex-col mt-20">{children}</main>
+      <Footer />
+    </div>
   )
 }
 

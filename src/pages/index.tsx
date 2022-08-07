@@ -2,51 +2,101 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Logo from '../../public/400x400px_EL_01.jpg'
-import styled from 'styled-components'
-
-const ProjectContainer = styled.div`
-  margin: 60px 0;
-`
-
-const StyledFigure = styled.figure`
-  max-width: 200px;
-  min-width: 200px;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 40px;
-  span {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.14);
-  }
-`
+import Link from 'next/link'
+import JunoLogo from '../../public/images/Juno_logo.png'
+import useHasScrolled from '../hooks/useHasScrolled'
+import Label from '../components/elements/label'
 
 const COMPANY_TITLE1 = 'Elysium '
-const COMPANY_TITLE2 = 'Labs;'
-const SUB_TITLE = 'Preparing to support your dreams'
+const COMPANY_TITLE2 = 'Labs'
+const SUB_TITLE = 'Building software'
+const POWERFUL = 'Powerful,'
+const EASY_TO_GRASP = 'easy-to-grasp,'
+const OPEN_SOURCE = 'and open-source'
 
-const PROJECT_HEADER = 'Our latest project'
+const PROJECT_HEADER = 'Featured'
 
 const Home: NextPage = () => {
+  const { scrollY } = useHasScrolled()
+
   return (
     <Layout>
       <SEO title="Home" />
-      <div>
-        <div>
-          <StyledFigure>
-            <Image src={Logo} alt="Elysium Labs" />
-          </StyledFigure>
-          <div>
-            <h1>
-              {COMPANY_TITLE1}
-              <span style={{ fontWeight: '600' }}>{COMPANY_TITLE2}</span>
-            </h1>
-            <p>{SUB_TITLE}</p>
-            <ProjectContainer>
-              <h2>{PROJECT_HEADER}</h2>
-              <a href="https://github.com/Elysium-Labs-EU">
-                <strong>Juno</strong>
-              </a>
-            </ProjectContainer>
+      <div className="flex flex-row p-12">
+        <div className="max-w-7xl flex flex-row justify-center flex-wrap items-center w-full mx-auto h-96 select-none">
+          <h1
+            className={`text-8xl ${
+              scrollY > 0 && 'text-gray-200'
+            } transition-all duration-1000`}
+          >
+            {COMPANY_TITLE1}
+            <span className="font-semibold">{COMPANY_TITLE2}</span>
+          </h1>
+        </div>
+      </div>
+      <div className="py-20 w-full">
+        <div className="max-w-7xl mx-4 sm:mx-auto text-white bg-black rounded-xl p-8 drop-shadow-2xl">
+          <div className="my-10 text-3xl text-center">
+            <p className="font-semibold">{SUB_TITLE}</p>
+            <div className="mt-6">
+              <Link href="/principals">
+                <div className="flex flex-row justify-center cursor-pointer flex-wrap">
+                  <p className="mx-1 hover:underline decoration-gray-500">
+                    {POWERFUL}
+                  </p>
+                  <p className="mx-1 hover:underline decoration-gray-100">
+                    {EASY_TO_GRASP}
+                  </p>
+                  <p className="mx-1 hover:underline decoration-orange-500">
+                    {OPEN_SOURCE}
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${
+          scrollY > 0 ? 'opacity-100' : 'opacity-30'
+        } transition-all duration-1000`}
+      >
+        <h2 className="mt-20">{PROJECT_HEADER}</h2>
+        <div className=" border-2 p-6 rounded-lg my-6">
+          <Link href="/juno">
+            <a className="text-2xl font-semibold">Juno</a>
+          </Link>
+          <div className="flex flex-col-reverse justify-between sm:flex-row sm:items-center">
+            <div>
+              <div className="flex flex-col max-w-max">
+                <Label>
+                  <p>
+                    Juno is now in{' '}
+                    <span className="font-semibold">Private Beta</span>
+                  </p>
+                </Label>
+              </div>
+              <Link href="/juno">
+                <p className="mt-6 cursor-pointer">
+                  The open-source Email Manager for Gmail. The goal of Juno is
+                  to spend as little time as possible in the mailbox.
+                </p>
+              </Link>
+              <Link href="/juno">
+                <span className="text-orange-600 cursor-pointer">
+                  read more...
+                </span>
+              </Link>
+            </div>
+            <div className="my-4 mx-auto sm:mx-4">
+              <Link href="/juno">
+                <Image
+                  src={JunoLogo}
+                  alt="Juno Email Manager"
+                  className="cursor-pointer invert"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

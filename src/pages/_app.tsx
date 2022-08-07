@@ -1,9 +1,25 @@
-import '../styles/globals.scss'
-import '../styles/typography.scss'
+import '../styles/globals.css'
+import '../styles/typography.css'
 import type { AppProps } from 'next/app'
+import { MDXProvider } from '@mdx-js/react'
+import { Heading, Hyperlink, Text } from '../components/elements/mdxElements'
+import { Octokit } from '@octokit/core'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const components = {
+  h1: Heading.H1,
+  h2: Heading.H2,
+  p: Text,
+  a: Hyperlink,
 }
 
-export default MyApp
+export const octokit = new Octokit({
+  auth: process.env.GITHUB_PERSONAL_ACCESS,
+})
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <MDXProvider components={components}>
+      <Component {...pageProps} />
+    </MDXProvider>
+  )
+}
