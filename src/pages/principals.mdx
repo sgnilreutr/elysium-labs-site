@@ -4,6 +4,7 @@ import useHasScrolled from '../hooks/useHasScrolled'
 import { FaBrain } from 'react-icons/fa'
 import { FiEye } from 'react-icons/fi'
 import { ImPower } from 'react-icons/im'
+import SEO from '../components/seo'
 
 <div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px'}}>
 ## Powerful
@@ -49,6 +50,10 @@ export default ({ children }) => {
   const { scrollY } = useHasScrolled()
   return (
     <Layout>
+      <SEO
+        title="Principals"
+        metaDescription="The principals we apply to our applications."
+      />
       <div className="mx-4 sm:mx-auto sm:w-full max-w-7xl flex flex-col items-center">
         <div
           className={`${

@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO />
       <div className="flex flex-row p-12">
         <div className="max-w-7xl flex flex-row justify-center flex-wrap items-center w-full mx-auto h-96 select-none">
           <h1

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Logo from '../../public/images/100x100px_EL_01.jpg'
 import useHasScrolled from '../hooks/useHasScrolled'
 import GithubContributors from '../components/githubContributors'
+import SEO from '../components/seo'
 
 Elysium Labs started as an open-source organization that aims to solve everyday productivity problems with powerful and easy-to-grasp software.
 
@@ -16,6 +17,10 @@ export default ({ children }) => {
   const { scrollY } = useHasScrolled()
   return (
     <Layout>
+      <SEO
+        title="About"
+        metaDescription="Background information about the organization"
+      />
       <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
         <div
           className={`${

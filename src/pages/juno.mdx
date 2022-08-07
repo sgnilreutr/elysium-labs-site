@@ -2,6 +2,7 @@ import React from 'react'
 import Label from '../components/elements/label'
 import Layout from '../components/layout'
 import Package from '../components/package'
+import SEO from '../components/seo'
 import BetaAccessForm from '../components/betaAccessForm'
 import UspGrid from '../components/uspGrid'
 import useHasScrolled from '../hooks/useHasScrolled'
@@ -50,6 +51,10 @@ export default ({ children }) => {
   const { scrollY } = useHasScrolled()
   return (
     <Layout>
+      <SEO
+        title="Juno"
+        metaDescription="The open-source Email Manager for Gmail."
+      />
       <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
         <div
           className={`my-10 ${

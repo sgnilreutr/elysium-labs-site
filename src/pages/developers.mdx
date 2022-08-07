@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import useHasScrolled from '../hooks/useHasScrolled'
 import GithubRepositories from '../components/githubRepositories'
+import SEO from '../components/seo'
 
 <div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px'}}>
 If you are a developer and wish to contribute to open-source software that you can use for learning, or for your own daily application, join Elysium Labs.
@@ -30,6 +31,7 @@ export default ({ children }) => {
   const { scrollY } = useHasScrolled()
   return (
     <Layout>
+      <SEO title="Developers" metaDescription="The technical details" />
       <div className="mx-4 sm:mx-auto sm:w-full max-w-7xl flex flex-col items-center">
         <div
           className={`${
