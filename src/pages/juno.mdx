@@ -3,9 +3,10 @@ import Label from '../components/elements/label'
 import Layout from '../components/layout'
 import Package from '../components/package'
 import BetaAccessForm from '../components/betaAccessForm'
+import UspGrid from '../components/uspGrid'
 import useHasScrolled from '../hooks/useHasScrolled'
 
-<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
+<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px', maxWidth: '65ch'}}>
 
 ## Why we build it
 
@@ -16,8 +17,8 @@ The system is based on the core principles of the Tempo Email client, consider t
 project an hommage - unfortunately, the Tempo project is no longer actively developed.
 
 </div>
-<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px'}}>
-
+<div style={{paddingTop: '100px', paddingBottom: '100px', borderBottomWidth: '1px', display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+<div style={{maxWidth: '65ch'}}>
 ## What we solve
 
 The goal of Juno is to spend as little time as possible in the mailbox.
@@ -29,9 +30,11 @@ users
 <br />
 Files sent via email are considered as valuable as the email text, both the text
 and files should never be lost and presented clearly.
+</div>
+<UspGrid />
 
 </div>
-<div style={{paddingTop: '100px'}}>
+<div style={{paddingTop: '100px', maxWidth: '65ch'}}>
 
 ## Development
 
@@ -45,36 +48,41 @@ to make it all run smoothly. The current version of Juno contains these dependen
 
 export default ({ children }) => {
   const { scrollY } = useHasScrolled()
-
-return (
-
-<Layout>
-  <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
-    <div
-      className={`my-10 ${
-        scrollY > 0 && 'opacity-30'
-      } transition-all duration-1000`}
-    >
-      <h1>Juno</h1>
-      <h4 className="text-gray-500">
-        The open-source Email Manager for Gmail.
-      </h4>
-      <Label>
-        <p>
-          Juno is now in <span className="font-semibold">Private Beta</span>
-        </p>
-      </Label>
-    </div>
-    <BetaAccessForm scrollY={scrollY} />
-    <div className="border-gray-300 h-[1px]" />
-    <div
-      className={`max-w-prose my-10 ${
-        scrollY > 0 ? 'opacity-100' : 'opacity-30'
-      } transition-all duration-1000`}
-    >
-      {children}
-    </div>
-    <Package />
-  </div>
-</Layout>
-) }
+  return (
+    <Layout>
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+        <div
+          className={`my-10 ${
+            scrollY > 0 && 'opacity-30'
+          } transition-all duration-1000`}
+        >
+          <h1>Juno</h1>
+          <h4 className="text-gray-500">
+            The open-source Email Manager for Gmail.
+          </h4>
+          <Label>
+            <p>
+              Juno is now in <span className="font-semibold">Private Beta</span>
+            </p>
+          </Label>
+        </div>
+        <BetaAccessForm scrollY={scrollY} />
+        <span>
+          Or if you already have access,{' '}
+          <a href={process.env.NEXT_PUBLIC_JUNO_APP_LINK} className="underline">
+            click here
+          </a>
+        </span>
+        <div className="border-gray-300 h-[1px]" />
+        <div
+          className={`my-10 flex flex-col items-center ${
+            scrollY > 0 ? 'opacity-100' : 'opacity-30'
+          } transition-all duration-1000`}
+        >
+          {children}
+        </div>
+        <Package />
+      </div>
+    </Layout>
+  )
+}
