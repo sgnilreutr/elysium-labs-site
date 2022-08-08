@@ -65,8 +65,8 @@ const Home: NextPage = () => {
         className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${ hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
           } transition-all duration-1000`}
       >
-        <h2 className="mt-20">{PROJECT_HEADER}</h2>
-        <h4 className="text-gray-500">{PROJECT_SUB_HEADER}</h4>
+        <h2 className="mt-20 text-center">{PROJECT_HEADER}</h2>
+        <h4 className="text-gray-500 text-center">{PROJECT_SUB_HEADER}</h4>
         <div className=" border-2 p-6 rounded-lg my-6">
           <Link href="/juno">
             <a className="text-2xl font-semibold">Juno</a>
