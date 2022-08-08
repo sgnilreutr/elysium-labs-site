@@ -32,15 +32,19 @@ const MenuItems = () => {
 const ExternalItems = () => {
   return (
     <ul className="flex flex-row">
-      {EXTERNAL_ITEMS.map((item) => (
-        <li
-          key={item.link}
-          className="mx-2 flex items-center cursor-pointer font-normal"
-          title={item?.title ?? item.name}
-        >
-          <a href={item.link}>{item.name}</a>
-        </li>
-      ))}
+      {EXTERNAL_ITEMS.map((item, index) => {
+        if (item?.link) {
+          return (
+            <li
+              key={`${item?.link ?? '' + index}`}
+              className="mx-2 flex items-center cursor-pointer font-normal"
+              title={item?.title ?? item.name}
+            >
+              <a href={item?.link ?? ''}>{item.name}</a>
+            </li>
+          )
+        }
+      })}
     </ul>
   )
 }
