@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       <SEO title="Software organization" />
       <div className="flex flex-row p-12">
         <div
-          className={`max-w-7xl flex flex-col justify-center flex-wrap items-center w-full mx-auto h-96 ${
+          className={`max-w-7xl flex flex-col md:justify-center flex-wrap items-center w-full mx-auto h-96 ${
             hasVerticalScroll && scrollY > 0 && 'text-gray-200'
           } transition-all duration-1000`}
         >
