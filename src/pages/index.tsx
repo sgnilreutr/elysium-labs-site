@@ -7,7 +7,7 @@ import JunoLogo from '../../public/images/Juno_logo.png'
 import useHasScrolled from '../hooks/useHasScrolled'
 import Label from '../components/elements/label'
 import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
-import { FiSlack } from 'react-icons/fi'
+import { FaDiscord } from 'react-icons/fa'
 
 const COMPANY_TITLE1 = 'Elysium '
 const COMPANY_TITLE2 = 'Labs'
@@ -113,17 +113,17 @@ const Home: NextPage = () => {
         } transition-all duration-1000`}
       >
         <div className="py-20 w-full">
-          <a href={process.env.NEXT_PUBLIC_SLACK_INVITE_LINK ?? ''}>
+          <a href={process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK ?? ''}>
             <div className="max-w-7xl mx-4 sm:mx-auto text-black bg-gray-300 rounded-xl p-6">
               <div className="my-10 text-center flex flex-col items-center justify-center ">
                 <div className="my-6">
-                  <FiSlack size={32} />
+                  <FaDiscord size={32} />
                 </div>
-                <h3 className="font-semibold ">Slack</h3>
+                <h3 className="font-semibold ">Discord</h3>
 
                 <div className="flex flex-row flex-wrap justify-center cursor-pointer text-xl md:max-w-3xl mt-6">
                   <p className="mx-1 hover:underline decoration-gray-500">
-                    Join our Slack community,
+                    Join our Discord community,
                   </p>
                   <p className="mx-1 hover:underline decoration-gray-500">
                     here you can chat about new ideas, drop your feedback, and

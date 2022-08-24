@@ -64,10 +64,10 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
         <span className="text-orange-600 mb-4">
           Something went wrong, reach out to us on{' '}
           <a
-            href="https://join.slack.com/t/slack-pfs5354/shared_invite/zt-1dnnwr9wn-njkaaxES_sUWywV2~JANjg"
+            href={process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK}
             className="underline"
           >
-            Slack
+            Discord
           </a>
         </span>
       )}
