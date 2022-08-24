@@ -29,8 +29,9 @@ const Home: NextPage = () => {
       <SEO title="Software organization" />
       <div className="flex flex-row p-12">
         <div
-          className={`max-w-7xl flex flex-col md:justify-center flex-wrap items-center w-full mx-auto h-96 ${ hasVerticalScroll && scrollY > 0 && 'text-gray-200'
-            } transition-all duration-1000`}
+          className={`max-w-7xl flex flex-col md:justify-center flex-wrap items-center w-full mx-auto h-96 ${
+            hasVerticalScroll && scrollY > 0 && 'text-gray-200'
+          } transition-all duration-1000`}
         >
           <h1 className="text-8xl flex flex-row flex-wrap">
             <span className="mr-4">{COMPANY_TITLE1}</span>
@@ -62,8 +63,9 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div
-        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${ hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
-          } transition-all duration-1000`}
+        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${
+          hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
+        } transition-all duration-1000`}
       >
         <h2 className="mt-20 text-center">{PROJECT_HEADER}</h2>
         <h4 className="text-gray-500 text-center">{PROJECT_SUB_HEADER}</h4>
@@ -106,8 +108,9 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div
-        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${ hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
-          } transition-all duration-1000`}
+        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${
+          hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
+        } transition-all duration-1000`}
       >
         <div className="py-20 w-full">
           <a href={process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK ?? ''}>
