@@ -1,7 +1,7 @@
-import { FaGithub, FaSlack } from 'react-icons/fa'
+import { FaGithub, FaDiscord } from 'react-icons/fa'
 
 const ICON_SIZE = 20
-const SLACK_LINK = process.env.NEXT_PUBLIC_SLACK_INVITE_LINK
+const DISCORD_LINK = process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK
 
 export const MENU_ITEMS = [
   { name: 'Juno', link: '/juno' },
@@ -17,8 +17,8 @@ export const EXTERNAL_ITEMS = [
     title: 'Github',
   },
   {
-    name: <FaSlack size={ICON_SIZE} />,
-    link: SLACK_LINK,
-    title: 'Slack',
+    name: <FaDiscord size={ICON_SIZE} />,
+    link: DISCORD_LINK,
+    title: 'Discord',
   },
 ]
