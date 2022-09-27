@@ -1,7 +1,19 @@
 import React, { useState } from 'react'
 import { useFormspark } from '@formspark/use-formspark'
+import Botpoison from '@botpoison/browser'
 import { FiCheck } from 'react-icons/fi'
 import ConfettiCanvas from '../utils/confettiCanvas'
+import assertNonNullish from '../utils/assertNonNullish'
+
+if (process.env.NODE_ENV === 'production') {
+  assertNonNullish(
+    process.env.NEXT_PUBLIC_FBOTPOISON_PUBLIC_KEY,
+    'Botpoison PK not found'
+  )
+}
+const botpoison = new Botpoison({
+  publicKey: process.env.NEXT_PUBLIC_FBOTPOISON_PUBLIC_KEY ?? '',
+})
 
 const FORMSPARK_FORM_ID = process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID
 
@@ -13,10 +25,11 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
   const [message, setMessage] = useState('')
   const [error, setError] = useState(false)
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      await submit({ message })
+      const { solution } = await botpoison.challenge()
+      await submit({ message, _botpoison: solution })
       setComplete(true)
     } catch (err) {
       setError(true)
@@ -28,11 +41,9 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
       <ConfettiCanvas triggerFire={complete} />
       <form
         onSubmit={onSubmit}
-        className={`flex sm:flex-row mx-4 sm:w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${
-          !complete ? 'justify-between' : 'justify-center'
-        } ${
-          scrollY > 0 && 'shadow-lg md:sticky top-16 md:z-50'
-        } transition-all duration-1000`}
+        className={`flex sm:flex-row mx-4 sm:w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${ !complete ? 'justify-between' : 'justify-center'
+          } ${ scrollY > 0 && 'shadow-lg md:sticky top-16 md:z-50'
+          } transition-all duration-1000`}
       >
         {!complete && (
           <>
@@ -64,10 +75,10 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
         <span className="text-orange-600 mb-4">
           Something went wrong, reach out to us on{' '}
           <a
-            href="https://join.slack.com/t/slack-pfs5354/shared_invite/zt-1dnnwr9wn-njkaaxES_sUWywV2~JANjg"
+            href={process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK}
             className="underline"
           >
-            Slack
+            Discord
           </a>
         </span>
       )}
