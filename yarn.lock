@@ -24,7 +24,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@botpoison/browser@^0.1.30":
+"@botpoison/browser@0.1.30":
   version "0.1.30"
   resolved "https://registry.yarnpkg.com/@botpoison/browser/-/browser-0.1.30.tgz#6571e6571a3109b75dba75d33d35b2f6aaf942bc"
   integrity sha512-hl+YoByBwBrNE0Hv/mwse9kAV6hAlq5qnwSlFhjnI/LkwOxNo1hOQ+x2UlopQ5QEIgxhxjndz9PwcMhFojEKfQ==
@@ -929,7 +929,7 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-dprint@^0.32.1:
+dprint@0.32.1:
   version "0.32.1"
   resolved "https://registry.yarnpkg.com/dprint/-/dprint-0.32.1.tgz#b731217d821bed624c39ab1b484db4879422eee8"
   integrity sha512-HBG9npq+26QW1IjhLyMfX0qMwkIYREZqMByNmLL9O778rsyK54eTkXPhuIBeF1FA2VIoZg3t/5si6FRvDtoQmw==
