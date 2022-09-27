@@ -7,12 +7,12 @@ import assertNonNullish from '../utils/assertNonNullish'
 
 if (process.env.NODE_ENV === 'production') {
   assertNonNullish(
-    process.env.NEXT_PUBLIC_FBOTPOISON_PUBLIC_KEY,
+    process.env.NEXT_PUBLIC_BOTPOISON_PUBLIC_KEY,
     'Botpoison PK not found'
   )
 }
 const botpoison = new Botpoison({
-  publicKey: process.env.NEXT_PUBLIC_FBOTPOISON_PUBLIC_KEY ?? '',
+  publicKey: process.env.NEXT_PUBLIC_BOTPOISON_PUBLIC_KEY ?? '',
 })
 
 const FORMSPARK_FORM_ID = process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID
