@@ -41,7 +41,7 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
       <ConfettiCanvas triggerFire={complete} />
       <form
         onSubmit={onSubmit}
-        className={`flex sm:flex-row mx-4 sm:w-screen max-w-2xl items-center shadow-sm p-2 my-6 bg-gray-200 rounded-lg b-2 mt-14 ${ !complete ? 'justify-between' : 'justify-center'
+        className={`flex sm:flex-row mx-4 sm:w-screen max-w-2xl items-center shadow-sm p-2 my-2 bg-gray-200 rounded-lg b-2 ${ !complete ? 'justify-between' : 'justify-center'
           } ${ scrollY > 0 && 'shadow-lg md:sticky top-16 md:z-50'
           } transition-all duration-1000`}
       >
@@ -52,13 +52,13 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
               required
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="h-14 mr-4 bg-gray-200 pl-2 outline-0 grow"
+              className="pl-2 mr-4 bg-gray-200 h-14 outline-0 grow"
               placeholder="enter your email"
             />
             <button
               type="submit"
               disabled={submitting}
-              className="p-4 bg-orange-400 hover:bg-orange-500 rounded-lg font-semibold text-white shadow-sm transition-all"
+              className="p-4 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
             >
               Request access
             </button>
@@ -72,7 +72,7 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
         )}
       </form>
       {error && (
-        <span className="text-orange-600 mb-4">
+        <span className="mb-4 text-orange-600">
           Something went wrong, reach out to us on{' '}
           <a
             href={process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK}

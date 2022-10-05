@@ -1,5 +1,9 @@
 import React from 'react'
+import Image from 'next/image'
 import Label from '../components/elements/label'
+import JunoLogo from '../../public/images/Juno_logo_dark.png'
+// import SortButton from '../../public/images/Juno_focus_mode.png'
+// import FocusButton from '../../public/images/Juno_sort_inbox.png'
 import Layout from '../components/layout'
 import Package from '../components/package'
 import SEO from '../components/seo'
@@ -9,6 +13,7 @@ import useHasScrolled from '../hooks/useHasScrolled'
 import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
 
 <div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px', maxWidth: '65ch'}}>
+
 
 ## Why we build it
 
@@ -23,6 +28,7 @@ project an hommage - unfortunately, the Tempo project is no longer actively deve
 <div style={{maxWidth: '65ch'}}>
 ## What we solve
 
+
 The goal of Juno is to spend as little time as possible in the mailbox.
 
 <br />
@@ -35,8 +41,10 @@ and files should never be lost and presented clearly.
 </div>
 <UspGrid />
 
+
 </div>
 <div style={{paddingTop: '12.5%', maxWidth: '65ch'}}>
+
 
 ## Development
 
@@ -47,6 +55,7 @@ On its turn Juno is applying the great work of other people who create the depen
 to make it all run smoothly. The current version of Juno contains these dependencies.
 
 </div>
+
 
 export default ({ children }) => {
   const { scrollY } = useHasScrolled()
@@ -59,14 +68,27 @@ export default ({ children }) => {
       />
       <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
         <div
-          className={`my-10 ${
+          className={`my-14 flex flex-col items-center ${
             hasVerticalScroll && scrollY > 0 && 'opacity-30'
           } transition-all duration-1000`}
         >
+          <Image src={JunoLogo} alt="Juno Email Manager" />
           <h1>Juno</h1>
           <h4 className="text-gray-500">
             The open-source Email Manager for Gmail.
           </h4>
+          {/* <Image
+            src={SortButton}
+            alt="Juno Email Manager"
+            className="max-w-l"
+          />
+          <Image
+            src={FocusButton}
+            alt="Juno Email Manager"
+            className="cursor-pointer"
+          /> */}
+        </div>
+        <div className="my-6">
           <Label>
             <p>
               Juno is now in <span className="font-semibold">Private Beta</span>

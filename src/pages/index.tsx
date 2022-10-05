@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Link from 'next/link'
-import JunoLogo from '../../public/images/Juno_logo.png'
+import JunoLogo from '../../public/images/Juno_logo_dark.png'
 import useHasScrolled from '../hooks/useHasScrolled'
 import Label from '../components/elements/label'
 import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
@@ -29,24 +29,23 @@ const Home: NextPage = () => {
       <SEO title="Software organization" />
       <div className="flex flex-row p-12">
         <div
-          className={`max-w-7xl flex flex-col md:justify-center flex-wrap items-center w-full mx-auto h-96 ${
-            hasVerticalScroll && scrollY > 0 && 'text-gray-200'
-          } transition-all duration-1000`}
+          className={`max-w-7xl flex flex-col md:justify-center flex-wrap items-center w-full mx-auto h-96 ${ hasVerticalScroll && scrollY > 0 && 'text-gray-200'
+            } transition-all duration-1000`}
         >
-          <h1 className="text-8xl flex flex-row flex-wrap">
+          <h1 className="flex flex-row flex-wrap text-8xl">
             <span className="mr-4">{COMPANY_TITLE1}</span>
             <span className="font-semibold">{COMPANY_TITLE2}</span>
           </h1>
-          <h4 className="text-gray-500 mt-10">{COMPANY_DESCRIPTION}</h4>
+          <h4 className="mt-10 text-gray-500">{COMPANY_DESCRIPTION}</h4>
         </div>
       </div>
-      <div className="py-20 w-full">
-        <div className="max-w-7xl mx-4 sm:mx-auto text-white bg-black rounded-xl p-8 drop-shadow-2xl">
+      <div className="w-full py-20">
+        <div className="p-8 mx-4 text-white bg-black max-w-7xl sm:mx-auto rounded-xl drop-shadow-2xl">
           <div className="my-10 text-3xl text-center">
             <p className="font-semibold">{SUB_TITLE}</p>
             <div className="mt-6">
               <Link href="/principals">
-                <div className="flex flex-row justify-center cursor-pointer flex-wrap">
+                <div className="flex flex-row flex-wrap justify-center cursor-pointer">
                   <p className="mx-1 hover:underline decoration-gray-500">
                     {POWERFUL}
                   </p>
@@ -63,13 +62,12 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div
-        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${
-          hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
-        } transition-all duration-1000`}
+        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${ hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
+          } transition-all duration-1000`}
       >
         <h2 className="mt-20 text-center">{PROJECT_HEADER}</h2>
-        <h4 className="text-gray-500 text-center">{PROJECT_SUB_HEADER}</h4>
-        <div className=" border-2 p-6 rounded-lg my-6">
+        <h4 className="text-center text-gray-500">{PROJECT_SUB_HEADER}</h4>
+        <div className="p-6 my-6 border-2 rounded-lg ">
           <Link href="/juno">
             <a className="text-2xl font-semibold">Juno</a>
           </Link>
@@ -95,12 +93,12 @@ const Home: NextPage = () => {
                 </span>
               </Link>
             </div>
-            <div className="my-4 mx-auto sm:mx-4">
+            <div className="mx-auto my-4 sm:mx-4">
               <Link href="/juno">
                 <Image
                   src={JunoLogo}
                   alt="Juno Email Manager"
-                  className="cursor-pointer invert"
+                  className="cursor-pointer"
                 />
               </Link>
             </div>
@@ -108,20 +106,19 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div
-        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${
-          hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
-        } transition-all duration-1000`}
+        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${ hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
+          } transition-all duration-1000`}
       >
-        <div className="py-20 w-full">
+        <div className="w-full py-20">
           <a href={process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK ?? ''}>
-            <div className="max-w-7xl mx-4 sm:mx-auto text-black bg-gray-300 rounded-xl p-6">
-              <div className="my-10 text-center flex flex-col items-center justify-center ">
+            <div className="p-6 mx-4 text-black bg-gray-300 max-w-7xl sm:mx-auto rounded-xl">
+              <div className="flex flex-col items-center justify-center my-10 text-center ">
                 <div className="my-6">
                   <FaDiscord size={32} />
                 </div>
                 <h3 className="font-semibold ">Discord</h3>
 
-                <div className="flex flex-row flex-wrap justify-center cursor-pointer text-xl md:max-w-3xl mt-6">
+                <div className="flex flex-row flex-wrap justify-center mt-6 text-xl cursor-pointer md:max-w-3xl">
                   <p className="mx-1 hover:underline decoration-gray-500">
                     Join our Discord community,
                   </p>
@@ -132,7 +129,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className="mt-8">
                   <button
-                    className="bg-white text-black py-4 px-6 rounded-lg font-semibold hover:bg-gray-100 border border-transparent hover:border-black transition-all"
+                    className="px-6 py-4 font-semibold text-black transition-all bg-white border border-transparent rounded-lg hover:bg-gray-100 hover:border-black"
                     type="button"
                   >
                     Join
