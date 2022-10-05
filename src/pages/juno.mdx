@@ -2,15 +2,16 @@ import React from 'react'
 import Image from 'next/image'
 import Label from '../components/elements/label'
 import JunoLogo from '../../public/images/Juno_logo_dark.png'
-// import SortButton from '../../public/images/Juno_focus_mode.png'
-// import FocusButton from '../../public/images/Juno_sort_inbox.png'
+import JunoScreen from '../../public/images/Juno_example_headerless_space.png'
+import SortButton from '../../public/images/Juno_focus_mode.png'
+import FocusButton from '../../public/images/Juno_sort_inbox.png'
 import Layout from '../components/layout'
 import Package from '../components/package'
 import SEO from '../components/seo'
 import BetaAccessForm from '../components/betaAccessForm'
 import UspGrid from '../components/uspGrid'
 import useHasScrolled from '../hooks/useHasScrolled'
-import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
+// import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
 
 <div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px', maxWidth: '65ch'}}>
 
@@ -59,7 +60,6 @@ to make it all run smoothly. The current version of Juno contains these dependen
 
 export default ({ children }) => {
   const { scrollY } = useHasScrolled()
-  const { hasVerticalScroll } = useHasVerticalScroll()
   return (
     <Layout>
       <SEO
@@ -68,25 +68,29 @@ export default ({ children }) => {
       />
       <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
         <div
-          className={`my-14 flex flex-col items-center ${
-            hasVerticalScroll && scrollY > 0 && 'opacity-30'
-          } transition-all duration-1000`}
+          className={`my-14 flex flex-col items-center 
+           transition-all duration-1000`}
         >
           <Image src={JunoLogo} alt="Juno Email Manager" />
           <h1>Juno</h1>
           <h4 className="text-gray-500">
             The open-source Email Manager for Gmail.
           </h4>
-          {/* <Image
-            src={SortButton}
-            alt="Juno Email Manager"
-            className="max-w-l"
-          />
-          <Image
-            src={FocusButton}
-            alt="Juno Email Manager"
-            className="cursor-pointer"
-          /> */}
+          <div className="shadow-lg my-6 rounded-lg">
+            <Image src={JunoScreen} alt="Juno Email Manager Desktop Example" />
+          </div>
+          {/* <div className="flex md:hidden flex-col items-center">
+            <Image
+              src={SortButton}
+              alt="Juno Email Manager"
+              className="max-w-l"
+            />
+            <Image
+              src={FocusButton}
+              alt="Juno Email Manager"
+              className="cursor-pointer"
+            />
+          </div> */}
         </div>
         <div className="my-6">
           <Label>
@@ -104,9 +108,7 @@ export default ({ children }) => {
         </span>
         <div className="border-gray-300 h-[1px]" />
         <div
-          className={`my-10 flex flex-col items-center ${
-            hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
-          } transition-all duration-1000`}
+          className={`my-10 flex flex-col items-center transition-all duration-1000`}
         >
           {children}
         </div>
