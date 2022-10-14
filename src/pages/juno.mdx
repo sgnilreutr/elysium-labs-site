@@ -78,7 +78,25 @@ export default ({ children }) => {
             <span className="font-semibold">time</span>, and keep you{' '}
             <span className="font-semibold">focused</span>.
           </h4>
-          <div className="shadow-lg my-10 rounded-lg">
+          <div className="my-8">
+            <Label>
+              <p>
+                Juno is now in{' '}
+                <span className="font-semibold">Private Beta</span>
+              </p>
+            </Label>
+          </div>
+          <BetaAccessForm scrollY={scrollY} />
+          <span>
+            Or if you already have access,{' '}
+            <a
+              href={process.env.NEXT_PUBLIC_JUNO_APP_LINK}
+              className="underline"
+            >
+              click here
+            </a>
+          </span>
+          <div className="shadow-lg my-14 rounded-lg">
             <Image src={JunoScreen} alt="Juno Email Manager Desktop Example" />
           </div>
           {/* <div className="flex md:hidden flex-col items-center">
@@ -94,20 +112,6 @@ export default ({ children }) => {
             />
           </div> */}
         </div>
-        <div className="my-6">
-          <Label>
-            <p>
-              Juno is now in <span className="font-semibold">Private Beta</span>
-            </p>
-          </Label>
-        </div>
-        <BetaAccessForm scrollY={scrollY} />
-        <span>
-          Or if you already have access,{' '}
-          <a href={process.env.NEXT_PUBLIC_JUNO_APP_LINK} className="underline">
-            click here
-          </a>
-        </span>
         <div className="border-gray-300 h-[1px]" />
         <div
           className={`my-10 flex flex-col items-center transition-all duration-1000`}
