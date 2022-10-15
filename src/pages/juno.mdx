@@ -9,26 +9,12 @@ import Layout from '../components/layout'
 import Package from '../components/package'
 import SEO from '../components/seo'
 import BetaAccessForm from '../components/betaAccessForm'
+import GoogleButton from '../components/googleButton/googleButton'
 import UspGrid from '../components/uspGrid'
-import useHasScrolled from '../hooks/useHasScrolled'
-// import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
 
-<div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px', maxWidth: '65ch'}}>
-
-
-## Why we build it
-
-The application is built as open-source to enable developers, project managers, and other people to go through their list of emails in the most efficient way possible.
-
-<br />
-The system is based on the core principles of the Tempo Email client, consider the
-project an hommage - unfortunately, the Tempo project is no longer actively developed.
-
-</div>
-<div style={{paddingTop: '12.5%', paddingBottom: '12.5%', borderBottomWidth: '1px', display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+<div style={{ paddingBottom: '12.5%', borderBottomWidth: '1px', display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
 <div style={{maxWidth: '65ch'}}>
 ## What we solve
-
 
 The goal of Juno is to spend as little time as possible in the mailbox.
 
@@ -42,10 +28,19 @@ and files should never be lost and presented clearly.
 </div>
 <UspGrid />
 
+</div>
+<div style={{ paddingTop: '12.5%',paddingBottom: '12.5%', borderBottomWidth: '1px', maxWidth: '65ch'}}>
+
+## Why we build it
+
+The application is built as open-source to enable developers, project managers, and other people to go through their list of emails in the most efficient way possible.
+
+<br />
+The system is based on the core principles of the Tempo Email client, consider the
+project an hommage - unfortunately, the Tempo project is no longer actively developed.
 
 </div>
 <div style={{paddingTop: '12.5%', maxWidth: '65ch'}}>
-
 
 ## Development
 
@@ -57,67 +52,32 @@ to make it all run smoothly. The current version of Juno contains these dependen
 
 </div>
 
-
 export default ({ children }) => {
-  const { scrollY } = useHasScrolled()
   return (
     <Layout>
       <SEO
         title="Juno"
         description="The open-source Email Manager for Gmail."
       />
-      <div className="max-w-7xl mx-4 sm:mx-auto sm:w-full flex flex-col items-center">
-        <div
-          className={`my-14 flex flex-col items-center 
-           transition-all duration-1000`}
-        >
-          <Image src={JunoLogo} alt="Juno Email Manager" />
-          <h1>Juno</h1>
-          <h4 className="text-gray-500 max-w-lg text-center">
-            Made for <span className="font-semibold">Gmail</span>, to save you{' '}
-            <span className="font-semibold">time</span>, and keep you{' '}
-            <span className="font-semibold">focused</span>.
-          </h4>
-          <div className="my-8">
-            <Label>
-              <p>
-                Juno is now in{' '}
-                <span className="font-semibold">Private Beta</span>
-              </p>
-            </Label>
-          </div>
-          <BetaAccessForm scrollY={scrollY} />
-          <span>
-            Or if you already have access,{' '}
-            <a
-              href={process.env.NEXT_PUBLIC_JUNO_APP_LINK}
-              className="underline"
-            >
-              click here
-            </a>
-          </span>
-          <div className="shadow-lg my-14 rounded-lg">
+      <div className="max-w-7xl flex flex-col md:justify-center items-center w-full mx-auto h-96 my-32">
+        <h1 className="md:text-8xl">Juno</h1>
+        <h2 className="text-gray-500 max-w-md text-center text-2xl my-10">
+          Made for <span className="font-semibold">Gmail</span>, to save you{' '}
+          <span className="font-semibold">time</span>, and keep you{' '}
+          <span className="font-semibold">focused</span>.
+        </h2>
+        <div className="flex items-center my-12 flex-col md:flex-row">
+          <BetaAccessForm />
+          <span className="text-gray-400 my-4 md:my-0 md:mx-4">or</span>
+          <GoogleButton />
+        </div>
+      </div>
+      {/* <div className="shadow-sm my-10 rounded-sm border border-black">
             <Image src={JunoScreen} alt="Juno Email Manager Desktop Example" />
-          </div>
-          {/* <div className="flex md:hidden flex-col items-center">
-            <Image
-              src={SortButton}
-              alt="Juno Email Manager"
-              className="max-w-l"
-            />
-            <Image
-              src={FocusButton}
-              alt="Juno Email Manager"
-              className="cursor-pointer"
-            />
           </div> */}
-        </div>
-        <div className="border-gray-300 h-[1px]" />
-        <div
-          className={`my-10 flex flex-col items-center transition-all duration-1000`}
-        >
-          {children}
-        </div>
+      {/* </div> */}
+      <div className="max-w-7xl flex mx-4 sm:mx-auto sm:w-full flex-col items-center">
+        {children}
         <Package />
       </div>
     </Layout>

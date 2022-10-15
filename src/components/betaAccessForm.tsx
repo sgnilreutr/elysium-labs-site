@@ -17,10 +17,11 @@ const botpoison = new Botpoison({
 
 const FORMSPARK_FORM_ID = process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID
 
-const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
+const BetaAccesForm = () => {
   const [submit, submitting] = useFormspark({
     formId: FORMSPARK_FORM_ID ?? '',
   })
+  const [open, setOpen] = useState(false)
   const [complete, setComplete] = useState(false)
   const [message, setMessage] = useState('')
   const [error, setError] = useState(false)
@@ -39,38 +40,52 @@ const BetaAccesForm = ({ scrollY }: { scrollY: number }) => {
   return (
     <>
       <ConfettiCanvas triggerFire={complete} />
-      <form
-        onSubmit={onSubmit}
-        className={`flex sm:flex-row mx-4 sm:w-screen max-w-2xl items-center shadow-sm p-2 my-2 bg-gray-200 rounded-lg b-2 ${ !complete ? 'justify-between' : 'justify-center'
-          } ${ scrollY > 0 && 'shadow-lg md:sticky top-16 md:z-50'
-          } transition-all duration-1000`}
-      >
-        {!complete && (
-          <>
-            <input
-              type="email"
-              required
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="pl-2 mr-4 bg-gray-200 h-14 outline-0 grow"
-              placeholder="enter your email"
-            />
-            <button
-              type="submit"
-              disabled={submitting}
-              className="p-4 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
-            >
-              Request access
-            </button>
-          </>
+      <div>
+        {!open && (
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="p-4 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
+          >
+            Request access
+          </button>
         )}
-        {complete && (
-          <div className="flex flex-row items-center h-14">
-            <FiCheck size={20} />
-            <span className="ml-4">You will be contacted shortly</span>
-          </div>
+        {open && (
+          <form
+            onSubmit={onSubmit}
+            className={`flex sm:flex-row border-gray-400 sm:w-screen max-w-lg items-center border-[1px] p-1 rounded-md b-2 ${
+              !complete ? 'justify-between' : 'justify-center'
+            }`}
+          >
+            {!complete && (
+              <>
+                <input
+                  type="email"
+                  required
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="pl-2 mr-4 bg-gray-100 outline-none h-14 outline-0 grow"
+                  placeholder="enter your email"
+                  autoFocus={open}
+                />
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="p-4 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
+                >
+                  Request access
+                </button>
+              </>
+            )}
+            {complete && (
+              <div className="flex flex-row items-center h-14">
+                <FiCheck size={20} />
+                <span className="ml-4">You will be contacted shortly</span>
+              </div>
+            )}
+          </form>
         )}
-      </form>
+      </div>
       {error && (
         <span className="mb-4 text-orange-600">
           Something went wrong, reach out to us on{' '}

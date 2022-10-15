@@ -27,17 +27,16 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <SEO title="Software organization" />
-      <div className="flex flex-row p-12">
-        <div
-          className={`max-w-7xl flex flex-col md:justify-center flex-wrap items-center w-full mx-auto h-96 ${ hasVerticalScroll && scrollY > 0 && 'text-gray-200'
-            } transition-all duration-1000`}
-        >
-          <h1 className="flex flex-row flex-wrap text-8xl">
-            <span className="mr-4">{COMPANY_TITLE1}</span>
-            <span className="font-semibold">{COMPANY_TITLE2}</span>
-          </h1>
-          <h4 className="mt-10 text-gray-500">{COMPANY_DESCRIPTION}</h4>
-        </div>
+      <div
+        className={`max-w-7xl flex flex-col md:justify-center flex-wrap items-center w-full mx-auto h-96 my-24 ${
+          hasVerticalScroll && scrollY > 0 && 'text-gray-200'
+        } transition-all duration-1000`}
+      >
+        <h1 className="flex flex-row flex-wrap text-8xl">
+          <span className="mr-4">{COMPANY_TITLE1}</span>
+          <span className="font-semibold">{COMPANY_TITLE2}</span>
+        </h1>
+        <h4 className="mt-10 text-gray-500">{COMPANY_DESCRIPTION}</h4>
       </div>
       <div className="w-full py-20">
         <div className="p-8 mx-4 text-white bg-black max-w-7xl sm:mx-auto rounded-xl drop-shadow-2xl">
@@ -61,10 +60,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${ hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
-          } transition-all duration-1000`}
-      >
+      <div className="mx-4 max-w-7xl sm:mx-auto sm:w-full">
         <h2 className="mt-20 text-center">{PROJECT_HEADER}</h2>
         <h4 className="text-center text-gray-500">{PROJECT_SUB_HEADER}</h4>
         <div className="p-6 my-6 border-2 rounded-lg ">
@@ -105,10 +101,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`max-w-7xl mx-4 sm:mx-auto sm:w-full ${ hasVerticalScroll && scrollY < 1 ? 'opacity-30' : 'opacity-100'
-          } transition-all duration-1000`}
-      >
+      <div className="mx-4 max-w-7xl sm:mx-auto sm:w-full">
         <div className="w-full py-20">
           <a href={process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK ?? ''}>
             <div className="p-6 mx-4 text-black bg-gray-300 max-w-7xl sm:mx-auto rounded-xl">
