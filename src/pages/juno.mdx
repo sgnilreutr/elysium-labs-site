@@ -61,15 +61,18 @@ export default ({ children }) => {
       />
       <div className="max-w-7xl flex flex-col md:justify-center items-center w-full mx-auto h-96 my-32">
         <h1 className="md:text-8xl">Juno</h1>
-        <h2 className="text-gray-500 max-w-md text-center text-2xl my-10">
+        <h2 className="text-gray-500 max-w-md text-center text-2xl my-10 mx-6">
           Made for <span className="font-semibold">Gmail</span>, to save you{' '}
           <span className="font-semibold">time</span>, and keep you{' '}
           <span className="font-semibold">focused</span>.
         </h2>
-        <div className="flex items-center my-12 flex-col md:flex-row">
-          <BetaAccessForm />
-          <span className="text-gray-400 my-4 md:my-0 md:mx-4">or</span>
-          <GoogleButton />
+        <div className="flex items-center my-12 flex-col">
+          <p className="my-4">Completely free. Open source.</p>
+          <div className="flex items-center flex-col md:flex-row">
+            <BetaAccessForm />
+            <span className="text-gray-400 my-4 md:my-0 md:mx-4">or</span>
+            <GoogleButton />
+          </div>
         </div>
       </div>
       {/* <div className="shadow-sm my-10 rounded-sm border border-black">
