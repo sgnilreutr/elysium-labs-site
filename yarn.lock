@@ -929,10 +929,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-dprint@^0.32.1:
-  version "0.32.1"
-  resolved "https://registry.yarnpkg.com/dprint/-/dprint-0.32.1.tgz#b731217d821bed624c39ab1b484db4879422eee8"
-  integrity sha512-HBG9npq+26QW1IjhLyMfX0qMwkIYREZqMByNmLL9O778rsyK54eTkXPhuIBeF1FA2VIoZg3t/5si6FRvDtoQmw==
+dprint@0.32.2:
+  version "0.32.2"
+  resolved "https://registry.yarnpkg.com/dprint/-/dprint-0.32.2.tgz#42a4da652fbde7de303ac84a52897938cac4abf1"
+  integrity sha512-cGKnZonCFQkcNbptAtJXlzUOqyiyYoD9pINepJ9PvkFi8iwMLChQDSjhMeqT3DDQf5Rof3pYA5LI/bafPpPknQ==
   dependencies:
     yauzl "=2.10.0"
 
