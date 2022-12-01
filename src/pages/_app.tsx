@@ -1,9 +1,12 @@
-import '../styles/globals.css'
-import '../styles/typography.css'
+import 'styles/globals.css';
+import 'styles/typography.css';
+
+import { Heading, Hyperlink, Text } from 'components/elements/mdxElements';
+
+import { MDXProvider } from '@mdx-js/react';
+import { Octokit } from '@octokit/core';
+
 import type { AppProps } from 'next/app'
-import { MDXProvider } from '@mdx-js/react'
-import { Heading, Hyperlink, Text } from '../components/elements/mdxElements'
-import { Octokit } from '@octokit/core'
 
 const components = {
   h1: Heading.H1,

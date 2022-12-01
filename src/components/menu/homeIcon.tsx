@@ -8,7 +8,7 @@ const COMPANY_TITLE2 = 'Labs'
 
 const HomeIcon = () => {
   return (
-    <Link href="/">
+    <Link href="/" passHref>
       <div className="flex flex-row items-center cursor-pointer">
         <>
           <Image
@@ -16,7 +16,7 @@ const HomeIcon = () => {
             alt="Elysium Labs"
             style={{ borderRadius: '5px' }}
           />
-          <span className="ml-2 hidden sm:block">
+          <span className="hidden ml-2 sm:block">
             {COMPANY_TITLE1}
             <span style={{ fontWeight: '600' }}>{COMPANY_TITLE2}</span>
           </span>

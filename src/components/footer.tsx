@@ -4,11 +4,9 @@ import * as global from '../constants/globalConstants'
 
 const Footer = () => {
   return (
-    <footer className="max-w-7xl mx-4 xl:mx-auto xl:w-full m-8 border-2 border-dashed p-6 border-gray-300">
+    <footer className="p-6 m-8 mx-4 border-2 border-gray-300 border-dashed max-w-7xl xl:mx-auto xl:w-full">
       <Link href="/">
-        <a>
-          © {new Date().getFullYear()}, {global.COMPANY_NAME}
-        </a>
+        © {new Date().getFullYear()}, {global.COMPANY_NAME}
       </Link>
     </footer>
   )

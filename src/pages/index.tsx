@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
+import Label from 'components/elements/label'
+import Layout from 'components/layout'
+import SEO from 'components/seo'
+import useHasScrolled from 'hooks/useHasScrolled'
+import useHasVerticalScroll from 'hooks/useHasVerticalScroll'
 import Image from 'next/image'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
 import Link from 'next/link'
-import JunoLogo from '../../public/images/Juno_logo_dark.png'
-import useHasScrolled from '../hooks/useHasScrolled'
-import Label from '../components/elements/label'
-import useHasVerticalScroll from '../hooks/useHasVerticalScroll'
 import { FaDiscord } from 'react-icons/fa'
+
+import JunoLogo from '../../public/images/Juno_logo_dark.png'
 
 const COMPANY_TITLE1 = 'Elysium '
 const COMPANY_TITLE2 = 'Labs'
@@ -43,7 +44,7 @@ const Home: NextPage = () => {
           <div className="my-10 text-3xl text-center">
             <p className="font-semibold">{SUB_TITLE}</p>
             <div className="mt-6">
-              <Link href="/principals">
+              <Link href="/principals" passHref>
                 <div className="flex flex-row flex-wrap justify-center cursor-pointer">
                   <p className="mx-1 hover:underline decoration-gray-500">
                     {POWERFUL}
@@ -65,7 +66,7 @@ const Home: NextPage = () => {
         <h4 className="text-center text-gray-500">{PROJECT_SUB_HEADER}</h4>
         <div className="p-6 my-6 border-2 rounded-lg ">
           <Link href="/juno">
-            <a className="text-2xl font-semibold">Juno</a>
+            <span className="text-2xl font-semibold">Juno</span>
           </Link>
           <div className="flex flex-col-reverse justify-between sm:flex-row sm:items-center">
             <div>

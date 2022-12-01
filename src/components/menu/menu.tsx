@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
-import Logo from '../../../public/images/30x30_EL_01.jpg'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { MENU_ITEMS, EXTERNAL_ITEMS } from '../../constants/menuConstants'
+import { MENU_ITEMS, EXTERNAL_ITEMS } from 'constants/menuConstants'
 import SideMenu from './sideMenu'
 import { FiMenu } from 'react-icons/fi'
 import HomeIcon from './homeIcon'
@@ -13,7 +11,7 @@ const ICON_SIZE = 28
 const MenuItems = () => {
   const { asPath } = useRouter()
   return (
-    <ul className="hidden sm:flex flex-row">
+    <ul className="flex-row hidden sm:flex">
       {MENU_ITEMS.map((item) => (
         <li
           key={item.link}
@@ -37,7 +35,7 @@ const ExternalItems = () => {
           return (
             <li
               key={`${item?.link ?? '' + index}`}
-              className="mx-2 flex items-center cursor-pointer font-normal"
+              className="flex items-center mx-2 font-normal cursor-pointer"
               title={item?.title ?? item.name}
             >
               <a href={item?.link ?? ''}>{item.name}</a>
@@ -58,12 +56,12 @@ const Menu = () => {
 
   return (
     <nav>
-      <div className="max-w-7xl w-full mx-auto flex flex-row justify-between items-center">
+      <div className="flex flex-row items-center justify-between w-full mx-auto max-w-7xl">
         <HomeIcon />
         <div className="flex flex-row items-center">
           <MenuItems />
           <ExternalItems />
-          <div className="sm:hidden flex place-content-center ml-2">
+          <div className="flex ml-2 sm:hidden place-content-center">
             <button type="button" onClick={handleToggleMenu}>
               <FiMenu
                 size={ICON_SIZE}
