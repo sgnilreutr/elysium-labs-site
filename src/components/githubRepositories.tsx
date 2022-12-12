@@ -58,7 +58,7 @@ const RepoContainer = ({ item }: any) => {
 
   return (
     <div
-      className="p-6 border-2 max-w-2xl my-6 rounded-md relative flex flex-col"
+      className="relative flex flex-col max-w-2xl p-6 my-6 border-2 rounded-md"
       ref={hoverRef}
     >
       <div
@@ -72,7 +72,7 @@ const RepoContainer = ({ item }: any) => {
           } transition-all duration-600`}
         >
           <button
-            className="border border-black p-4 bg-black text-white rounded-lg font-semibold shadow-sm mr-4"
+            className="p-4 mr-4 font-semibold text-white bg-black border border-black rounded-lg shadow-sm"
             onClick={clickToCopy}
           >
             {!hasCopied ? 'Clone repo' : 'Link copied'}
@@ -81,7 +81,7 @@ const RepoContainer = ({ item }: any) => {
             href={item?.html_url}
             target="_blank"
             rel="noreferrer"
-            className="border border-black p-4 bg-white text-black rounded-lg font-semibold shadow-sm"
+            className="p-4 font-semibold text-black bg-white border border-black rounded-lg shadow-sm"
           >
             View on Github
           </a>
@@ -99,13 +99,13 @@ const RepoContainer = ({ item }: any) => {
           <Image
             src={Logo}
             alt={item?.full_name}
-            width="100px"
-            height="100px"
+            width="100"
+            height="100"
             style={{ borderRadius: '1rem' }}
           />
         </div>
       </div>
-      <div className="flex flex-row justify-between pt-6 max-w-md">
+      <div className="flex flex-row justify-between max-w-md pt-6">
         {contributors ? (
           <DetailData
             data={contributors.length}
