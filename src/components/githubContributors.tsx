@@ -65,8 +65,8 @@ const GithubContributors = () => {
             <Image
               src={contributor?.avatar_url}
               alt={contributor?.login}
-              width="50px"
-              height="50px"
+              width="50"
+              height="50"
             />
           </a>
         ))
