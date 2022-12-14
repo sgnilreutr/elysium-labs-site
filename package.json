@@ -16,8 +16,8 @@
   "dependencies": {
     "@botpoison/browser": "^0.1.30",
     "@formspark/use-formspark": "0.1.39",
-    "@mdx-js/loader": "2.1.5",
-    "@mdx-js/react": "2.1.5",
+    "@mdx-js/loader": "2.2.1",
+    "@mdx-js/react": "2.2.1",
     "@next/mdx": "13.0.5",
     "@octokit/core": "4.1.0",
     "base64url": "3.0.1",
