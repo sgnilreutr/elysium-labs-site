@@ -1,4 +1,5 @@
 import React from 'react'
+import Docs from 'components/docs'
 import Layout from 'components/layout'
 import useHasScrolled from 'hooks/useHasScrolled'
 import useHasVerticalScroll from 'hooks/useHasVerticalScroll'
@@ -46,6 +47,7 @@ export default ({ children }) => {
           </h4>
         </div>
         <div className="max-w-prose my-10">{children}</div>
+        <Docs />
         <GithubRepositories />
       </div>
     </Layout>
