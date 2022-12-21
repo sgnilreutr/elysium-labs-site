@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Label from 'components/elements/label'
+import Docs from 'components/docs'
+import Feedback from 'components/feedback'
 import JunoLogo from '../../public/images/Juno_logo_dark.png'
 import JunoScreen from '../../public/images/Juno_example.png'
 import SortButton from '../../public/images/Juno_focus_mode.png'
@@ -92,8 +94,9 @@ export default ({ children }) => {
       {/* </div> */}
       <div className="max-w-7xl flex mx-4 sm:mx-auto sm:w-full flex-col items-center">
         {children}
-        <Package />
       </div>
+      <Feedback />
+      <Docs />
     </Layout>
   )
 }
