@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Label from 'components/elements/label'
+import Docs from 'components/docs'
+import Feedback from 'components/feedback'
 import JunoLogo from '../../public/images/Juno_logo_dark.png'
 import JunoScreen from '../../public/images/Juno_example.png'
 import SortButton from '../../public/images/Juno_focus_mode.png'
@@ -17,6 +19,12 @@ import UspGrid from 'components/uspGrid'
 ## What we solve
 
 The goal of Juno is to spend as little time as possible in the mailbox.
+
+<br />
+Juno is an incredibly useful tool that can save time, improve productivity, and enhance
+the user experience. Whether you are a busy professional, a student, or anyone else
+who relies on email for communication, this tool can help to make managing your email
+a much more efficient and enjoyable process.
 
 <br />
 A clear list of to-dos will serve as a focus for your email processing. Going through
@@ -86,8 +94,9 @@ export default ({ children }) => {
       {/* </div> */}
       <div className="max-w-7xl flex mx-4 sm:mx-auto sm:w-full flex-col items-center">
         {children}
-        <Package />
       </div>
+      <Feedback />
+      <Docs />
     </Layout>
   )
 }

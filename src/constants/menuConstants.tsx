@@ -1,4 +1,4 @@
-import { FaBookOpen, FaDiscord, FaGithub } from 'react-icons/fa'
+import { FaBook, FaDiscord, FaGithub } from 'react-icons/fa'
 
 const ICON_SIZE = 20
 const DISCORD_LINK = process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK
@@ -18,7 +18,7 @@ export const EXTERNAL_ITEMS = [
     title: 'Github',
   },
   {
-    name: <FaBookOpen size={ICON_SIZE} />,
+    name: <FaBook size={ICON_SIZE} />,
     link: DOCS_LINK,
     title: 'Docs',
   },

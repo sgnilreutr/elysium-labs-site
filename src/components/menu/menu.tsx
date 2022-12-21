@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { MENU_ITEMS, EXTERNAL_ITEMS } from 'constants/menuConstants'
