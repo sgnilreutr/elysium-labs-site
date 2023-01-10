@@ -4,7 +4,7 @@ const Feedback = () => (
   <div className="mx-4 max-w-7xl sm:mx-auto sm:w-full">
     <div className="w-full py-20">
       <a href={process.env.NEXT_PUBLIC_JUNO_FEEDBACK_LINK ?? ''}>
-        <div className="p-6 mx-4 text-black border-[1px] border-gray-300 max-w-7xl sm:mx-auto rounded-xl">
+        <div className="p-6 mx-4 text-black border-[1px] border-gray-300 max-w-7xl sm:mx-auto rounded-xl bg-white">
           <div className="flex flex-col items-center justify-center my-10 text-center ">
             <div className="my-6">
               <FaCommentDots size={32} />
@@ -18,7 +18,7 @@ const Feedback = () => (
             </div>
             <div className="mt-8">
               <button
-                className="px-6 py-4 font-semibold text-black transition-all bg-white border border-transparent rounded-lg hover:bg-gray-100 hover:border-black"
+                className="px-6 py-4 font-semibold text-black transition-all bg-gray-500 border border-transparent rounded-lg hover:bg-gray-100 hover:border-black"
                 type="button"
               >
                 I&apos;ll give feedback

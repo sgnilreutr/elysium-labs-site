@@ -4,7 +4,7 @@ const Docs = () => (
   <div className="mx-4 max-w-7xl sm:mx-auto sm:w-full">
     <div className="w-full py-20">
       <a href={process.env.NEXT_PUBLIC_DOCS_LINK ?? ''}>
-        <div className="p-6 mx-4 text-black bg-orange-300 max-w-7xl sm:mx-auto rounded-xl">
+        <div className="drop-shadow-2xl p-6 mx-4 text-black bg-orange-300 max-w-7xl sm:mx-auto rounded-xl">
           <div className="flex flex-col items-center justify-center my-10 text-center ">
             <div className="my-6">
               <FaBook size={32} />

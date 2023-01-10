@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         </h1>
         <h4 className="mt-10 text-gray-500">{COMPANY_DESCRIPTION}</h4>
         <div className="max-w-prose">
-          <h5 className="mt-10 text-gray-500">{COMPANY_SUB_DESCRIPTION}</h5>
+          <h5 className="mt-10 text-gray-500 text-center">{COMPANY_SUB_DESCRIPTION}</h5>
         </div>
       </div>
       <div className="w-full py-20">
@@ -115,7 +115,7 @@ const Home: NextPage = () => {
       <div className="mx-4 max-w-7xl sm:mx-auto sm:w-full">
         <div className="w-full py-20">
           <a href={process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK ?? ''}>
-            <div className="p-6 mx-4 text-black bg-gray-300 max-w-7xl sm:mx-auto rounded-xl">
+            <div className="p-6 mx-4 text-white bg-gray-400 drop-shadow-2xl max-w-7xl sm:mx-auto rounded-xl">
               <div className="flex flex-col items-center justify-center my-10 text-center ">
                 <div className="my-6">
                   <FaDiscord size={32} />
