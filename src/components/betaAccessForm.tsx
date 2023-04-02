@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
-import { useFormspark } from '@formspark/use-formspark'
-import Botpoison from '@botpoison/browser'
+import { useState } from 'react'
 import { FiCheck } from 'react-icons/fi'
-import ConfettiCanvas from '../utils/confettiCanvas'
-import assertNonNullish from '../utils/assertNonNullish'
+
+import assertNonNullish from '@/lib/assertNonNullish'
+import ConfettiCanvas from '@/lib/confettiCanvas'
+import Botpoison from '@botpoison/browser'
+import { useFormspark } from '@formspark/use-formspark'
+import classNames from '@/lib/classNames'
 
 if (process.env.NODE_ENV === 'production') {
   assertNonNullish(
@@ -21,10 +23,10 @@ const BetaAccesForm = () => {
   const [submit, submitting] = useFormspark({
     formId: FORMSPARK_FORM_ID ?? '',
   })
-  const [open, setOpen] = useState(false)
   const [complete, setComplete] = useState(false)
-  const [message, setMessage] = useState('')
   const [error, setError] = useState(false)
+  const [message, setMessage] = useState('')
+  const [open, setOpen] = useState(false)
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -41,23 +43,24 @@ const BetaAccesForm = () => {
     <>
       <ConfettiCanvas triggerFire={complete} />
       <div>
-        {!open && (
+        {!open ? (
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="p-4 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
+            className="p-4 font-semibold text-orange-900 transition-all bg-orange-300 rounded-lg shadow-sm hover:bg-orange-400"
           >
             Request access
           </button>
-        )}
-        {open && (
+        ) : null}
+        {open ? (
           <form
             onSubmit={onSubmit}
-            className={`flex sm:flex-row border-gray-400 sm:w-screen max-w-lg items-center border-[1px] p-1 rounded-md b-2 ${
-              !complete ? 'justify-between' : 'justify-center'
-            }`}
+            className={classNames(
+              'flex sm:flex-row border-gray-400 sm:w-screen max-w-lg items-center border p-1 rounded-md b-2',
+              `${!complete ? 'justify-between' : 'justify-center'}`
+            )}
           >
-            {!complete && (
+            {!complete ? (
               <>
                 <input
                   type="email"
@@ -76,17 +79,17 @@ const BetaAccesForm = () => {
                   Request access
                 </button>
               </>
-            )}
-            {complete && (
+            ) : null}
+            {complete ? (
               <div className="flex flex-row items-center h-14">
                 <FiCheck size={20} />
                 <span className="ml-4">You will be contacted shortly</span>
               </div>
-            )}
+            ) : null}
           </form>
-        )}
+        ) : null}
       </div>
-      {error && (
+      {error ? (
         <span className="mb-4 text-orange-600">
           Something went wrong, reach out to us on{' '}
           <a
@@ -96,7 +99,7 @@ const BetaAccesForm = () => {
             Discord
           </a>
         </span>
-      )}
+      ) : null}
     </>
   )
 }

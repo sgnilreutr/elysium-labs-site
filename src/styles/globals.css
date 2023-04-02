@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  background-color: #f6f6f6;
+@layer base {
+  body {
+    @apply p-0 m-0 antialiased bg-neutral-100 scroll-smooth;
+    /* @apply antialiased dark:text-white dark:bg-gray-900; */
+  }
 }
 
 #__next {

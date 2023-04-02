@@ -6,20 +6,7 @@ html {
   font-size: 100%;
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: system-ui;
-  font-weight: normal;
-  word-wrap: break-word;
-  font-kerning: normal;
-  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-}
-
-blockquote,
+/* blockquote,
 dd,
 dl,
 figure,
@@ -33,16 +20,15 @@ hr,
 p,
 pre {
   margin: 0;
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5 {
   font-weight: 400;
   line-height: 1.3;
-  color: $font-color-primary;
 }
 
 h1 {
@@ -69,4 +55,4 @@ h5 {
 small,
 .text_small {
   font-size: 0.8rem;
-}
+} */

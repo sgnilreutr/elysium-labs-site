@@ -1,9 +1,10 @@
-import React from 'react'
 import Link from 'next/link'
-import { MENU_ITEMS } from '../../constants/menuConstants'
 import { useRouter } from 'next/router'
 import { FiX } from 'react-icons/fi'
-import HomeIcon from './homeIcon'
+
+import { MENU_ITEMS } from '@/components/menu/MenuConstants'
+
+import HomeIcon from './HomeIcon'
 
 const ICON_SIZE = 28
 
@@ -37,15 +38,15 @@ const SideMenu = ({
       </div>
       <div>
         <ul className="flex flex-col mt-4">
-          {MENU_ITEMS.map((item) => (
+          {MENU_ITEMS.map(({ href, label }) => (
             <li
-              key={item.link}
+              key={href}
               className={`my-2 flex items-center cursor-pointer ${
-                asPath === item.link ? 'font-bold' : 'font-normal'
+                asPath === href ? 'font-bold' : 'font-normal'
               }`}
-              title={item.name}
+              title={label}
             >
-              <Link href={item.link}>{item.name}</Link>
+              <Link href={href}>{label}</Link>
             </li>
           ))}
         </ul>

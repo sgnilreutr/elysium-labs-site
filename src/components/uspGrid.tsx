@@ -1,9 +1,13 @@
-import React from 'react'
 import { BsKeyboard } from 'react-icons/bs'
 import { GiBroom } from 'react-icons/gi'
 import { TbArrowWaveRightDown, TbDatabaseOff } from 'react-icons/tb'
+import UspItem from './UspItem'
+import Stack from './elements/Stack'
+import Header from './elements/Header'
 
-const ICON_SIZE = 20
+const ICON_SIZE = 28
+
+const HEADER = 'What we give you to do just that'
 
 const USP_ITEMS = [
   {
@@ -28,41 +32,23 @@ const USP_ITEMS = [
   },
 ]
 
-const UspItem = ({
-  icon,
-  header,
-  body,
-}: {
-  icon: JSX.Element
-  header: string
-  body: string
-}) => {
-  return (
-    <div className="max-w-md flex flex-col items-center bg-black text-white rounded-xl p-8 drop-shadow-2xl my-4 md:m-4 text-center">
-      <div>{icon}</div>
-      <h4 className="mt-3 mb-1 font-light text-xl">{header}</h4>
-      <span className="text-gray-300">{body}</span>
-    </div>
-  )
-}
-
 const UspGrid = () => {
   return (
-    <div className="my-14 w-full">
-      <h3 className="text-gray-500 my-10 text-center">
-        What we give you to do just that
-      </h3>
-      <div className="flex flex-row flex-wrap items-center justify-evenly">
-        {USP_ITEMS.map((item) => (
-          <UspItem
-            key={item?.header}
-            icon={item?.icon}
-            header={item?.header}
-            body={item?.body}
-          />
+    <Stack direction="vertical" className="w-full">
+      <Header
+        type="h3"
+        className="py-10 text-3xl text-center"
+        color="text-gray-500"
+        weight="font-regular"
+      >
+        {HEADER}
+      </Header>
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        {USP_ITEMS.map(({ body, header, icon }) => (
+          <UspItem key={header} icon={icon} header={header} body={body} />
         ))}
       </div>
-    </div>
+    </Stack>
   )
 }
 
