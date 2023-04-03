@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Label from './elements/Label'
+import Label from '@/components/elements/Label'
 
 import JunoLogo from 'public/images/Juno_logo_dark.png'
-import Stack from './elements/Stack'
+import Stack from '@/components/elements/Stack'
 import { FiChevronRight } from 'react-icons/fi'
 import Header from '@/components/elements/Header'
 
