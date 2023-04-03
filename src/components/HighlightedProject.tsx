@@ -5,7 +5,7 @@ import Label from './elements/Label'
 import JunoLogo from 'public/images/Juno_logo_dark.png'
 import Stack from './elements/Stack'
 import { FiChevronRight } from 'react-icons/fi'
-import Header from './elements/Header'
+import Header from '@/components/elements/Header'
 
 const PROJECT_HEADER = 'Featured'
 const PROJECT_SUB_HEADER = 'We are currently focusing on this project'
