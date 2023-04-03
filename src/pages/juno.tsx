@@ -9,7 +9,7 @@ import Layout from '@/components/Layout'
 import SectionList from '@/components/SectionList'
 import SEO from '@/components/Seo'
 // import UspGrid from '@/components/UspGrid'
-import UspGridTwo from '@/components/uspGridJuno/UspGridTwo'
+import UspGridTwo from '@/components/UspGridJuno/UspGridTwo'
 
 const sectionsData = [
   {
