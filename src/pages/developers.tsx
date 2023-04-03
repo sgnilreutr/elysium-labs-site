@@ -109,7 +109,7 @@ const Developers = ({ repoContributors, repos }: TDevelopers) => {
 export default Developers
 
 export async function getStaticProps() {
-  const repos = await getRepos()
+  const repos = (await getRepos()) ?? null
   const repoContributors = repos
     ? await Promise.all(
         repos.map((repo) => getContributorsInformation({ repository: repo }))
