@@ -89,7 +89,7 @@ const Developers = ({ repoContributors, repos }: TDevelopers) => {
               {DEVELOPERS_HEADER}
             </Header>
             <Header
-              type="h4"
+              type="h2"
               className="text-2xl text-center"
               weight="font-regular"
               color="text-gray-500"

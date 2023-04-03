@@ -91,7 +91,7 @@ const Principals = () => {
               {PRINCIPALS_HEADER}
             </Header>
             <Header
-              type="h4"
+              type="h2"
               color="text-gray-500"
               weight="font-regular"
               className="text-2xl"

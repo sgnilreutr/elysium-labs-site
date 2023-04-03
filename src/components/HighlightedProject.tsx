@@ -36,7 +36,7 @@ const HighlightedProject = () => {
         align="center"
         direction="vertical"
         justify="center"
-        className="p-6 border md:p-10 lg:p-16 bg_gradient_blue_orange"
+        className="p-6 border md:p-10 lg:p-16"
       >
         <Link href="/juno">
           <span className="text-2xl font-semibold">{PROJECT_NAME}</span>

@@ -61,7 +61,7 @@ const About = () => {
               {ABOUT_HEADER_1}
             </Header>
             <Header
-              type="h4"
+              type="h2"
               className="text-2xl text-center"
               weight="font-regular"
               color="text-gray-500"

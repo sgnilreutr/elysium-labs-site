@@ -9,6 +9,7 @@ import Layout from '@/components/Layout'
 import SectionList from '@/components/SectionList'
 import SEO from '@/components/Seo'
 import UspGrid from '@/components/UspGrid'
+import UspGridTwo from '@/components/UspGridJuno/UspGridTwo'
 
 const sectionsData = [
   {
@@ -91,7 +92,7 @@ const Juno = () => {
             <p className="mt-4 text-xl text-gray-500">
               {JUNO_PROMOTION_HEADER}
             </p>
-            <p className="mb-4 text-gray-500">{JUNO_PROMOTION_SUB_HEADER}</p>
+            <p className="mb-4 text-gray-500 ">{JUNO_PROMOTION_SUB_HEADER}</p>
             <div className="relative flex flex-col items-center gap-3 md:flex-row">
               <BetaAccessForm />
               <GoogleButton />
@@ -101,7 +102,8 @@ const Juno = () => {
       </div>
       <div className="flex flex-col items-center mx-4 max-w-7xl sm:mx-auto sm:w-full">
         <Stack align="center" direction="vertical" className="pb-24">
-          <UspGrid />
+          <UspGridTwo />
+          {/* <UspGrid /> */}
           <p>
             More information can be found in the Usage docs {''}
             <InlineLink href="https://docs.elysiumlabs.io/docs/juno/usage/">
