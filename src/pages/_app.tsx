@@ -1,5 +1,4 @@
 import '@/styles/globals.css'
-import '@/styles/typography.css'
 
 import { Heading, Hyperlink, Text } from '@/components/elements/mdxElements'
 
