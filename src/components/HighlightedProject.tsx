@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Label from '@/components/elements/Label'
 
 import JunoLogo from 'public/images/Juno_logo_dark.png'
 import Stack from '@/components/elements/Stack'
 import { FiChevronRight } from 'react-icons/fi'
 import Header from '@/components/elements/Header'
+import Label from '@/components/elements/Label'
 
 const PROJECT_HEADER = 'Featured'
 const PROJECT_SUB_HEADER = 'We are currently focusing on this project'
