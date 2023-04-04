@@ -19,26 +19,30 @@ const PROJECT_READ_MORE = 'read more'
 const HighlightedProject = () => {
   return (
     <div className="mx-4 max-w-7xl sm:mx-auto sm:w-full">
-      <div className="pb-6">
-        <Header type="h2" className="text-4xl text-center" animation="none">
-          {PROJECT_HEADER}
-        </Header>
-        <Header
-          type="h4"
-          weight="font-regular"
-          color="text-gray-500"
-          className="text-2xl text-center"
-          animation="none"
-        >
-          {PROJECT_SUB_HEADER}
-        </Header>
-      </div>
       <Stack
         align="center"
         direction="vertical"
         justify="center"
-        className="p-6 border md:p-10 lg:p-16"
+        className="p-6 text-white bg-black border radial_spotlight md:p-10 lg:p-24"
       >
+        <div className="pb-12">
+          <Header
+            type="h2"
+            className="text-4xl text-center text-gray-300"
+            animation="none"
+          >
+            {PROJECT_HEADER}
+          </Header>
+          <Header
+            type="h4"
+            weight="font-regular"
+            color="text-gray-500"
+            className="text-2xl text-center text-orange-600"
+            animation="none"
+          >
+            {PROJECT_SUB_HEADER}
+          </Header>
+        </div>
         <Link href="/juno">
           <span className="text-2xl font-semibold">{PROJECT_NAME}</span>
         </Link>
@@ -58,9 +62,11 @@ const HighlightedProject = () => {
           </Link>
 
           <div className="flex flex-col max-w-max">
-            <Label>
-              <span className="font-semibold">{PROJECT_LABEL}</span>
-            </Label>
+            <Link href="/juno">
+              <Label>
+                <span className="font-semibold">{PROJECT_LABEL}</span>
+              </Label>
+            </Link>
           </div>
           <Link href="/juno" className="max-w-md text-center">
             <p className="mt-6 cursor-pointer">{PROJECT_DESCRIPTION}</p>

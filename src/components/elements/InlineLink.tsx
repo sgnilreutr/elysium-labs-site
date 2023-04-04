@@ -14,7 +14,7 @@ const InlineLink = ({ children, href, ...rest }: IInlineLink) => {
     <Link
       {...rest}
       href={href}
-      className={classNames('font-semibold', rest.className)}
+      className={classNames('font-semibold hover:underline', rest.className)}
     >
       {children}
     </Link>

@@ -20,7 +20,7 @@ const Home: NextPage = () => {
     <Layout>
       <SEO title={Seo.title} description={Seo.description} />
       <Hero />
-      <UspBanner />
+      {/* <UspBanner /> */}
       <HighlightedProject />
       <Stack
         className="flex flex-row flex-wrap flex-1 py-48 mx-auto max-w-7xl max-h-max md:flex-nowrap"

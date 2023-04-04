@@ -1,5 +1,5 @@
 import { BsKeyboard } from 'react-icons/bs'
-import { FiCheckCircle, FiArchive } from 'react-icons/fi'
+import { FiCheckCircle, FiArchive, FiArrowRight } from 'react-icons/fi'
 import { GiBroom } from 'react-icons/gi'
 import { TbArrowWaveRightDown, TbDatabaseOff } from 'react-icons/tb'
 import TextHighlight from '../elements/TextHighlight'
@@ -10,7 +10,10 @@ export const SENDER_RECIPIENTS = [
 ]
 const ICON_SIZE = 20
 
-export const HEADER = 'What we give you to do just that'
+export const SECTION_ID_FOCUS = 'email-demo'
+
+export const HEADER = 'What we give you'
+export const SUB_HEADER = 'Play around with our not-so-real features'
 
 export const USP_ITEMS = [
   {
@@ -59,6 +62,7 @@ export const USP_ITEMS = [
 export const BUTTONS_ARRAY = [
   { label: 'Todo', icon: <FiCheckCircle /> },
   { label: 'Archive', icon: <FiArchive /> },
+  { label: 'Reply', icon: <FiArrowRight /> },
 ]
 
 export const INBOX_ZERO = {

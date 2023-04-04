@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { FiRefreshCw } from 'react-icons/fi'
 
 import Header from '../elements/Header'
@@ -9,13 +9,16 @@ import {
   BUTTONS_ARRAY,
   HEADER,
   INBOX_ZERO,
+  SECTION_ID_FOCUS,
+  SUB_HEADER,
   USP_ITEMS,
 } from './UspGridJunoConstants'
 
 const UspGridTwo = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0)
-  const maxCards = USP_ITEMS.length
+  const mailContainerRef = useRef<HTMLDivElement | null>(null)
 
+  const maxCards = USP_ITEMS.length
   const cardsAreGone = currentCardIndex === USP_ITEMS.length
 
   const handleReset = () => {
@@ -23,6 +26,14 @@ const UspGridTwo = () => {
   }
 
   const handleCardSwitch = () => {
+    if (mailContainerRef.current) {
+      mailContainerRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest',
+      })
+    }
+
     setCurrentCardIndex((prevState) => {
       if (prevState === maxCards) {
         return prevState
@@ -32,18 +43,28 @@ const UspGridTwo = () => {
   }
 
   return (
-    <Stack direction="vertical" className="md:w-full" align="center">
+    <Stack direction="vertical" className="w-full" align="center">
       <Header
         type="h3"
-        className="py-10 text-3xl text-center"
+        className="pt-10 text-3xl text-center"
         color="text-gray-500"
         weight="font-regular"
       >
         {HEADER}
       </Header>
+      <Header
+        type="h4"
+        className="pb-10 text-lg text-center text-gray-400"
+        weight="font-regular"
+      >
+        {SUB_HEADER}
+      </Header>
       <div className="w-full max-w-2xl md:w-screen">
         <Stack spacing="large" className="flex-col-reverse md:flex-row">
-          <div className="relative md:w-screen min-h-[450px]">
+          <div
+            className="relative md:w-screen min-h-[450px]"
+            ref={mailContainerRef}
+          >
             {!cardsAreGone ? (
               USP_ITEMS.map(({ body, header, icon }, index) => {
                 const shouldEnter = currentCardIndex === index
@@ -91,7 +112,7 @@ const UspGridTwo = () => {
           </div>
           {!cardsAreGone ? (
             <Stack className="flex-row items-center justify-center md:pt-2 md:flex-col">
-              <span className="text-sm text-neutral-400 px-[12px] flex items-center mr-auto animate-pulse gap-1">
+              <span className="text-sm text-neutral-400 px-[12px] flex items-center mr-auto gap-1">
                 <span className="text-sm text-neutral-600">
                   {currentCardIndex + 1}
                 </span>{' '}
@@ -104,6 +125,7 @@ const UspGridTwo = () => {
                     label={label}
                     icon={icon}
                     onClick={handleCardSwitch}
+                    currentCardIndex={currentCardIndex}
                   />
                 ))}
               </Stack>
