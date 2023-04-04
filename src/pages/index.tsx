@@ -23,7 +23,7 @@ const Home: NextPage = () => {
       <UspBanner />
       <HighlightedProject />
       <Stack
-        className="flex flex-row flex-wrap flex-1 py-24 mx-auto max-w-7xl max-h-max md:flex-nowrap"
+        className="flex flex-row flex-wrap flex-1 py-48 mx-auto max-w-7xl max-h-max md:flex-nowrap"
         spacing="huge"
       >
         <Discord />
