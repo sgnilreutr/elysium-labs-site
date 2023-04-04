@@ -8,7 +8,7 @@ interface ILayout {
 
 const Layout = ({ children }: ILayout) => {
   return (
-    <div className="flex flex-col w-full h-full leading-normal bg-gray-100">
+    <div className="flex flex-col h-full leading-normal bg-gray-100 md:w-full">
       <PageHeader />
       <main className="flex flex-col mt-20">{children}</main>
       <Footer />

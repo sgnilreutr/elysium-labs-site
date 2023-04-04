@@ -9,6 +9,7 @@ import useHasScrolled from '@/hooks/useHasScrolled'
 import useHasVerticalScroll from '@/hooks/useHasVerticalScroll'
 import SectionList from '@/components/SectionList'
 import InlineLink from '@/components/elements/InlineLink'
+import Discord from '@/components/infoBlocks/Discord'
 
 const ABOUT_HEADER_1 = 'About'
 const ABOUT_HEADER_2 = 'Elysium Labs'
@@ -70,16 +71,17 @@ const About = () => {
             </Header>
           </div>
         </div>
-        <div className="flex items-center justify-center my-10">
-          <Image src={Logo} style={{ borderRadius: '1rem' }} alt="Logo" />
+        <div className="flex items-center justify-center py-4 md:py-10">
+          <Image src={Logo} className="rounded-md" alt="Logo" />
         </div>
-        <div className="mt-20 max-w-prose">
+        <div className="pt-4 text-center md:pt-20 max-w-prose">
           <InlineLink href={JOIN_LINK_HREF}>{JOIN_LINK_TEXT}</InlineLink>
         </div>
 
-        <div className="my-10 max-w-prose">
+        <div className="py-48 max-w-prose">
           <SectionList sectionsData={sectionsData} />
         </div>
+        <Discord />
         {/* <GithubContributors /> */}
       </div>
     </Layout>

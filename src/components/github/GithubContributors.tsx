@@ -41,7 +41,6 @@ const GithubContributors = () => {
                 }
               })
             )
-            console.log(users)
             setContributors(users)
           }
         }

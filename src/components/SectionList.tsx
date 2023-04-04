@@ -3,9 +3,9 @@ import Stack from './elements/Stack'
 import Section from './Section'
 
 interface ISectionData {
-  title: string
-  icon?: JSX.Element
   content: JSX.Element
+  icon?: JSX.Element
+  title: string
 }
 
 interface ISectionList extends React.HTMLAttributes<HTMLDivElement> {
@@ -15,7 +15,7 @@ interface ISectionList extends React.HTMLAttributes<HTMLDivElement> {
 const SectionList = ({ sectionsData, ...rest }: ISectionList) => (
   <Stack
     direction="vertical"
-    className={classNames('!gap-24', rest.className)}
+    className={classNames('!gap-48', rest.className)}
     align="center"
   >
     {sectionsData.map(({ title, icon, content }, index) => (

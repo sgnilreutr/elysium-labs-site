@@ -1,7 +1,10 @@
 import classNames from '@/lib/classNames'
+
 import Stack from '../elements/Stack'
-import { SENDER_RECIPIENTS } from './UspGridJunoConstants'
 import SenderRecipient from './SenderRecipient'
+import { EMAIL_TIME_EXPIRED, SENDER_RECIPIENTS } from './UspGridJunoConstants'
+
+import type { ReactNode } from 'react'
 
 const FakText = () => {
   const randomNum = Math.floor(Math.random() * 3) + 1
@@ -18,7 +21,7 @@ const FakText = () => {
 }
 
 interface IEmailItem {
-  body: string
+  body: ReactNode
   header: string
   icon: JSX.Element
   shouldEnter: boolean
@@ -30,7 +33,7 @@ const EmailItem = ({ body, header, icon, shouldEnter }: IEmailItem) => {
   return (
     <div
       className={classNames(
-        'absolute top-0 left-0 flex flex-col items-center w-full p-8 text-black bg-white border rounded-md shadow-sm min-h-64 border-neutral-200',
+        'absolute top-0 left-0 flex flex-col items-center md:w-full p-4 md:p-8 text-black bg-white border rounded-md shadow-sm min-h-64 border-neutral-200',
         `${shouldEnter && 'animate-slideUpAndFadeOpacityChanged'}`,
         `${!shouldEnter && 'invisible'}`,
         'will-change-[opacity,transform]'
@@ -45,9 +48,11 @@ const EmailItem = ({ body, header, icon, shouldEnter }: IEmailItem) => {
             <div className="p-2 text-orange-600 bg-orange-200 rounded-full">
               {icon}
             </div>
-            <h3 className="text-xl font-semibold">{header}</h3>
+            <h3 className="w-full text-xl font-semibold">{header}</h3>
           </Stack>
-          <span className="text-neutral-300">1 hour ago</span>
+          <span className="text-sm text-right text-neutral-300 md:text-base">
+            {EMAIL_TIME_EXPIRED}
+          </span>
         </Stack>
         <Stack direction="vertical" className="pb-2">
           {SENDER_RECIPIENTS.map(({ body, label }) => (

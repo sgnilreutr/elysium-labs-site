@@ -28,6 +28,7 @@ const HighlightedProject = () => {
           weight="font-regular"
           color="text-gray-500"
           className="text-2xl text-center"
+          animation="none"
         >
           {PROJECT_SUB_HEADER}
         </Header>

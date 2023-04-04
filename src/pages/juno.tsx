@@ -51,11 +51,6 @@ const sectionsData = [
             here.
           </InlineLink>
         </p>
-        <p>
-          On its turn Juno is applying the great work of other people who create
-          the dependencies to make it all run smoothly. The current version of
-          Juno contains these dependencies.
-        </p>
       </>
     ),
   },
@@ -76,32 +71,32 @@ const Juno = () => {
   return (
     <Layout>
       <SEO title={Seo.title} description={Seo.description} />
-      <div className="flex flex-col items-center w-full">
-        <div className="flex flex-col items-center w-full py-32 mx-auto max-w-7xl md:justify-center">
-          <Header type="h1" className="md:text-8xl">
+      <div className="flex flex-col items-center md:w-full">
+        <div className="flex flex-col items-center pt-24 pb-12 mx-4 md:py-32 md:w-full md:mx-auto max-w-7xl md:justify-center">
+          <Header type="h1" className="text-6xl md:text-8xl">
             {JUNO_HEADER}
           </Header>
           <Header
             type="h2"
             weight="font-regular"
-            className="text-center md:text-4xl"
+            className="text-2xl text-center md:text-4xl"
           >
             {JUNO_SUB_HEADER}
           </Header>
-          <div className="flex flex-col items-center my-12">
-            <p className="mt-4 text-xl text-gray-500">
+          <div className="flex flex-col items-center py-12">
+            <p className="text-xl text-center text-gray-500 md:text-left">
               {JUNO_PROMOTION_HEADER}
             </p>
-            <p className="mb-4 text-gray-500 ">{JUNO_PROMOTION_SUB_HEADER}</p>
-            <div className="relative flex flex-col items-center gap-3 md:flex-row">
+            <p className="text-gray-500 ">{JUNO_PROMOTION_SUB_HEADER}</p>
+            <div className="relative flex flex-col items-center gap-3 pt-8 md:flex-row">
               <BetaAccessForm />
               <GoogleButton />
             </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center mx-4 max-w-7xl sm:mx-auto sm:w-full">
-        <Stack align="center" direction="vertical" className="pb-24">
+      <div className="flex flex-col items-center mx-4 max-w-7xl md:mx-auto md:w-full">
+        <Stack align="center" direction="vertical" className="pb-16 md:pb-24">
           <UspGridTwo />
           {/* <UspGrid /> */}
           <p>
@@ -113,7 +108,7 @@ const Juno = () => {
         </Stack>
         <SectionList sectionsData={sectionsData} />
       </div>
-      <Stack className="flex flex-row flex-1 pt-24 mx-auto max-w-7xl max-h-max">
+      <Stack className="flex-wrap flex-1 pt-48 mx-auto max-w-7xl max-h-max md:flex-nowrap">
         <Feedback />
         <Docs />
       </Stack>

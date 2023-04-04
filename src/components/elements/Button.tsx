@@ -10,7 +10,7 @@ const Button = ({ children, ...rest }: IButton) => {
     <button
       type="button"
       className={classNames(
-        'px-6 py-4 font-semibold text-black transition-all border border-transparent rounded-lg',
+        'px-5 py-3 font-semibold text-black transition-all border border-transparent rounded-lg inline-flex items-center',
         rest.className
       )}
     >

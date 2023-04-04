@@ -9,6 +9,7 @@ import SEO from '@/components/Seo'
 import useHasScrolled from '@/hooks/useHasScrolled'
 import useHasVerticalScroll from '@/hooks/useHasVerticalScroll'
 import SectionList from '@/components/SectionList'
+import Discord from '@/components/infoBlocks/Discord'
 
 const PRINCIPALS_HEADER = 'Principals'
 const PRINCIPALS_SUB_HEADER =
@@ -94,15 +95,16 @@ const Principals = () => {
               type="h2"
               color="text-gray-500"
               weight="font-regular"
-              className="text-2xl"
+              className="text-2xl text-center"
             >
               {PRINCIPALS_SUB_HEADER}
             </Header>
           </div>
         </div>
-        <div className="flex flex-col items-center mx-4 max-w-7xl sm:mx-auto sm:w-full">
+        <div className="flex flex-col items-center pb-48 mx-4 max-w-7xl sm:mx-auto sm:w-full">
           <SectionList sectionsData={sectionsData} />
         </div>
+        <Discord />
       </div>
     </Layout>
   )

@@ -32,7 +32,7 @@ const UspGridTwo = () => {
   }
 
   return (
-    <Stack direction="vertical" className="w-full" align="center">
+    <Stack direction="vertical" className="md:w-full" align="center">
       <Header
         type="h3"
         className="py-10 text-3xl text-center"
@@ -41,9 +41,9 @@ const UspGridTwo = () => {
       >
         {HEADER}
       </Header>
-      <div className="w-screen max-w-2xl">
-        <Stack spacing="large">
-          <div className="relative w-screen min-h-[300px] md:min-h-[450px]">
+      <div className="w-full max-w-2xl md:w-screen">
+        <Stack spacing="large" className="flex-col-reverse md:flex-row">
+          <div className="relative md:w-screen min-h-[450px]">
             {!cardsAreGone ? (
               USP_ITEMS.map(({ body, header, icon }, index) => {
                 const shouldEnter = currentCardIndex === index
@@ -65,7 +65,7 @@ const UspGridTwo = () => {
                 return null
               })
             ) : (
-              <div className="absolute top-0 left-0 flex flex-col items-center w-full p-8 text-black bg-white border rounded-md shadow-sm  min-h-[300px] md:min-h-[450px] border-neutral-200">
+              <div className="absolute top-0 left-0 flex flex-col items-center w-full p-8 text-black bg-white border rounded-md shadow-sm md:min-h-[450px] border-neutral-200">
                 <Stack direction="vertical" align="center">
                   <Stack direction="vertical" align="center">
                     <span className="text-xl font-semibold">
@@ -90,11 +90,14 @@ const UspGridTwo = () => {
             )}
           </div>
           {!cardsAreGone ? (
-            <Stack direction="vertical" className="pt-2">
-              <span className="text-sm text-neutral-400 px-[12px]">
-                {currentCardIndex + 1} / {maxCards}
+            <Stack className="flex-row items-center justify-center md:pt-2 md:flex-col">
+              <span className="text-sm text-neutral-400 px-[12px] flex items-center mr-auto animate-pulse gap-1">
+                <span className="text-sm text-neutral-600">
+                  {currentCardIndex + 1}
+                </span>{' '}
+                / {maxCards}
               </span>
-              <Stack direction="vertical" spacing="mini">
+              <Stack className="md:flex-col" spacing="mini">
                 {BUTTONS_ARRAY.map(({ label, icon }) => (
                   <EmailButton
                     key={label}

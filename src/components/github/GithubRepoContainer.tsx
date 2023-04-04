@@ -11,11 +11,20 @@ import GithubDetailData from './GithubDetailData'
 
 import type { TSingleContributorsEntryType } from '@/lib/getContributorsInformation'
 import type { TSingleRepoType } from '@/lib/getRepos'
+import {
+  GITHUB_REPO_COPY_PRE,
+  GITHUB_REPO_COPY_AFTER,
+  GITHUB_REPO_VIEW,
+} from './GithubConstants'
 type TRepository = TSingleRepoType & {
   contributors: Array<TSingleContributorsEntryType>
 }
 
-const RepoContainer = ({ repository }: { repository: TRepository }) => {
+interface IRepoContainer {
+  repository: TRepository
+}
+
+const RepoContainer = ({ repository }: IRepoContainer) => {
   const [hasCopied, setHasCopied] = useState(false)
   const [hoverRef, isHovered] = useHover<HTMLDivElement>()
 
@@ -39,7 +48,7 @@ const RepoContainer = ({ repository }: { repository: TRepository }) => {
         className={classNames(
           'absolute top-0 left-0',
           `${isHovered ? 'bg-gray-100/80' : 'bg-gray-100/0'}`,
-          'h-full w-full z-10 flex justify-center items-center transition-all duration-100'
+          'h-full md:w-full z-10 flex justify-center items-center transition-all duration-100'
         )}
       >
         <div
@@ -51,7 +60,7 @@ const RepoContainer = ({ repository }: { repository: TRepository }) => {
             className="p-4 mr-4 font-semibold text-white bg-black border border-black rounded-lg shadow-sm"
             onClick={clickToCopy}
           >
-            {!hasCopied ? 'Clone repo' : 'Link copied'}
+            {!hasCopied ? GITHUB_REPO_COPY_PRE : GITHUB_REPO_COPY_AFTER}
           </button>
           <a
             href={repository?.html_url}
@@ -59,7 +68,7 @@ const RepoContainer = ({ repository }: { repository: TRepository }) => {
             rel="noreferrer"
             className="p-4 font-semibold text-black bg-white border border-black rounded-lg shadow-sm"
           >
-            View on Github
+            {GITHUB_REPO_VIEW}
           </a>
         </div>
       </div>

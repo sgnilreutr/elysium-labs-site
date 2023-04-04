@@ -78,7 +78,7 @@ const Developers = ({ repoContributors, repos }: TDevelopers) => {
   return (
     <Layout>
       <SEO title={Seo.title} description={Seo.description} />
-      <div className="flex flex-col items-center mx-4 justify-items-center sm:mx-auto sm:w-full max-w-7xl">
+      <div className="flex flex-col items-center justify-items-center sm:mx-auto sm:w-full max-w-7xl">
         <div
           className={`${
             hasVerticalScroll && scrollY > 0 && 'opacity-30'
@@ -98,7 +98,7 @@ const Developers = ({ repoContributors, repos }: TDevelopers) => {
             </Header>
           </div>
         </div>
-        <SectionList sectionsData={sectionsData} className="pb-24" />
+        <SectionList sectionsData={sectionsData} className="pb-48 mx-4" />
         <Docs />
         <GithubRepositories repoContributors={repoContributors} repos={repos} />
       </div>

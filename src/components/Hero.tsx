@@ -15,13 +15,13 @@ const Hero = () => {
   return (
     <div
       className={classNames(
-        'max-w-7xl flex flex-col md:justify-center items-center w-full mx-auto h-96 my-24',
+        'max-w-7xl flex flex-col md:justify-center items-center md:w-full mx-4 md:mx-auto h-96 my-24',
         `${hasVerticalScroll && scrollY > 0 && 'text-gray-200'}`,
         'transition-all duration-1000'
       )}
     >
       <Header type="h1" className="flex flex-row flex-wrap text-8xl">
-        <span className="mr-4 font-normal">{COMPANY_TITLE1}</span>
+        <span className="font-normal md:mr-4">{COMPANY_TITLE1}</span>
         <span>{COMPANY_TITLE2}</span>
       </Header>
       <Header

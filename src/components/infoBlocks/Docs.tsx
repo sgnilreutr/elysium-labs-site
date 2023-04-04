@@ -37,7 +37,10 @@ const Docs = () => (
           wrap
         >
           {DESCRIPTION.map((description, index) => (
-            <p key={index} className=" decoration-orange-700">
+            <p
+              key={index}
+              className="text-center  decoration-orange-700 md:text-left"
+            >
               {description}
             </p>
           ))}
