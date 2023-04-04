@@ -20,7 +20,7 @@ const HighlightedProject = () => {
   return (
     <div className="mx-4 max-w-7xl sm:mx-auto sm:w-full">
       <div className="pb-6">
-        <Header type="h2" className="text-4xl text-center">
+        <Header type="h2" className="text-4xl text-center" animation="none">
           {PROJECT_HEADER}
         </Header>
         <Header
