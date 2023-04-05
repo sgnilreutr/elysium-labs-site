@@ -11,7 +11,7 @@ const BUTTON = "I'll give feedback"
 
 const Feedback = () => (
   <InfoBlock href={href}>
-    <div className="p-6 text-white bg-black border border-gray-900 md:p-10 lg:p-16 max-w-7xl sm:mx-auto">
+    <div className="p-6 text-gray-600 bg-white border border-gray-100 md:p-10 lg:p-16 max-w-7xl sm:mx-auto">
       <Stack
         align="center"
         className="md:!gap-10"
@@ -26,7 +26,7 @@ const Feedback = () => (
           {DESCRIPTION}
         </p>
 
-        <Button className="bg-white hover:bg-gray-100 hover:border-slate-200">
+        <Button className="bg-gray-200 hover:bg-gray-300 hover:border-slate-300">
           <span className="flex flex-row items-center gap-2">
             {BUTTON} <FiExternalLink />
           </span>
