@@ -2,7 +2,7 @@ import { FaBrain } from 'react-icons/fa'
 import { FiEye } from 'react-icons/fi'
 import { ImPower } from 'react-icons/im'
 
-import Header from '@/components/elements/Header'
+import Heading from '@/components/elements/Heading'
 import InlineLink from '@/components/elements/InlineLink'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
@@ -83,22 +83,21 @@ const Principals = () => {
       <SEO title={Seo.title} description={Seo.description} />
       <div className="flex flex-col items-center mx-4 sm:mx-auto sm:w-full max-w-7xl">
         <div
-          className={`${
-            hasVerticalScroll && scrollY > 0 && 'opacity-30'
-          } transition-all duration-1000`}
+          className={`${hasVerticalScroll && scrollY > 0 && 'opacity-30'
+            } transition-all duration-1000`}
         >
           <div className="pt-20 pb-6">
-            <Header type="h1" className="text-4xl text-center">
+            <Heading type="h1" className="text-4xl text-center">
               {PRINCIPALS_HEADER}
-            </Header>
-            <Header
+            </Heading>
+            <Heading
               type="h2"
               color="text-gray-500"
               weight="font-regular"
               className="text-2xl text-center"
             >
               {PRINCIPALS_SUB_HEADER}
-            </Header>
+            </Heading>
           </div>
         </div>
         <div className="flex flex-col items-center pb-48 mx-4 max-w-7xl sm:mx-auto sm:w-full">

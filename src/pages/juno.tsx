@@ -1,5 +1,5 @@
 import BetaAccessForm from '@/components/BetaAccessForm'
-import Header from '@/components/elements/Header'
+import Heading from '@/components/elements/Heading'
 import InlineLink from '@/components/elements/InlineLink'
 import Stack from '@/components/elements/Stack'
 import GoogleButton from '@/components/googleButton/GoogleButton'
@@ -73,16 +73,16 @@ const Juno = () => {
       <SEO title={Seo.title} description={Seo.description} />
       <div className="flex flex-col items-center md:w-full">
         <div className="flex flex-col items-center pt-24 pb-12 mx-4 md:py-32 md:w-full md:mx-auto max-w-7xl md:justify-center">
-          <Header type="h1" className="text-6xl md:text-8xl">
+          <Heading type="h1" className="text-6xl md:text-8xl">
             {JUNO_HEADER}
-          </Header>
-          <Header
+          </Heading>
+          <Heading
             type="h2"
             weight="font-regular"
             className="text-2xl text-center md:text-4xl"
           >
             {JUNO_SUB_HEADER}
-          </Header>
+          </Heading>
           <div className="flex flex-col items-center py-12">
             <p className="text-xl text-center text-gray-500 md:text-left">
               {JUNO_PROMOTION_HEADER}

@@ -1,18 +1,16 @@
-import GithubRepositories from '@/components/github/GithubRepositories'
 import Layout from '@/components/Layout'
-import Section from '@/components/Section'
 import SEO from '@/components/Seo'
 import InlineLink from '@/components/elements/InlineLink'
-import Stack from '@/components/elements/Stack'
+import GithubRepositories from '@/components/github/GithubRepositories'
 import Docs from '@/components/infoBlocks/Docs'
 import useHasScrolled from '@/hooks/useHasScrolled'
 import useHasVerticalScroll from '@/hooks/useHasVerticalScroll'
-import { getRepos } from '@/lib/getRepos'
 import { getContributorsInformation } from '@/lib/getContributorsInformation'
+import { getRepos } from '@/lib/getRepos'
 
-import type { InferGetStaticPropsType } from 'next'
-import Header from '@/components/elements/Header'
 import SectionList from '@/components/SectionList'
+import Heading from '@/components/elements/Heading'
+import type { InferGetStaticPropsType } from 'next'
 
 const DEVELOPERS_HEADER = 'For Developers'
 const DEVELOPERS_SUB_HEADER = 'The details you are looking for as a developer'
@@ -80,22 +78,21 @@ const Developers = ({ repoContributors, repos }: TDevelopers) => {
       <SEO title={Seo.title} description={Seo.description} />
       <div className="flex flex-col items-center justify-items-center sm:mx-auto sm:w-full max-w-7xl">
         <div
-          className={`${
-            hasVerticalScroll && scrollY > 0 && 'opacity-30'
-          } transition-all duration-1000`}
+          className={`${hasVerticalScroll && scrollY > 0 && 'opacity-30'
+            } transition-all duration-1000`}
         >
           <div className="pt-20 pb-6">
-            <Header type="h1" className="text-4xl text-center">
+            <Heading type="h1" className="text-4xl text-center">
               {DEVELOPERS_HEADER}
-            </Header>
-            <Header
+            </Heading>
+            <Heading
               type="h2"
               className="text-2xl text-center"
               weight="font-regular"
               color="text-gray-500"
             >
               {DEVELOPERS_SUB_HEADER}
-            </Header>
+            </Heading>
           </div>
         </div>
         <SectionList sectionsData={sectionsData} className="pb-48 mx-4" />
@@ -112,8 +109,8 @@ export async function getStaticProps() {
   const repos = (await getRepos()) ?? null
   const repoContributors = repos
     ? await Promise.all(
-        repos.map((repo) => getContributorsInformation({ repository: repo }))
-      )
+      repos.map((repo) => getContributorsInformation({ repository: repo }))
+    )
     : []
 
   return {

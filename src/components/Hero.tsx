@@ -1,6 +1,6 @@
 import useHasScrolled from '@/hooks/useHasScrolled'
 import useHasVerticalScroll from '@/hooks/useHasVerticalScroll'
-import Header from './elements/Header'
+import Heading from './elements/Heading'
 import classNames from '@/lib/classNames'
 
 const COMPANY_TITLE1 = 'Elysium '
@@ -20,27 +20,27 @@ const Hero = () => {
         'transition-all duration-1000'
       )}
     >
-      <Header type="h1" className="flex flex-row flex-wrap text-8xl">
+      <Heading type="h1" className="flex flex-row flex-wrap text-8xl">
         <span className="font-normal md:mr-4">{COMPANY_TITLE1}</span>
         <span>{COMPANY_TITLE2}</span>
-      </Header>
-      <Header
+      </Heading>
+      <Heading
         type="h4"
         weight="font-regular"
         color="text-gray-500"
         className="mt-10 text-4xl"
       >
         {COMPANY_DESCRIPTION}
-      </Header>
+      </Heading>
       <div className="max-w-prose">
-        <Header
+        <Heading
           type="h5"
           weight="font-regular"
           color="text-gray-500"
           className="mt-10 text-xl text-center"
         >
           {COMPANY_SUB_DESCRIPTION}
-        </Header>
+        </Heading>
       </div>
     </div>
   )

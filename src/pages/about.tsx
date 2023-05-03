@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Logo from 'public/images/100x100px_EL_01.jpg'
 
-import Header from '@/components/elements/Header'
+import Heading from '@/components/elements/Heading'
 import Layout from '@/components/Layout'
 // import GithubContributors from '@/components/githubContributors'
 import SEO from '@/components/Seo'
@@ -53,22 +53,21 @@ const About = () => {
       <SEO title={Seo.title} description={Seo.description} />
       <div className="flex flex-col items-center mx-4 max-w-7xl sm:mx-auto sm:w-full">
         <div
-          className={`${
-            hasVerticalScroll && scrollY > 0 && 'opacity-30'
-          } transition-all duration-1000`}
+          className={`${hasVerticalScroll && scrollY > 0 && 'opacity-30'
+            } transition-all duration-1000`}
         >
           <div className="pt-20 pb-6">
-            <Header type="h1" className="text-4xl text-center">
+            <Heading type="h1" className="text-4xl text-center">
               {ABOUT_HEADER_1}
-            </Header>
-            <Header
+            </Heading>
+            <Heading
               type="h2"
               className="text-2xl text-center"
               weight="font-regular"
               color="text-gray-500"
             >
               {ABOUT_HEADER_2}
-            </Header>
+            </Heading>
           </div>
         </div>
         <div className="flex items-center justify-center py-4 md:py-10">

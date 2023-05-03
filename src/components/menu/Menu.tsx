@@ -18,26 +18,27 @@ const Menu = () => {
 
   return (
     <nav className="w-full min-w-[320px]">
-      <div className="flex flex-row items-center justify-between mx-auto md:w-full max-w-7xl">
+      <div className="flex flex-row justify-between md:grid md:grid-cols-3 items-center mx-auto md:w-full max-w-7xl">
         <HomeIcon />
-        <Stack align="center" className="!gap-6 md:gap-3">
-          <div className="hidden md:inline">
-            <MenuItems menuItems={MENU_ITEMS} />
-          </div>
+
+        <div className="hidden md:flex flex-row justify-center">
+          <MenuItems menuItems={MENU_ITEMS} />
+        </div>
+        <Stack align="center" className="!gap-6 md:gap-3" justify='end'>
           <MenuItems menuItems={EXTERNAL_ITEMS} />
-          <div className="flex md:hidden place-content-center">
-            <button type="button" onClick={handleToggleMenu}>
-              <FiMenu size={ICON_SIZE} />
-            </button>
-          </div>
-          <SideMenu handleToggleMenu={handleToggleMenu} showMenu={showMenu}>
-            <div className="flex items-end justify-center flex-1 pb-12">
-              <MenuItems menuItems={EXTERNAL_ITEMS} />
-            </div>
-          </SideMenu>
         </Stack>
+        <div className="flex md:hidden place-content-center">
+          <button type="button" onClick={handleToggleMenu}>
+            <FiMenu size={ICON_SIZE} />
+          </button>
+        </div>
+        <SideMenu handleToggleMenu={handleToggleMenu} showMenu={showMenu}>
+          <div className="flex items-end justify-center flex-1 pb-12">
+            <MenuItems menuItems={EXTERNAL_ITEMS} />
+          </div>
+        </SideMenu>
       </div>
-    </nav>
+    </nav >
   )
 }
 

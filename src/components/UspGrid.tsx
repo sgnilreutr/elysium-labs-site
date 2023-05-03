@@ -3,7 +3,7 @@ import { GiBroom } from 'react-icons/gi'
 import { TbArrowWaveRightDown, TbDatabaseOff } from 'react-icons/tb'
 import UspItem from './UspItem'
 import Stack from './elements/Stack'
-import Header from './elements/Header'
+import Heading from './elements/Heading'
 
 const ICON_SIZE = 28
 
@@ -35,14 +35,14 @@ const USP_ITEMS = [
 const UspGrid = () => {
   return (
     <Stack direction="vertical" className="w-full">
-      <Header
+      <Heading
         type="h3"
         className="py-10 text-3xl text-center"
         color="text-gray-500"
         weight="font-regular"
       >
         {HEADER}
-      </Header>
+      </Heading>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {USP_ITEMS.map(({ body, header, icon }) => (
           <UspItem key={header} icon={icon} header={header} body={body} />

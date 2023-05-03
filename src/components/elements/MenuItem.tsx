@@ -29,8 +29,7 @@ const MenuItem = ({ href, icon, label, title }: IMenuItem) => {
   return (
     <li
       className={classNames(
-        `flex items-center cursor-pointer ${
-          isActive ? 'font-bold' : 'font-normal'
+        `flex items-center cursor-pointer ${isActive ? 'opacity-100' : 'opacity-50 hover:opacity-100'
         }`
       )}
       title={title}

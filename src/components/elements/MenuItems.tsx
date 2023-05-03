@@ -7,7 +7,7 @@ interface IMenuItems {
 
 const MenuItems = ({ menuItems }: IMenuItems) => {
   return (
-    <ul className="flex flex-row gap-6 md:gap-3 sm:flex">
+    <ul className="flex flex-row gap-6 sm:flex">
       {menuItems.map(({ label, icon, title, href }) => (
         <MenuItem
           href={href}

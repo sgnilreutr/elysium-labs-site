@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { FiRefreshCw } from 'react-icons/fi'
 
-import Header from '../elements/Header'
+import Heading from '../elements/Heading'
 import Stack from '../elements/Stack'
 import EmailButton from './EmailButton'
 import EmailItem from './EmailItem'
@@ -9,7 +9,6 @@ import {
   BUTTONS_ARRAY,
   HEADER,
   INBOX_ZERO,
-  SECTION_ID_FOCUS,
   SUB_HEADER,
   USP_ITEMS,
 } from './UspGridJunoConstants'
@@ -44,21 +43,21 @@ const UspGridTwo = () => {
 
   return (
     <Stack direction="vertical" className="w-full" align="center">
-      <Header
+      <Heading
         type="h3"
         className="pt-10 text-3xl text-center"
         color="text-gray-500"
         weight="font-regular"
       >
         {HEADER}
-      </Header>
-      <Header
+      </Heading>
+      <Heading
         type="h4"
         className="pb-10 text-lg text-center text-gray-400"
         weight="font-regular"
       >
         {SUB_HEADER}
-      </Header>
+      </Heading>
       <div className="w-full max-w-2xl md:w-screen">
         <Stack spacing="large" className="flex-col-reverse md:flex-row">
           <div

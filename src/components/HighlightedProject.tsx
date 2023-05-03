@@ -4,7 +4,7 @@ import Image from 'next/image'
 import JunoLogo from 'public/images/Juno_logo_dark.png'
 import Stack from '@/components/elements/Stack'
 import { FiChevronRight } from 'react-icons/fi'
-import Header from '@/components/elements/Header'
+import Heading from '@/components/elements/Heading'
 import Label from '@/components/elements/Label'
 
 const PROJECT_HEADER = 'Featured'
@@ -26,14 +26,14 @@ const HighlightedProject = () => {
         className="p-6 text-white bg-black border radial_spotlight md:p-10 lg:p-24"
       >
         <div className="pb-12">
-          <Header
+          <Heading
             type="h2"
             className="text-4xl text-center text-gray-300"
             animation="none"
           >
             {PROJECT_HEADER}
-          </Header>
-          <Header
+          </Heading>
+          <Heading
             type="h4"
             weight="font-regular"
             color="text-gray-500"
@@ -41,7 +41,7 @@ const HighlightedProject = () => {
             animation="none"
           >
             {PROJECT_SUB_HEADER}
-          </Header>
+          </Heading>
         </div>
         <Link href="/juno">
           <span className="text-2xl font-semibold">{PROJECT_NAME}</span>
