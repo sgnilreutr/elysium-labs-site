@@ -6,7 +6,7 @@ import Docs from '@/components/infoBlocks/Docs'
 import Layout from '@/components/Layout'
 import SEO from '@/components/Seo'
 
-import UspBanner from '@/components/UspBanner'
+// import UspBanner from '@/components/UspBanner'
 
 import type { NextPage } from 'next'
 
@@ -20,7 +20,6 @@ const Home: NextPage = () => {
     <Layout>
       <SEO title={Seo.title} description={Seo.description} />
       <Hero />
-      {/* <UspBanner /> */}
       <HighlightedProject />
       <Stack
         className="flex flex-row flex-wrap flex-1 py-48 mx-auto max-w-7xl max-h-max md:flex-nowrap"

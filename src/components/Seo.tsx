@@ -7,7 +7,7 @@ const DEFAULT_META_DESC =
 
 const DEFAULT_URL = 'https://elysiumlabs.io'
 
-interface ISeo {
+interface SeoProps {
   canonicalUrl?: string
   description?: string
   image?: string
@@ -21,7 +21,7 @@ export default function SEO({
   image = '',
   title,
   uri,
-}: ISeo) {
+}: SeoProps) {
   const fullSeo = {
     metaTitle: `${SITE_NAME} ${title && `| ${title}`}`,
     metaDescription: description,
