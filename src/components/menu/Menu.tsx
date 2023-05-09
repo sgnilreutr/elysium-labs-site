@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FiMenu } from 'react-icons/fi'
 
 import MenuItems from '../elements/MenuItems'
@@ -22,6 +22,17 @@ const Menu = () => {
       return !prevState
     })
   }
+
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showMenu]);
 
   return (
     <nav className="w-full min-w-[320px]">
