@@ -13,7 +13,14 @@ const Menu = () => {
   const [showMenu, setShowMenu] = useState(false)
 
   const handleToggleMenu = () => {
-    setShowMenu((prevState) => !prevState)
+    setShowMenu((prevState) => {
+      if (prevState) {
+        document.body.style.overflow = 'unset'
+      } else {
+        document.body.style.overflow = 'hidden'
+      }
+      return !prevState
+    })
   }
 
   return (
