@@ -1,4 +1,4 @@
-import type { TDevelopers } from '@/pages/developers'
+import type { DevelopersProps } from '@/pages/developers'
 import RepoContainer from './GithubRepoContainer'
 import Heading from '../elements/Heading'
 import {
@@ -7,7 +7,7 @@ import {
   GITHUB_LOADING,
 } from './GithubConstants'
 
-const GithubRepositories = ({ repoContributors, repos }: TDevelopers) => {
+const GithubRepositories = ({ repoContributors, repos }: DevelopersProps) => {
   const enhancedRepository = repos
     ? repos
       .map((repo, index) => {

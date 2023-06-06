@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react'
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 import Heading from './elements/Heading'
 
-interface ISection extends React.HTMLAttributes<HTMLDivElement> {
+interface SectionProps extends ComponentPropsWithoutRef<'div'> {
   children: ReactNode
   header?: ReactNode
 }
 
-const Section = ({ children, header, ...rest }: ISection) => {
+const Section = ({ children, header, ...rest }: SectionProps) => {
   return (
     <section {...rest} className={rest.className}>
       {header ? (

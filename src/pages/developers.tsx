@@ -15,7 +15,7 @@ import type { InferGetStaticPropsType } from 'next'
 const DEVELOPERS_HEADER = 'For Developers'
 const DEVELOPERS_SUB_HEADER = 'The details you are looking for as a developer'
 
-export type TDevelopers = InferGetStaticPropsType<typeof getStaticProps>
+export type DevelopersProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const sectionsData = [
   {
@@ -70,7 +70,7 @@ const Seo = {
   description: 'The technical details',
 }
 
-const Developers = ({ repoContributors, repos }: TDevelopers) => {
+const Developers = ({ repoContributors, repos }: DevelopersProps) => {
   const { scrollY } = useHasScrolled()
   const { hasVerticalScroll } = useHasVerticalScroll()
   return (

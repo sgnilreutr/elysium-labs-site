@@ -14,11 +14,11 @@ const HomeIcon = () => {
           <Image
             src={Logo}
             alt="Elysium Labs"
-            style={{ borderRadius: '5px' }}
+            className="rounded-[5px]"
           />
           <span className="hidden ml-2 sm:block">
             {COMPANY_TITLE1}
-            <span style={{ fontWeight: '600' }}>{COMPANY_TITLE2}</span>
+            <span className="font-[600]">{COMPANY_TITLE2}</span>
           </span>
         </>
       </div>

@@ -4,9 +4,9 @@ import { useRouter } from 'next/router'
 import classNames from '@/lib/classNames'
 
 import isUrl from '@/lib/isUrl'
-import type { IMenuItem } from '../menu/MenuTypes'
+import type { MenuItem } from '../menu/MenuTypes'
 
-const LabelIcon = ({ icon, label }: Pick<IMenuItem, 'icon' | 'label'>) => {
+const LabelIcon = ({ icon, label }: Pick<MenuItem, 'icon' | 'label'>) => {
   return icon ? (
     <span className="flex flex-row items-center gap-3">
       {icon}
@@ -17,7 +17,7 @@ const LabelIcon = ({ icon, label }: Pick<IMenuItem, 'icon' | 'label'>) => {
   )
 }
 
-const MenuItem = ({ href, icon, label, title }: IMenuItem) => {
+const MenuItemComponent = ({ href, icon, label, title }: MenuItem) => {
   const { asPath } = useRouter()
   if (!href) {
     // If there is no link, do not render the menu item.
@@ -47,4 +47,4 @@ const MenuItem = ({ href, icon, label, title }: IMenuItem) => {
   )
 }
 
-export default MenuItem
+export default MenuItemComponent

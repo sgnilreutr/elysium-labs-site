@@ -1,11 +1,11 @@
-import type { TMenuItems } from '../menu/MenuTypes'
+import type { MenuItems } from '../menu/MenuTypes'
 import MenuItem from './MenuItem'
 
-interface IMenuItems {
-  menuItems: TMenuItems
+interface MenuItemsProps {
+  menuItems: MenuItems
 }
 
-const MenuItems = ({ menuItems }: IMenuItems) => {
+const MenuItemsComponent = ({ menuItems }: MenuItemsProps) => {
   return (
     <ul className="flex flex-row gap-6 sm:flex">
       {menuItems.map(({ label, icon, title, href }) => (
@@ -21,4 +21,4 @@ const MenuItems = ({ menuItems }: IMenuItems) => {
   )
 }
 
-export default MenuItems
+export default MenuItemsComponent

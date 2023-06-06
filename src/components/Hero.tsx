@@ -37,7 +37,7 @@ const Hero = () => {
           type="h5"
           weight="font-regular"
           color="text-gray-500"
-          className="mt-10 text-xl text-center"
+          className="mt-10 text-xl md:text-center"
         >
           {COMPANY_SUB_DESCRIPTION}
         </Heading>

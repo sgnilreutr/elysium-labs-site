@@ -10,13 +10,13 @@ import type { ReactNode } from 'react'
 
 const ICON_SIZE = 28
 
-interface ISideMenu {
+interface SideMenuProps {
   children: ReactNode
   handleToggleMenu: () => void
   showMenu: boolean
 }
 
-const SideMenu = ({ children, handleToggleMenu, showMenu }: ISideMenu) => {
+const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
   const { asPath } = useRouter()
 
   return (

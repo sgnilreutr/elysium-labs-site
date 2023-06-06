@@ -2,11 +2,11 @@ import type { ReactNode } from 'react'
 import Footer from './Footer'
 import PageHeader from './PageHeader'
 
-interface ILayout {
+interface LayoutProps {
   children: ReactNode
 }
 
-const Layout = ({ children }: ILayout) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-col h-full leading-normal bg-gray-100 md:w-full">
       <PageHeader />

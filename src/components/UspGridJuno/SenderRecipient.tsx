@@ -1,11 +1,11 @@
 import Stack from '../elements/Stack'
 
-interface ISenderRecipient {
+interface SenderRecipientProps {
   body: string
   label: string
 }
 
-const SenderRecipient = ({ body, label }: ISenderRecipient) => {
+const SenderRecipient = ({ body, label }: SenderRecipientProps) => {
   return (
     <Stack spacing="mini" className="text-sm" align="start">
       <span className="text-neutral-300">{label}</span>

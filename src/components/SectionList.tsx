@@ -1,18 +1,19 @@
 import classNames from '@/lib/classNames'
 import Stack from './elements/Stack'
 import Section from './Section'
+import type { ComponentPropsWithoutRef } from 'react'
 
-interface ISectionData {
+interface SectionData {
   content: JSX.Element
   icon?: JSX.Element
   title: string
 }
 
-interface ISectionList extends React.HTMLAttributes<HTMLDivElement> {
-  sectionsData: Array<ISectionData>
+interface SectionListProps extends ComponentPropsWithoutRef<'div'> {
+  sectionsData: Array<SectionData>
 }
 
-const SectionList = ({ sectionsData, ...rest }: ISectionList) => (
+const SectionList = ({ sectionsData, ...rest }: SectionListProps) => (
   <Stack
     direction="vertical"
     className={classNames('!gap-48', rest.className)}

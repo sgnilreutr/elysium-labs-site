@@ -6,7 +6,7 @@ import { EMAIL_TIME_EXPIRED, SENDER_RECIPIENTS } from './UspGridJunoConstants'
 
 import type { ReactNode } from 'react'
 
-const FakText = () => {
+const FakeText = () => {
   const randomNum = Math.floor(Math.random() * 3) + 1
   return (
     <div
@@ -20,7 +20,7 @@ const FakText = () => {
   )
 }
 
-interface IEmailItem {
+interface EmailItemProps {
   body: ReactNode
   header: string
   icon: JSX.Element
@@ -29,7 +29,7 @@ interface IEmailItem {
 
 const MAX_NUMBER_FAKE_TEXT_ROWS = 9
 
-const EmailItem = ({ body, header, icon, shouldEnter }: IEmailItem) => {
+const EmailItem = ({ body, header, icon, shouldEnter }: EmailItemProps) => {
   return (
     <div
       className={classNames(
@@ -66,7 +66,7 @@ const EmailItem = ({ body, header, icon, shouldEnter }: IEmailItem) => {
           <div className="grid grid-cols-3 gap-2 pt-1">
             {Array.from({ length: MAX_NUMBER_FAKE_TEXT_ROWS }).map(
               (_, index) => (
-                <FakText key={index} />
+                <FakeText key={index} />
               )
             )}
           </div>

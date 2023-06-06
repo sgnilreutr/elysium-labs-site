@@ -1,6 +1,6 @@
 import classNames from '@/lib/classNames'
 
-interface IEmailButton {
+interface EmailButtonProps {
   label: string
   icon: JSX.Element
   onClick: () => void
@@ -12,16 +12,15 @@ const EmailButton = ({
   icon,
   onClick,
   currentCardIndex,
-}: IEmailButton) => {
+}: EmailButtonProps) => {
   return (
     <button
       type="button"
       className={classNames(
         'py-[6px] px-[12px] text-sm transition-all ease-in-out border border-transparent rounded-md',
-        `${
-          currentCardIndex === 0
-            ? 'animate-bounce hover:animate-none text-neutral-500 animate-pulse hover:border-neutral-600'
-            : 'text-neutral-400 hover:text-black hover:border-neutral-600'
+        `${currentCardIndex === 0
+          ? 'animate-bounce hover:animate-none text-neutral-500 animate-pulse hover:border-neutral-600'
+          : 'text-neutral-400 hover:text-black hover:border-neutral-600'
         }`
       )}
       onClick={onClick}
