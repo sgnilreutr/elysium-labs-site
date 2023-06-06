@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex flex-col h-full leading-normal bg-gray-100 md:w-full">
       <PageHeader />
-      <main className="flex flex-col mt-20">{children}</main>
+      <main className="flex flex-col md:mt-20">{children}</main>
       <Footer />
     </div>
   )

@@ -22,24 +22,12 @@ const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
   return (
     <aside
       className={classNames(
-        'z-[100] fixed p-4 w-full bg-gray-200/95 h-[100vdh] flex flex-col',
+        'z-[100] fixed p-4 w-full bg-gray-200/95 h-dynamic-screen flex flex-col',
         `${showMenu ? 'bottom-0 left-0' : '-bottom-full -left-full'}`,
         'transition-[bottom] backdrop-blur-xl border-b border-gray-300'
       )}
     >
-      <div
-        className={classNames(
-          'flex flex-row justify-between transition-opacity',
-          `${showMenu ? 'opacity-100' : 'opacity-0'}`,
-          'duration-[1200ms]'
-        )}
-      >
-        <HomeIcon />
-        <button type="button" onClick={handleToggleMenu}>
-          <FiX size={ICON_SIZE} />
-        </button>
-      </div>
-      <div className="pt-10">
+      <div className="pt-[50%]">
         <ul className="flex flex-col gap-6">
           {MENU_ITEMS.map(({ href, label }) => (
             <li
@@ -57,6 +45,18 @@ const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
         </ul>
       </div>
       {children}
+      <div
+        className={classNames(
+          'flex flex-row justify-between transition-opacity',
+          `${showMenu ? 'opacity-100' : 'opacity-0'}`,
+          'duration-[1200ms]'
+        )}
+      >
+        <HomeIcon />
+        <button type="button" onClick={handleToggleMenu}>
+          <FiX size={ICON_SIZE} />
+        </button>
+      </div>
     </aside>
   )
 }
