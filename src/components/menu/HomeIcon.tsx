@@ -11,11 +11,7 @@ const HomeIcon = () => {
     <Link href="/" passHref>
       <div className="flex flex-row items-center cursor-pointer">
         <>
-          <Image
-            src={Logo}
-            alt="Elysium Labs"
-            className="rounded-[5px]"
-          />
+          <Image src={Logo} alt="Elysium Labs" className="rounded-[5px]" />
           <span className="hidden ml-2 sm:block">
             {COMPANY_TITLE1}
             <span className="font-[600]">{COMPANY_TITLE2}</span>

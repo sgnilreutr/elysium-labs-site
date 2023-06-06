@@ -27,32 +27,35 @@ const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
         'transition-[bottom] backdrop-blur-xl border-b border-gray-300'
       )}
     >
-      <div className="pt-[50%]">
+      <div className="pt-[50%] flex flex-1">
         <ul className="flex flex-col gap-6">
-          {MENU_ITEMS.map(({ href, label }) => (
-            <li
-              key={href}
-              className={classNames(
-                'flex items-center cursor-pointer',
-                `${asPath === href ? 'font-bold' : 'font-normal'}`,
-                'text-2xl'
-              )}
-              title={label}
-            >
-              <Link href={href}>{label}</Link>
-            </li>
-          ))}
+          {MENU_ITEMS.map(({ href, label }) => {
+            const isActive = href === asPath
+            return (
+              <li
+                key={href}
+                className={classNames(
+                  'flex items-center cursor-pointer',
+                  `${isActive ? 'opacity-100' : 'opacity-50'}`,
+                  'text-2xl'
+                )}
+                title={label}
+              >
+                <Link href={href}>{label}</Link>
+              </li>
+            )
+          })}
         </ul>
       </div>
-      {children}
       <div
         className={classNames(
-          'flex flex-row justify-between transition-opacity',
+          'flex flex-row items-center justify-between transition-opacity',
           `${showMenu ? 'opacity-100' : 'opacity-0'}`,
           'duration-[1200ms]'
         )}
       >
         <HomeIcon />
+        {children}
         <button type="button" onClick={handleToggleMenu}>
           <FiX size={ICON_SIZE} />
         </button>

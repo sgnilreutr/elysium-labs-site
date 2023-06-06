@@ -25,14 +25,14 @@ const Menu = () => {
 
   useEffect(() => {
     if (showMenu) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = 'unset'
     }
     return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [showMenu]);
+      document.body.style.overflow = 'unset'
+    }
+  }, [showMenu])
 
   return (
     <nav className="w-full min-w-[320px]">
@@ -42,7 +42,7 @@ const Menu = () => {
         <div className="hidden md:flex flex-row justify-center">
           <MenuItems menuItems={MENU_ITEMS} />
         </div>
-        <Stack align="center" className="!gap-6 md:gap-3" justify='end'>
+        <Stack align="center" className="!gap-6 md:gap-3" justify="end">
           <MenuItems menuItems={EXTERNAL_ITEMS} />
         </Stack>
         <div className="flex md:hidden place-content-center">
@@ -51,12 +51,12 @@ const Menu = () => {
           </button>
         </div>
         <SideMenu handleToggleMenu={handleToggleMenu} showMenu={showMenu}>
-          <div className="flex items-end justify-center flex-1 pb-12">
+          <div className="flex items-end justify-center flex-1">
             <MenuItems menuItems={EXTERNAL_ITEMS} />
           </div>
         </SideMenu>
       </div>
-    </nav >
+    </nav>
   )
 }
 

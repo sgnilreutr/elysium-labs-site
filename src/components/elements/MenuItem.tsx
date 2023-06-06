@@ -29,7 +29,8 @@ const MenuItemComponent = ({ href, icon, label, title }: MenuItem) => {
   return (
     <li
       className={classNames(
-        `flex items-center cursor-pointer ${isActive ? 'opacity-100' : 'opacity-50 hover:opacity-100'
+        `flex items-center cursor-pointer ${
+          isActive ? 'opacity-100' : 'opacity-50 hover:opacity-100'
         }`
       )}
       title={title}

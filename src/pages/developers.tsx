@@ -78,8 +78,9 @@ const Developers = ({ repoContributors, repos }: DevelopersProps) => {
       <SEO title={Seo.title} description={Seo.description} />
       <div className="flex flex-col items-center justify-items-center sm:mx-auto sm:w-full max-w-7xl">
         <div
-          className={`${hasVerticalScroll && scrollY > 0 && 'opacity-30'
-            } transition-all duration-1000`}
+          className={`${
+            hasVerticalScroll && scrollY > 0 && 'opacity-30'
+          } transition-all duration-1000`}
         >
           <div className="pt-20 pb-6">
             <Heading type="h1" className="text-4xl text-center">
@@ -109,8 +110,8 @@ export async function getStaticProps() {
   const repos = (await getRepos()) ?? null
   const repoContributors = repos
     ? await Promise.all(
-      repos.map((repo) => getContributorsInformation({ repository: repo }))
-    )
+        repos.map((repo) => getContributorsInformation({ repository: repo }))
+      )
     : []
 
   return {

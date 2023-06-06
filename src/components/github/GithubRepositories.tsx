@@ -10,14 +10,14 @@ import {
 const GithubRepositories = ({ repoContributors, repos }: DevelopersProps) => {
   const enhancedRepository = repos
     ? repos
-      .map((repo, index) => {
-        const contributorRepoEntry = repoContributors[index]
-        if (contributorRepoEntry?.repository !== repo.name) {
-          return
-        }
-        return { contributors: contributorRepoEntry.contributors, ...repo }
-      })
-      .filter((item): item is NonNullable<typeof item> => item !== undefined)
+        .map((repo, index) => {
+          const contributorRepoEntry = repoContributors[index]
+          if (contributorRepoEntry?.repository !== repo.name) {
+            return
+          }
+          return { contributors: contributorRepoEntry.contributors, ...repo }
+        })
+        .filter((item): item is NonNullable<typeof item> => item !== undefined)
     : []
 
   return (

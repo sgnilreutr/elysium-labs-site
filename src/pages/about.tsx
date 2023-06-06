@@ -53,8 +53,9 @@ const About = () => {
       <SEO title={Seo.title} description={Seo.description} />
       <div className="flex flex-col items-center mx-4 max-w-7xl sm:mx-auto sm:w-full">
         <div
-          className={`${hasVerticalScroll && scrollY > 0 && 'opacity-30'
-            } transition-all duration-1000`}
+          className={`${
+            hasVerticalScroll && scrollY > 0 && 'opacity-30'
+          } transition-all duration-1000`}
         >
           <div className="pt-20 pb-6">
             <Heading type="h1" className="text-4xl text-center">

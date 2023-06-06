@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react'
 import { Heading, Hyperlink, Text } from '@/components/elements/mdxElements'
 
 import { MDXProvider } from '@mdx-js/react'
