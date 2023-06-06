@@ -23,8 +23,8 @@ const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
     <aside
       className={classNames(
         'z-[100] fixed p-4 w-full bg-gray-200/95 h-screen flex flex-col',
-        `${showMenu ? 'top-0 left-0' : '-top-full -left-full'}`,
-        'transition-[top] backdrop-blur-xl border-b border-gray-300'
+        `${showMenu ? 'bottom-0 left-0' : '-bottom-full -left-full'}`,
+        'transition-[bottom] backdrop-blur-xl border-b border-gray-300'
       )}
     >
       <div
