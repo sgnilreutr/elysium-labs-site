@@ -1,6 +1,10 @@
 {
-  "includes": ["src/**/*.{js,jsx,json,md,ts,tsx,mdx}"],
-  "excludes": ["/node_modules, /build, /dist, /.git, /public, /next"],
+  "includes": [
+    "src/**/*.{css,js,jsx,json,md,ts,tsx,mdx}"
+  ],
+  "excludes": [
+    "/node_modules, /build, /dist, /.git, /public, /next"
+  ],
   "prettier": {
     "trailingComma": "es5",
     "tabWidth": 2,

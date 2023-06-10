@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="flex flex-col h-full leading-normal bg-gray-100 md:w-full">
+    <div className="flex flex-col h-full leading-normal bg-gray-100 md:w-full gradient_background">
       <PageHeader />
       <main className="flex flex-col md:mt-20">{children}</main>
       <Footer />

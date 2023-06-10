@@ -5,7 +5,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   children: ReactNode
 }
 
-const Button = ({ children, type = "button", ...rest }: ButtonProps) => {
+const Button = ({ children, type = 'button', ...rest }: ButtonProps) => {
   return (
     <button
       type={type}
