@@ -1,16 +1,16 @@
 import classNames from '@/lib/classNames'
-import type { ReactNode } from 'react'
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
-interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   children: ReactNode
 }
 
-const Button = ({ children, ...rest }: IButton) => {
+const Button = ({ children, type = "button", ...rest }: ButtonProps) => {
   return (
     <button
-      type="button"
+      type={type}
       className={classNames(
-        'px-5 py-3 font-semibold text-black transition-all border border-transparent rounded-lg inline-flex items-center',
+        'px-4 py-2 h-10 font-semibold text-black transition-all border border-transparent rounded-lg inline-flex items-center',
         rest.className
       )}
     >

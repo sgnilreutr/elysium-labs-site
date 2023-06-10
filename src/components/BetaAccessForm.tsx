@@ -47,7 +47,7 @@ const BetaAccesForm = () => {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="p-4 font-semibold text-orange-900 transition-all bg-orange-300 rounded-lg shadow-sm hover:bg-orange-400"
+            className="px-4 py-2 h-10 font-semibold text-orange-900 transition-all bg-orange-300 rounded-lg shadow-sm hover:bg-orange-400"
           >
             Request access
           </button>
@@ -67,14 +67,14 @@ const BetaAccesForm = () => {
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="pl-2 mr-4 bg-gray-100 outline-none h-14 outline-0 grow"
+                  className="pl-2 mr-4 bg-gray-100 outline-none h-10 outline-0 grow"
                   placeholder="enter your email"
                   autoFocus={open}
                 />
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="p-4 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
+                  className="px-4 py-2 h-10 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
                 >
                   Request access
                 </button>

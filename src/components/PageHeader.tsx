@@ -8,7 +8,7 @@ const PageHeader = () => {
   return (
     <header
       className={classNames(
-        'fixed bottom-0 md:top-0 md:bottom-[unset] left-0 z-20 md:w-full p-4 border-t md:border-t-[unset] md:border-b w-full',
+        'fixed bottom-0 md:top-0 md:bottom-[unset] left-0 z-20 md:w-full p-4 border-t md:border-t-0 md:border-b w-full',
         `${scrollY > 0 ? 'border-gray-300' : 'md:border-transparent'}`,
         'bg-gray-100/80 transition-all duration-200 backdrop-blur-lg'
       )}
