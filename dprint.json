@@ -12,6 +12,6 @@
     "singleQuote": true
   },
   "plugins": [
-    "https://plugins.dprint.dev/prettier-0.10.0.json@ca9a97de84cbb2cd60534eb72c0455f3ca8704743917569ace70499136cf5c9c"
+    "https://plugins.dprint.dev/prettier-0.24.0.json@9a57d0d8e440ad90d07a503166af47e7a6a886abd46767933f9c279f72468596"
   ]
 }
