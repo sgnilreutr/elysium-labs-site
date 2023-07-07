@@ -8,11 +8,11 @@ interface MenuItemsProps {
 const MenuItemsComponent = ({ menuItems }: MenuItemsProps) => {
   return (
     <ul className="flex flex-row gap-6 sm:flex">
-      {menuItems.map(({ label, icon, title, href }) => (
+      {menuItems.map(({ label, icon, title, href }, index) => (
         <MenuItem
           href={href}
           icon={icon}
-          key={href}
+          key={index}
           label={label}
           title={title}
         />
