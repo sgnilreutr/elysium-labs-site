@@ -3,6 +3,9 @@
   "version": "0.3.0",
   "author": "Robbert Tuerlings <@sgnilreutR>",
   "license": "0BSD",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
