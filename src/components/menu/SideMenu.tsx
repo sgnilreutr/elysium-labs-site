@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { FiX } from 'react-icons/fi'
 
 import { MENU_ITEMS } from '@/components/menu/MenuConstants'
@@ -7,6 +6,7 @@ import { MENU_ITEMS } from '@/components/menu/MenuConstants'
 import HomeIcon from './HomeIcon'
 import classNames from '@/lib/classNames'
 import type { ReactNode } from 'react'
+import { usePathname } from 'next/navigation'
 
 const ICON_SIZE = 28
 
@@ -17,7 +17,7 @@ interface SideMenuProps {
 }
 
 const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
-  const { asPath } = useRouter()
+  const pathname = usePathname()
 
   return (
     <aside
@@ -30,7 +30,7 @@ const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
       <div className="pt-[50%] flex flex-1">
         <ul className="flex flex-col gap-6">
           {MENU_ITEMS.map(({ href, label }) => {
-            const isActive = href === asPath
+            const isActive = href === pathname
             return (
               <li
                 key={href}

@@ -1,3 +1,5 @@
+'use client'
+
 import useHasScrolled from '@/hooks/useHasScrolled'
 import useHasVerticalScroll from '@/hooks/useHasVerticalScroll'
 import Heading from './elements/Heading'

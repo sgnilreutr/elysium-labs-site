@@ -11,9 +11,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "format-check": "dprint check",
     "format": "dprint fmt",
-    "update-deps": "yarn upgrade-interactive --latest",
+    "update-deps": "pnpm update --latest",
     "typecheck": "tsc --incremental --noEmit"
   },
   "dependencies": {
@@ -23,6 +24,9 @@
     "@mdx-js/react": "2.3.0",
     "@next/mdx": "13.4.19",
     "@octokit/core": "5.0.0",
+    "@types/mdx": "^2.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "@vercel/analytics": "^1.0.2",
     "base64url": "3.0.1",
     "next": "13.4.19",
@@ -33,14 +37,14 @@
   },
   "devDependencies": {
     "@octokit/types": "^11.1.0",
-    "@types/node": "20.5.1",
-    "@types/react": "18.2.20",
+    "@types/node": "20.5.6",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "dprint": "^0.40.2",
-    "eslint": "8.47.0",
+    "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   }
 }

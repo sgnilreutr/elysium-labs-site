@@ -1,14 +1,14 @@
-import { octokit } from '@/pages/_app'
-import type { TSingleRepoType } from './getRepos'
+import { octokit } from '@/data/octokitApi'
+import type { SingleRepoType } from './getRepos'
 import type { ReturnTypeOf, UnwrapPromise } from './typeHelpers'
 
-interface IGetContributorsInformation {
-  repository: TSingleRepoType
+interface GetContributorsInformation {
+  repository: SingleRepoType
 }
 
 export async function getContributorsInformation({
   repository,
-}: IGetContributorsInformation) {
+}: GetContributorsInformation) {
   try {
     if (!repository || !repository?.name) {
       return null
@@ -33,15 +33,15 @@ export async function getContributorsInformation({
   }
 }
 
-type TGetContributorsInformationResponse = ReturnTypeOf<
+type GetContributorsInformationResponse = ReturnTypeOf<
   typeof getContributorsInformation
 >
-export type TGetContributorsInformationResponseType =
-  UnwrapPromise<TGetContributorsInformationResponse>
+export type GetContributorsInformationResponseType =
+  UnwrapPromise<GetContributorsInformationResponse>
 
 type ArrayElementType<T> = T extends (infer U)[] ? U : never
 type NonNullableGetContributorsInformationResponseType =
-  NonNullable<TGetContributorsInformationResponseType>
-export type TSingleContributorsEntryType = ArrayElementType<
+  NonNullable<GetContributorsInformationResponseType>
+export type SingleContributorsEntryType = ArrayElementType<
   NonNullableGetContributorsInformationResponseType['contributors']
 >

@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
 import classNames from '@/lib/classNames'
 
 import isUrl from '@/lib/isUrl'
 import type { MenuItem } from '../menu/MenuTypes'
+import { usePathname } from 'next/navigation'
 
 const LabelIcon = ({ icon, label }: Pick<MenuItem, 'icon' | 'label'>) => {
   return icon ? (
@@ -18,19 +18,18 @@ const LabelIcon = ({ icon, label }: Pick<MenuItem, 'icon' | 'label'>) => {
 }
 
 const MenuItemComponent = ({ href, icon, label, title }: MenuItem) => {
-  const { asPath } = useRouter()
+  const pathname = usePathname()
   if (!href) {
     // If there is no link, do not render the menu item.
     return null
   }
   const isExternal = isUrl(href)
-  const isActive = href === asPath
+  const isActive = href === pathname
 
   return (
     <li
       className={classNames(
-        `flex items-center cursor-pointer ${
-          isActive ? 'opacity-100' : 'opacity-50 hover:opacity-100'
+        `flex items-center cursor-pointer ${isActive ? 'opacity-100' : 'opacity-50 hover:opacity-100'
         }`
       )}
       title={title}

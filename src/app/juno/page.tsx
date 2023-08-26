@@ -5,11 +5,10 @@ import Stack from '@/components/elements/Stack'
 import GoogleButton from '@/components/googleButton/GoogleButton'
 import Docs from '@/components/infoBlocks/Docs'
 import Feedback from '@/components/infoBlocks/Feedback'
-import Layout from '@/components/Layout'
 import SectionList from '@/components/SectionList'
-import SEO from '@/components/Seo'
 // import UspGrid from '@/components/UspGrid'
 import UspGridTwo from '@/components/UspGridJuno/UspGridTwo'
+import { Metadata } from 'next'
 
 const sectionsData = [
   {
@@ -56,7 +55,7 @@ const sectionsData = [
   },
 ]
 
-const Seo = {
+export const metadata: Metadata = {
   title: 'Juno',
   description: 'Redefining managing emails for Gmail on the Mac',
 }
@@ -67,10 +66,9 @@ const JUNO_SUB_HEADER = 'Email efficiency redefined'
 const JUNO_PROMOTION_HEADER = 'Coming soon on macOS, already on the web.'
 const JUNO_PROMOTION_SUB_HEADER = 'Completely free. Open source.'
 
-const Juno = () => {
+export default function Juno() {
   return (
-    <Layout>
-      <SEO title={Seo.title} description={Seo.description} />
+    <>
       <div className="flex flex-col items-center md:w-full">
         <div className="flex flex-col items-center pt-24 pb-12 mx-4 md:py-32 md:w-full md:mx-auto max-w-7xl md:justify-center">
           <Heading type="h1" className="text-6xl md:text-8xl">
@@ -112,14 +110,6 @@ const Juno = () => {
         <Feedback />
         <Docs />
       </Stack>
-    </Layout>
+    </>
   )
-}
-
-export default Juno
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
 }

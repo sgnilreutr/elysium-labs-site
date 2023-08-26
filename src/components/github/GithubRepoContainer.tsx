@@ -1,3 +1,6 @@
+
+'use client'
+
 import Image from 'next/image'
 import { useCallback, useState } from 'react'
 import { VscPerson, VscRepoForked, VscStarEmpty } from 'react-icons/vsc'
@@ -9,22 +12,22 @@ import copyToClipboard from '@/lib/copyToClipboard'
 import Logo from '../../../public/images/100x100px_EL_01.jpg'
 import GithubDetailData from './GithubDetailData'
 
-import type { TSingleContributorsEntryType } from '@/lib/getContributorsInformation'
-import type { TSingleRepoType } from '@/lib/getRepos'
+import type { SingleContributorsEntryType } from '@/lib/getContributorsInformation'
+import type { SingleRepoType } from '@/lib/getRepos'
 import {
   GITHUB_REPO_COPY_PRE,
   GITHUB_REPO_COPY_AFTER,
   GITHUB_REPO_VIEW,
 } from './GithubConstants'
-type TRepository = TSingleRepoType & {
-  contributors: Array<TSingleContributorsEntryType>
+type Repository = SingleRepoType & {
+  contributors: Array<SingleContributorsEntryType>
 }
 
-interface IRepoContainer {
-  repository: TRepository
+interface RepoContainerProps {
+  repository: Repository
 }
 
-const RepoContainer = ({ repository }: IRepoContainer) => {
+const RepoContainer = ({ repository }: RepoContainerProps) => {
   const [hasCopied, setHasCopied] = useState(false)
   const [hoverRef, isHovered] = useHover<HTMLDivElement>()
 
@@ -52,9 +55,8 @@ const RepoContainer = ({ repository }: IRepoContainer) => {
         )}
       >
         <div
-          className={`flex flex-row ${
-            isHovered ? 'opacity-100' : 'opacity-0'
-          } transition-all duration-600`}
+          className={`flex flex-row ${isHovered ? 'opacity-100' : 'opacity-0'
+            } transition-all duration-600`}
         >
           <button
             className="p-4 mr-4 font-semibold text-white bg-black border border-black rounded-lg shadow-sm"
