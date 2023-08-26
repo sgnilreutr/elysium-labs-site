@@ -1,5 +1,6 @@
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
+
 import * as global from '../constants/globalConstants'
 
 // const DEVELOPER_SECTION = {

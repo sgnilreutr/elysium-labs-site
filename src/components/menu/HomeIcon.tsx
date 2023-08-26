@@ -1,6 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import Image from 'next/image'
+
 import Logo from '../../../public/images/30x30_EL_01.jpg'
 
 const COMPANY_TITLE1 = 'Elysium '

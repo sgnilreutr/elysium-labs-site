@@ -1,6 +1,9 @@
-import useHasScrolled from '../hooks/useHasScrolled'
-import Menu from './menu/Menu'
+'use client'
+
 import classNames from '@/lib/classNames'
+
+import Menu from './menu/Menu'
+import useHasScrolled from '../hooks/useHasScrolled'
 
 const PageHeader = () => {
   const { scrollY } = useHasScrolled()

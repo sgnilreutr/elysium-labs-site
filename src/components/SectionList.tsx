@@ -1,7 +1,9 @@
+import type { ComponentPropsWithoutRef } from 'react'
+
 import classNames from '@/lib/classNames'
+
 import Stack from './elements/Stack'
 import Section from './Section'
-import type { ComponentPropsWithoutRef } from 'react'
 
 interface SectionData {
   content: JSX.Element

@@ -1,21 +1,16 @@
-import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
+import type { Metadata } from 'next/types'
+
+import Heading from '@/components/elements/Heading'
 import InlineLink from '@/components/elements/InlineLink'
 import GithubRepositories from '@/components/github/GithubRepositories'
 import Docs from '@/components/infoBlocks/Docs'
-import useHasScrolled from '@/hooks/useHasScrolled'
-import useHasVerticalScroll from '@/hooks/useHasVerticalScroll'
+import ScrollTransitionWrapper from '@/components/ScrollTransitionWrapper'
+import SectionList from '@/components/SectionList'
 import { getContributorsInformation } from '@/lib/getContributorsInformation'
 import { getRepos } from '@/lib/getRepos'
 
-import SectionList from '@/components/SectionList'
-import Heading from '@/components/elements/Heading'
-import type { InferGetStaticPropsType } from 'next'
-
 const DEVELOPERS_HEADER = 'For Developers'
 const DEVELOPERS_SUB_HEADER = 'The details you are looking for as a developer'
-
-export type DevelopersProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const sectionsData = [
   {
@@ -65,48 +60,12 @@ const sectionsData = [
   },
 ]
 
-const Seo = {
+export const metadata: Metadata = {
   title: 'Developers',
   description: 'The technical details',
 }
 
-const Developers = ({ repoContributors, repos }: DevelopersProps) => {
-  const { scrollY } = useHasScrolled()
-  const { hasVerticalScroll } = useHasVerticalScroll()
-  return (
-    <Layout>
-      <SEO title={Seo.title} description={Seo.description} />
-      <div className="flex flex-col items-center justify-items-center sm:mx-auto sm:w-full max-w-7xl">
-        <div
-          className={`${
-            hasVerticalScroll && scrollY > 0 && 'opacity-30'
-          } transition-all duration-1000`}
-        >
-          <div className="pt-20 pb-6">
-            <Heading type="h1" className="text-4xl text-center">
-              {DEVELOPERS_HEADER}
-            </Heading>
-            <Heading
-              type="h2"
-              className="text-2xl text-center"
-              weight="font-regular"
-              color="text-gray-500"
-            >
-              {DEVELOPERS_SUB_HEADER}
-            </Heading>
-          </div>
-        </div>
-        <SectionList sectionsData={sectionsData} className="pb-48 mx-4" />
-        <Docs />
-        <GithubRepositories repoContributors={repoContributors} repos={repos} />
-      </div>
-    </Layout>
-  )
-}
-
-export default Developers
-
-export async function getStaticProps() {
+async function getRepoData() {
   const repos = (await getRepos()) ?? null
   const repoContributors = repos
     ? await Promise.all(
@@ -114,10 +73,34 @@ export async function getStaticProps() {
       )
     : []
 
-  return {
-    props: {
-      repos,
-      repoContributors,
-    },
-  }
+  return { repos, repoContributors }
+}
+
+export type GetRepoDataResponse = Awaited<ReturnType<typeof getRepoData>>
+
+export default async function Developers() {
+  const { repos, repoContributors } = await getRepoData()
+
+  return (
+    <div className="flex flex-col items-center justify-items-center sm:mx-auto sm:w-full max-w-7xl">
+      <ScrollTransitionWrapper>
+        <div className="pt-20 pb-6">
+          <Heading type="h1" className="text-4xl text-center">
+            {DEVELOPERS_HEADER}
+          </Heading>
+          <Heading
+            type="h2"
+            className="text-2xl text-center"
+            weight="font-regular"
+            color="text-gray-500"
+          >
+            {DEVELOPERS_SUB_HEADER}
+          </Heading>
+        </div>
+      </ScrollTransitionWrapper>
+      <SectionList sectionsData={sectionsData} className="pb-48 mx-4" />
+      <Docs />
+      <GithubRepositories repoContributors={repoContributors} repos={repos} />
+    </div>
+  )
 }

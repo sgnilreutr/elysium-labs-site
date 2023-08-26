@@ -1,5 +1,5 @@
-import type { MenuItems } from '../menu/MenuTypes'
 import MenuItem from './MenuItem'
+import type { MenuItems } from '../menu/MenuTypes'
 
 interface MenuItemsProps {
   menuItems: MenuItems

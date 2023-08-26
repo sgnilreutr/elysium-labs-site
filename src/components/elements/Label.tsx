@@ -1,5 +1,6 @@
-import classNames from '@/lib/classNames'
 import type { ReactNode } from 'react'
+
+import classNames from '@/lib/classNames'
 
 interface ILabel extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode

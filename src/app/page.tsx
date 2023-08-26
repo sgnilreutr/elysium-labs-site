@@ -1,24 +1,21 @@
+import type { Metadata } from 'next/types'
+
 import Stack from '@/components/elements/Stack'
 import Hero from '@/components/Hero'
 import HighlightedProject from '@/components/HighlightedProject'
 import Discord from '@/components/infoBlocks/Discord'
 import Docs from '@/components/infoBlocks/Docs'
-import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
 
 // import UspBanner from '@/components/UspBanner'
 
-import type { NextPage } from 'next'
-
-const Seo = {
+export const metadata: Metadata = {
   title: 'Software organization',
   description: undefined,
 }
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
-    <Layout>
-      <SEO title={Seo.title} description={Seo.description} />
+    <>
       <Hero />
       <HighlightedProject />
       <Stack
@@ -28,14 +25,6 @@ const Home: NextPage = () => {
         <Discord />
         <Docs />
       </Stack>
-    </Layout>
+    </>
   )
-}
-
-export default Home
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
 }

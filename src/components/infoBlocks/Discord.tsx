@@ -1,8 +1,9 @@
+import { FiExternalLink } from 'react-icons/fi'
 import { RxDiscordLogo } from 'react-icons/rx'
+
+import Button from '../elements/Button'
 import InfoBlock from '../elements/InfoBlock'
 import Stack from '../elements/Stack'
-import Button from '../elements/Button'
-import { FiExternalLink } from 'react-icons/fi'
 
 const href = process.env.NEXT_PUBLIC_DISCORD_INVITE_LINK
 

@@ -1,9 +1,10 @@
 import { BsKeyboard } from 'react-icons/bs'
 import { GiBroom } from 'react-icons/gi'
 import { TbArrowWaveRightDown, TbDatabaseOff } from 'react-icons/tb'
-import UspItem from './UspItem'
-import Stack from './elements/Stack'
+
 import Heading from './elements/Heading'
+import Stack from './elements/Stack'
+import UspItem from './UspItem'
 
 const ICON_SIZE = 28
 

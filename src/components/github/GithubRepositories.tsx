@@ -1,13 +1,13 @@
-import type { DevelopersProps } from '@/pages/developers'
+import type { GetRepoDataResponse } from '@/app/developers/page'
+
+import { GITHUB_HEADER, GITHUB_SUB_HEADER } from './GithubConstants'
 import RepoContainer from './GithubRepoContainer'
 import Heading from '../elements/Heading'
-import {
-  GITHUB_HEADER,
-  GITHUB_SUB_HEADER,
-  GITHUB_LOADING,
-} from './GithubConstants'
 
-const GithubRepositories = ({ repoContributors, repos }: DevelopersProps) => {
+const GithubRepositories = ({
+  repoContributors,
+  repos,
+}: GetRepoDataResponse) => {
   const enhancedRepository = repos
     ? repos
         .map((repo, index) => {
@@ -36,13 +36,9 @@ const GithubRepositories = ({ repoContributors, repos }: DevelopersProps) => {
         </Heading>
       </div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {enhancedRepository ? (
-          enhancedRepository?.map((repository) => (
-            <RepoContainer key={repository?.name} repository={repository} />
-          ))
-        ) : (
-          <p className="py-6">{GITHUB_LOADING}</p>
-        )}
+        {enhancedRepository.map((repository) => (
+          <RepoContainer key={repository.name} repository={repository} />
+        ))}
       </div>
     </div>
   )

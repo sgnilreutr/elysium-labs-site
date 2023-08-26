@@ -1,5 +1,6 @@
-import classNames from '@/lib/classNames'
 import type { ReactNode } from 'react'
+
+import classNames from '@/lib/classNames'
 
 type TAnimation = 'slideUpAndFade' | 'none'
 type TColor = 'black' | 'text-gray-500'

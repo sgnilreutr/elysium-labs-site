@@ -1,15 +1,13 @@
+import type { Metadata } from 'next'
 import { FaBrain } from 'react-icons/fa'
 import { FiEye } from 'react-icons/fi'
 import { ImPower } from 'react-icons/im'
 
 import Heading from '@/components/elements/Heading'
 import InlineLink from '@/components/elements/InlineLink'
-import Layout from '@/components/Layout'
-import SEO from '@/components/Seo'
-import useHasScrolled from '@/hooks/useHasScrolled'
-import useHasVerticalScroll from '@/hooks/useHasVerticalScroll'
-import SectionList from '@/components/SectionList'
 import Discord from '@/components/infoBlocks/Discord'
+import ScrollTransitionWrapper from '@/components/ScrollTransitionWrapper'
+import SectionList from '@/components/SectionList'
 
 const PRINCIPALS_HEADER = 'Principals'
 const PRINCIPALS_SUB_HEADER =
@@ -70,50 +68,33 @@ const sectionsData = [
   },
 ]
 
-const Seo = {
+export const metadata: Metadata = {
   title: 'Principals',
   description: 'The principals we apply to our applications',
 }
 
-const Principals = () => {
-  const { scrollY } = useHasScrolled()
-  const { hasVerticalScroll } = useHasVerticalScroll()
+export default function Principals() {
   return (
-    <Layout>
-      <SEO title={Seo.title} description={Seo.description} />
-      <div className="flex flex-col items-center mx-4 sm:mx-auto sm:w-full max-w-7xl">
-        <div
-          className={`${
-            hasVerticalScroll && scrollY > 0 && 'opacity-30'
-          } transition-all duration-1000`}
-        >
-          <div className="pt-20 pb-6">
-            <Heading type="h1" className="text-4xl text-center">
-              {PRINCIPALS_HEADER}
-            </Heading>
-            <Heading
-              type="h2"
-              color="text-gray-500"
-              weight="font-regular"
-              className="text-2xl text-center"
-            >
-              {PRINCIPALS_SUB_HEADER}
-            </Heading>
-          </div>
+    <div className="flex flex-col items-center mx-4 sm:mx-auto sm:w-full max-w-7xl">
+      <ScrollTransitionWrapper>
+        <div className="pt-20 pb-6">
+          <Heading type="h1" className="text-4xl text-center">
+            {PRINCIPALS_HEADER}
+          </Heading>
+          <Heading
+            type="h2"
+            color="text-gray-500"
+            weight="font-regular"
+            className="text-2xl text-center"
+          >
+            {PRINCIPALS_SUB_HEADER}
+          </Heading>
         </div>
-        <div className="flex flex-col items-center pb-48 mx-4 max-w-7xl sm:mx-auto sm:w-full">
-          <SectionList sectionsData={sectionsData} />
-        </div>
-        <Discord />
+      </ScrollTransitionWrapper>
+      <div className="flex flex-col items-center pb-48 mx-4 max-w-7xl sm:mx-auto sm:w-full">
+        <SectionList sectionsData={sectionsData} />
       </div>
-    </Layout>
+      <Discord />
+    </div>
   )
-}
-
-export default Principals
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
 }

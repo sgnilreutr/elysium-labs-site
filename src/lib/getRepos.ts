@@ -1,4 +1,5 @@
-import { octokit } from '@/pages/_app'
+import { octokit } from '@/data/octokitApi'
+
 import type { ReturnTypeOf, UnwrapPromise } from './typeHelpers'
 
 export async function getRepos() {
@@ -7,19 +8,15 @@ export async function getRepos() {
       org: 'Elysium-Labs-EU',
       type: 'public',
     })
-    if (repoResponse?.status === 200) {
-      return repoResponse?.data
-    } else {
-      return null
-    }
+    return repoResponse.data
   } catch (err) {
     console.error(err)
   }
 }
 
-type TGetReposResponse = ReturnTypeOf<typeof getRepos>
-export type TGetReposResponseType = UnwrapPromise<TGetReposResponse>
+type GetReposResponse = ReturnTypeOf<typeof getRepos>
+export type GetReposResponseType = UnwrapPromise<GetReposResponse>
 
 type ArrayElementType<T> = T extends (infer U)[] ? U : never
-type NonNullableGetReposResponseType = NonNullable<TGetReposResponseType>
-export type TSingleRepoType = ArrayElementType<NonNullableGetReposResponseType>
+type NonNullableGetReposResponseType = NonNullable<GetReposResponseType>
+export type SingleRepoType = ArrayElementType<NonNullableGetReposResponseType>
