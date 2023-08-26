@@ -1,9 +1,10 @@
+import type { Metadata } from 'next/types'
+
 import Stack from '@/components/elements/Stack'
 import Hero from '@/components/Hero'
 import HighlightedProject from '@/components/HighlightedProject'
 import Discord from '@/components/infoBlocks/Discord'
 import Docs from '@/components/infoBlocks/Docs'
-import { Metadata } from 'next/types'
 
 // import UspBanner from '@/components/UspBanner'
 

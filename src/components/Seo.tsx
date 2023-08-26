@@ -1,4 +1,5 @@
 import Head from 'next/head'
+
 import Logo from 'public/images/100x100px_EL_01.jpg'
 
 const SITE_NAME = 'Elysium Labs'

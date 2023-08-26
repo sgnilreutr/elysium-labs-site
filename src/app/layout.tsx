@@ -3,9 +3,9 @@ import { Inter } from 'next/font/google'
 import type { ReactNode } from 'react'
 
 import '@/styles/globals.css'
-import classNames from '@/lib/classNames'
-import PageHeader from '@/components/PageHeader'
 import Footer from '@/components/Footer'
+import PageHeader from '@/components/PageHeader'
+import classNames from '@/lib/classNames'
 
 interface LayoutProps {
   children: ReactNode
@@ -18,7 +18,9 @@ export default function RootLayout({ children }: LayoutProps) {
     <html lang="en">
       <body className="flex flex-col h-full leading-normal bg-gray-100 md:w-full gradient_background">
         <PageHeader />
-        <main className={classNames(inter.variable, 'flex flex-col md:mt-20')}>{children}</main>
+        <main className={classNames(inter.variable, 'flex flex-col md:mt-20')}>
+          {children}
+        </main>
         <Footer />
         <Analytics />
       </body>

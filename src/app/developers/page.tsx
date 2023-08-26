@@ -1,13 +1,13 @@
+import type { Metadata } from 'next/types'
+
+import Heading from '@/components/elements/Heading'
 import InlineLink from '@/components/elements/InlineLink'
 import GithubRepositories from '@/components/github/GithubRepositories'
 import Docs from '@/components/infoBlocks/Docs'
+import ScrollTransitionWrapper from '@/components/ScrollTransitionWrapper'
+import SectionList from '@/components/SectionList'
 import { getContributorsInformation } from '@/lib/getContributorsInformation'
 import { getRepos } from '@/lib/getRepos'
-import { Metadata } from 'next/types'
-
-import SectionList from '@/components/SectionList'
-import Heading from '@/components/elements/Heading'
-import ScrollTransitionWrapper from '@/components/ScrollTransitionWrapper'
 
 const DEVELOPERS_HEADER = 'For Developers'
 const DEVELOPERS_SUB_HEADER = 'The details you are looking for as a developer'
@@ -69,18 +69,19 @@ async function getRepoData() {
   const repos = (await getRepos()) ?? null
   const repoContributors = repos
     ? await Promise.all(
-      repos.map((repo) => getContributorsInformation({ repository: repo }))
-    )
+        repos.map((repo) => getContributorsInformation({ repository: repo }))
+      )
     : []
 
   return { repos, repoContributors }
 }
 
+export type GetRepoDataResponse = Awaited<ReturnType<typeof getRepoData>>
+
 export default async function Developers() {
   const { repos, repoContributors } = await getRepoData()
 
   return (
-
     <div className="flex flex-col items-center justify-items-center sm:mx-auto sm:w-full max-w-7xl">
       <ScrollTransitionWrapper>
         <div className="pt-20 pb-6">

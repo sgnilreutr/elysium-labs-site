@@ -1,5 +1,6 @@
-import classNames from '@/lib/classNames'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+
+import classNames from '@/lib/classNames'
 
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   children: ReactNode

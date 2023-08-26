@@ -2,6 +2,7 @@ import { BsKeyboard } from 'react-icons/bs'
 import { FiCheckCircle, FiArchive, FiArrowRight } from 'react-icons/fi'
 import { GiBroom } from 'react-icons/gi'
 import { TbArrowWaveRightDown, TbDatabaseOff } from 'react-icons/tb'
+
 import TextHighlight from '../elements/TextHighlight'
 
 export const SENDER_RECIPIENTS = [

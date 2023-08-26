@@ -1,13 +1,12 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
-import Logo from 'public/images/100x100px_EL_01.jpg'
 
 import Heading from '@/components/elements/Heading'
-// import GithubContributors from '@/components/githubContributors'
-import SectionList from '@/components/SectionList'
 import InlineLink from '@/components/elements/InlineLink'
 import Discord from '@/components/infoBlocks/Discord'
-import { Metadata } from 'next'
 import ScrollTransitionWrapper from '@/components/ScrollTransitionWrapper'
+import SectionList from '@/components/SectionList'
+import Logo from 'public/images/100x100px_EL_01.jpg'
 
 const ABOUT_HEADER_1 = 'About'
 const ABOUT_HEADER_2 = 'Elysium Labs'
@@ -43,7 +42,6 @@ export const metadata: Metadata = {
 }
 
 export default function About() {
-
   return (
     <div className="flex flex-col items-center mx-4 max-w-7xl sm:mx-auto sm:w-full">
       <ScrollTransitionWrapper>
@@ -72,7 +70,6 @@ export default function About() {
         <SectionList sectionsData={sectionsData} />
       </div>
       <Discord />
-      {/* <GithubContributors /> */}
     </div>
   )
 }

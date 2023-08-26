@@ -1,4 +1,3 @@
-
 'use client'
 
 import Image from 'next/image'
@@ -8,17 +7,16 @@ import { VscPerson, VscRepoForked, VscStarEmpty } from 'react-icons/vsc'
 import useHover from '@/hooks/useHover'
 import classNames from '@/lib/classNames'
 import copyToClipboard from '@/lib/copyToClipboard'
-
-import Logo from '../../../public/images/100x100px_EL_01.jpg'
-import GithubDetailData from './GithubDetailData'
-
 import type { SingleContributorsEntryType } from '@/lib/getContributorsInformation'
 import type { SingleRepoType } from '@/lib/getRepos'
+
 import {
   GITHUB_REPO_COPY_PRE,
   GITHUB_REPO_COPY_AFTER,
   GITHUB_REPO_VIEW,
 } from './GithubConstants'
+import GithubDetailData from './GithubDetailData'
+import Logo from '../../../public/images/100x100px_EL_01.jpg'
 type Repository = SingleRepoType & {
   contributors: Array<SingleContributorsEntryType>
 }
@@ -55,17 +53,18 @@ const RepoContainer = ({ repository }: RepoContainerProps) => {
         )}
       >
         <div
-          className={`flex flex-row ${isHovered ? 'opacity-100' : 'opacity-0'
-            } transition-all duration-600`}
+          className={`flex flex-row ${
+            isHovered ? 'opacity-100' : 'opacity-0'
+          } transition-all duration-600`}
         >
           <button
             className="p-4 mr-4 font-semibold text-white bg-black border border-black rounded-lg shadow-sm"
-            onClick={clickToCopy}
+            onClick={() => void clickToCopy()}
           >
             {!hasCopied ? GITHUB_REPO_COPY_PRE : GITHUB_REPO_COPY_AFTER}
           </button>
           <a
-            href={repository?.html_url}
+            href={repository.html_url}
             target="_blank"
             rel="noreferrer"
             className="p-4 font-semibold text-black bg-white border border-black rounded-lg shadow-sm"
@@ -77,15 +76,15 @@ const RepoContainer = ({ repository }: RepoContainerProps) => {
       <div className="flex flex-row justify-between">
         <div className="max-w-lg pr-6">
           <h4 className="pb-6 text-xl">
-            {repository?.owner?.login} /
-            <span className="font-bold"> {repository?.name}</span>
+            {repository.owner.login} /
+            <span className="font-bold"> {repository.name}</span>
           </h4>
-          <span className="text-gray-500">{repository?.description}</span>
+          <span className="text-gray-500">{repository.description}</span>
         </div>
         <div className="hidden sm:block">
           <Image
             src={Logo}
-            alt={repository?.full_name}
+            alt={repository.full_name}
             width="100"
             height="100"
             className="rounded-md"
@@ -93,26 +92,18 @@ const RepoContainer = ({ repository }: RepoContainerProps) => {
         </div>
       </div>
       <div className="flex flex-row justify-between max-w-md pt-6">
-        {repository.contributors ? (
-          <GithubDetailData
-            data={repository.contributors.length}
-            icon={<VscPerson size={16} />}
-            title="Contributors"
-          />
-        ) : (
-          <GithubDetailData
-            data={0}
-            icon={<VscPerson size={16} />}
-            title="Contributors"
-          />
-        )}
         <GithubDetailData
-          data={repository?.stargazers_count}
+          data={repository.contributors.length}
+          icon={<VscPerson size={16} />}
+          title="Contributors"
+        />
+        <GithubDetailData
+          data={repository.stargazers_count}
           icon={<VscStarEmpty size={16} />}
           title="Stars"
         />
         <GithubDetailData
-          data={repository?.forks_count}
+          data={repository.forks_count}
           icon={<VscRepoForked size={16} />}
           title="Forks"
         />

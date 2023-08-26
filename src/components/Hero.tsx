@@ -2,8 +2,9 @@
 
 import useHasScrolled from '@/hooks/useHasScrolled'
 import useHasVerticalScroll from '@/hooks/useHasVerticalScroll'
-import Heading from './elements/Heading'
 import classNames from '@/lib/classNames'
+
+import Heading from './elements/Heading'
 
 const COMPANY_TITLE1 = 'Elysium '
 const COMPANY_TITLE2 = 'Labs'

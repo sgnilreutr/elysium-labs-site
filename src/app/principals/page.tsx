@@ -1,13 +1,13 @@
+import type { Metadata } from 'next'
 import { FaBrain } from 'react-icons/fa'
 import { FiEye } from 'react-icons/fi'
 import { ImPower } from 'react-icons/im'
 
 import Heading from '@/components/elements/Heading'
 import InlineLink from '@/components/elements/InlineLink'
-import SectionList from '@/components/SectionList'
 import Discord from '@/components/infoBlocks/Discord'
-import { Metadata } from 'next'
 import ScrollTransitionWrapper from '@/components/ScrollTransitionWrapper'
+import SectionList from '@/components/SectionList'
 
 const PRINCIPALS_HEADER = 'Principals'
 const PRINCIPALS_SUB_HEADER =
@@ -74,7 +74,6 @@ export const metadata: Metadata = {
 }
 
 export default function Principals() {
-
   return (
     <div className="flex flex-col items-center mx-4 sm:mx-auto sm:w-full max-w-7xl">
       <ScrollTransitionWrapper>

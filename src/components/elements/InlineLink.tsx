@@ -1,7 +1,8 @@
-import classNames from '@/lib/classNames'
 import Link from 'next/link'
 import type { LinkProps } from 'next/link'
 import type { ReactNode } from 'react'
+
+import classNames from '@/lib/classNames'
 
 interface IInlineLink extends LinkProps {
   children: ReactNode

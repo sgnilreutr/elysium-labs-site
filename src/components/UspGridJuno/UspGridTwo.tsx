@@ -1,8 +1,6 @@
 import { useRef, useState } from 'react'
 import { FiRefreshCw } from 'react-icons/fi'
 
-import Heading from '../elements/Heading'
-import Stack from '../elements/Stack'
 import EmailButton from './EmailButton'
 import EmailItem from './EmailItem'
 import {
@@ -12,6 +10,8 @@ import {
   SUB_HEADER,
   USP_ITEMS,
 } from './UspGridJunoConstants'
+import Heading from '../elements/Heading'
+import Stack from '../elements/Stack'
 
 const UspGridTwo = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0)

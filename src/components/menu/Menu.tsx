@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react'
 import { FiMenu } from 'react-icons/fi'
 
-import MenuItems from '../elements/MenuItems'
-import Stack from '../elements/Stack'
 import HomeIcon from './HomeIcon'
 import { EXTERNAL_ITEMS, MENU_ITEMS } from './MenuConstants'
 import SideMenu from './SideMenu'
+import MenuItems from '../elements/MenuItems'
+import Stack from '../elements/Stack'
 
 const ICON_SIZE = 28
 

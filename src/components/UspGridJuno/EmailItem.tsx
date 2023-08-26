@@ -1,10 +1,10 @@
+import type { ReactNode } from 'react'
+
 import classNames from '@/lib/classNames'
 
-import Stack from '../elements/Stack'
 import SenderRecipient from './SenderRecipient'
 import { EMAIL_TIME_EXPIRED, SENDER_RECIPIENTS } from './UspGridJunoConstants'
-
-import type { ReactNode } from 'react'
+import Stack from '../elements/Stack'
 
 const FakeText = () => {
   const randomNum = Math.floor(Math.random() * 3) + 1

@@ -1,10 +1,11 @@
-interface ICopyToClipboard {
+interface CopyToClipboardProps {
   toCopyItem: string
 }
 
 export default async function copyToClipboard({
   toCopyItem,
-}: ICopyToClipboard) {
+}: CopyToClipboardProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (!navigator.clipboard) {
     alert('Copy functionality not supported')
     return false

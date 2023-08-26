@@ -1,7 +1,8 @@
+import type { CSSProperties } from 'react'
 import React, { useCallback, useEffect, useRef } from 'react'
 import ReactCanvasConfetti from 'react-canvas-confetti'
 
-const canvasStyles: any = {
+const canvasStyles: CSSProperties = {
   position: 'fixed',
   pointerEvents: 'none',
   width: '100%',
@@ -10,25 +11,30 @@ const canvasStyles: any = {
   left: 0,
 }
 
-export default function ConfettiCanvas({
-  triggerFire,
-}: {
+interface ConfettiCanvasProps {
   triggerFire: boolean
-}) {
-  const refAnimationInstance = useRef<any>(null)
+}
 
-  const getInstance = useCallback((instance: any) => {
+export default function ConfettiCanvas({ triggerFire }: ConfettiCanvasProps) {
+  const refAnimationInstance = useRef<confetti.CreateTypes | null>(null)
+
+  const getInstance = useCallback((instance: confetti.CreateTypes | null) => {
     refAnimationInstance.current = instance
   }, [])
 
-  const makeShot = useCallback((particleRatio: number, opts: any) => {
-    refAnimationInstance.current &&
-      refAnimationInstance.current({
+  const makeShot = useCallback(
+    (particleRatio: number, opts: Record<string, number>) => {
+      if (!refAnimationInstance.current) {
+        return
+      }
+      void refAnimationInstance.current({
         ...opts,
         origin: { y: 0.7 },
         particleCount: Math.floor(200 * particleRatio),
       })
-  }, [])
+    },
+    []
+  )
 
   const fire = useCallback(() => {
     makeShot(0.25, {

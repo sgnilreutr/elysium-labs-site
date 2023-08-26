@@ -1,11 +1,12 @@
+import Botpoison from '@botpoison/browser'
+import { useFormspark } from '@formspark/use-formspark'
+import type { FormEvent } from 'react'
 import { useState } from 'react'
 import { FiCheck } from 'react-icons/fi'
 
 import assertNonNullish from '@/lib/assertNonNullish'
-import ConfettiCanvas from '@/lib/confettiCanvas'
-import Botpoison from '@botpoison/browser'
-import { useFormspark } from '@formspark/use-formspark'
 import classNames from '@/lib/classNames'
+import ConfettiCanvas from '@/lib/confettiCanvas'
 
 if (process.env.NODE_ENV === 'production') {
   assertNonNullish(
@@ -28,7 +29,7 @@ const BetaAccesForm = () => {
   const [message, setMessage] = useState('')
   const [open, setOpen] = useState(false)
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
       const { solution } = await botpoison.challenge()
@@ -54,7 +55,7 @@ const BetaAccesForm = () => {
         ) : null}
         {open ? (
           <form
-            onSubmit={onSubmit}
+            onSubmit={(e) => void onSubmit(e)}
             className={classNames(
               'flex sm:flex-row border-gray-400 sm:w-screen max-w-lg items-center border p-1 rounded-md b-2',
               `${!complete ? 'justify-between' : 'justify-center'}`

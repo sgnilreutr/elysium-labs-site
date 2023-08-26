@@ -1,12 +1,12 @@
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import type { ReactNode } from 'react'
 import { FiX } from 'react-icons/fi'
 
 import { MENU_ITEMS } from '@/components/menu/MenuConstants'
+import classNames from '@/lib/classNames'
 
 import HomeIcon from './HomeIcon'
-import classNames from '@/lib/classNames'
-import type { ReactNode } from 'react'
-import { usePathname } from 'next/navigation'
 
 const ICON_SIZE = 28
 

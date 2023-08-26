@@ -1,8 +1,8 @@
+import type { ReactNode } from 'react'
+
 import classNames from '@/lib/classNames'
 
 import Stack from './Stack'
-
-import type { ReactNode } from 'react'
 
 interface IInfoBlock extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode

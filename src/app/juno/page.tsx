@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import BetaAccessForm from '@/components/BetaAccessForm'
 import Heading from '@/components/elements/Heading'
 import InlineLink from '@/components/elements/InlineLink'
@@ -8,7 +10,6 @@ import Feedback from '@/components/infoBlocks/Feedback'
 import SectionList from '@/components/SectionList'
 // import UspGrid from '@/components/UspGrid'
 import UspGridTwo from '@/components/UspGridJuno/UspGridTwo'
-import { Metadata } from 'next'
 
 const sectionsData = [
   {

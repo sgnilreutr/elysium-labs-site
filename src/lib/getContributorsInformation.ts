@@ -1,4 +1,5 @@
 import { octokit } from '@/data/octokitApi'
+
 import type { SingleRepoType } from './getRepos'
 import type { ReturnTypeOf, UnwrapPromise } from './typeHelpers'
 
@@ -10,7 +11,7 @@ export async function getContributorsInformation({
   repository,
 }: GetContributorsInformation) {
   try {
-    if (!repository || !repository?.name) {
+    if (!repository.name) {
       return null
     }
     const contributorsResponse = await octokit.request(
@@ -20,13 +21,9 @@ export async function getContributorsInformation({
         repo: `${repository.name}`,
       }
     )
-    if (contributorsResponse?.status === 200) {
-      return {
-        repository: repository.name,
-        contributors: contributorsResponse.data,
-      }
-    } else {
-      return null
+    return {
+      repository: repository.name,
+      contributors: contributorsResponse.data,
     }
   } catch (err) {
     console.error(err)

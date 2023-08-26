@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+
 import Heading from './elements/Heading'
 
 interface SectionProps extends ComponentPropsWithoutRef<'div'> {

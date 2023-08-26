@@ -1,10 +1,10 @@
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import classNames from '@/lib/classNames'
-
 import isUrl from '@/lib/isUrl'
+
 import type { MenuItem } from '../menu/MenuTypes'
-import { usePathname } from 'next/navigation'
 
 const LabelIcon = ({ icon, label }: Pick<MenuItem, 'icon' | 'label'>) => {
   return icon ? (
@@ -29,7 +29,8 @@ const MenuItemComponent = ({ href, icon, label, title }: MenuItem) => {
   return (
     <li
       className={classNames(
-        `flex items-center cursor-pointer ${isActive ? 'opacity-100' : 'opacity-50 hover:opacity-100'
+        `flex items-center cursor-pointer ${
+          isActive ? 'opacity-100' : 'opacity-50 hover:opacity-100'
         }`
       )}
       title={title}

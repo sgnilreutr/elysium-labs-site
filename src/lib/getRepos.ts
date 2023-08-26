@@ -1,4 +1,5 @@
 import { octokit } from '@/data/octokitApi'
+
 import type { ReturnTypeOf, UnwrapPromise } from './typeHelpers'
 
 export async function getRepos() {
@@ -7,11 +8,7 @@ export async function getRepos() {
       org: 'Elysium-Labs-EU',
       type: 'public',
     })
-    if (repoResponse?.status === 200) {
-      return repoResponse?.data
-    } else {
-      return null
-    }
+    return repoResponse.data
   } catch (err) {
     console.error(err)
   }
