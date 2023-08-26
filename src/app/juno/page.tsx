@@ -17,7 +17,7 @@ const sectionsData = [
     content: (
       <>
         <p>
-          The application is built as open-source to enable developers, project
+          The application will be built as open-source to enable developers, project
           managers, and other people to go through their list of emails in the
           most efficient way possible.
         </p>
@@ -34,7 +34,7 @@ const sectionsData = [
     content: (
       <>
         <p>
-          Juno is developed as an open-source application. All the{' '}
+          Juno is being developed as an open-source application. All the{' '}
           <InlineLink href="https://github.com/Elysium-Labs-EU/juno-core/tree/main">
             source code
           </InlineLink>{' '}
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
 const JUNO_HEADER = 'Juno'
 const JUNO_SUB_HEADER = 'Email efficiency redefined'
 
-const JUNO_PROMOTION_HEADER = 'Coming soon on macOS, already on the web.'
+const JUNO_PROMOTION_HEADER = 'Coming soon on macOS'
 const JUNO_PROMOTION_SUB_HEADER = 'Completely free. Open source.'
 
 export default function Juno() {
@@ -89,7 +89,7 @@ export default function Juno() {
             <p className="text-gray-500 ">{JUNO_PROMOTION_SUB_HEADER}</p>
             <div className="relative flex flex-col items-center gap-3 pt-8 md:flex-row">
               <BetaAccessForm />
-              <GoogleButton />
+              {/* <GoogleButton /> */}
             </div>
           </div>
         </div>

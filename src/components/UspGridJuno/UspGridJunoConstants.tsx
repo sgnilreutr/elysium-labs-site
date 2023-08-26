@@ -22,7 +22,7 @@ export const USP_ITEMS = [
     header: 'Workflow management',
     body: (
       <>
-        Juno is shipped with a predefined workflow, one we believe is the{' '}
+        Juno will ship with a predefined workflow, one we believe is the{' '}
         <TextHighlight>most optimal</TextHighlight>.
       </>
     ),
