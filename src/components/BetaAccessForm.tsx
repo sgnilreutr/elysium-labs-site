@@ -1,3 +1,5 @@
+'use client'
+
 import Botpoison from '@botpoison/browser'
 import { useFormspark } from '@formspark/use-formspark'
 import type { FormEvent } from 'react'
@@ -48,7 +50,7 @@ const BetaAccesForm = () => {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="px-4 py-2 h-10 font-semibold text-orange-900 transition-all bg-orange-300 rounded-lg shadow-sm hover:bg-orange-400"
+            className="h-10 px-4 py-2 font-semibold text-orange-900 transition-all bg-orange-300 rounded-lg shadow-sm hover:bg-orange-400"
           >
             Request access
           </button>
@@ -68,14 +70,14 @@ const BetaAccesForm = () => {
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="pl-2 mr-4 bg-gray-100 outline-none h-10 outline-0 grow"
+                  className="h-10 pl-2 mr-4 bg-gray-100 outline-none outline-0 grow"
                   placeholder="enter your email"
                   autoFocus={open}
                 />
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-4 py-2 h-10 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
+                  className="h-10 px-4 py-2 font-semibold text-white transition-all bg-orange-400 rounded-lg shadow-sm hover:bg-orange-500"
                 >
                   Request access
                 </button>
