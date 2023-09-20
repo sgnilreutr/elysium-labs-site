@@ -11,7 +11,7 @@ const PROJECT_HEADER = 'Featured'
 const PROJECT_SUB_HEADER = 'We are currently focusing on this project'
 
 const PROJECT_NAME = 'Juno'
-const PROJECT_LABEL = 'Private Beta'
+const PROJECT_LABEL = 'Under Development'
 const PROJECT_DESCRIPTION =
   'Juno is fast, lightweight, and intuitive, making it the perfect choice for anyone looking for a simple and effective way to manage their Gmail account.'
 const PROJECT_READ_MORE = 'read more'
