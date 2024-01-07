@@ -18,7 +18,7 @@ export async function getContributorsInformation({
       'GET /repos/{owner}/{repo}/contributors',
       {
         owner: 'Elysium-Labs-EU',
-        repo: `${repository.name}`,
+        repo: repository.name,
       }
     )
     return {

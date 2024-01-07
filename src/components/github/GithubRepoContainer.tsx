@@ -48,7 +48,7 @@ const RepoContainer = ({ repository }: RepoContainerProps) => {
       <div
         className={classNames(
           'absolute top-0 left-0',
-          `${isHovered ? 'bg-gray-100/80' : 'bg-gray-100/0'}`,
+          isHovered ? 'bg-gray-100/80' : 'bg-gray-100/0',
           'h-full md:w-full z-10 flex justify-center items-center transition-all duration-100'
         )}
       >

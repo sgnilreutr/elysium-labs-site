@@ -23,7 +23,7 @@ const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
     <aside
       className={classNames(
         'z-[100] fixed p-4 w-full bg-gray-200/95 h-dynamic-screen flex flex-col',
-        `${showMenu ? 'bottom-0 left-0' : '-bottom-full -left-full'}`,
+        showMenu ? 'bottom-0 left-0' : '-bottom-full -left-full',
         'transition-[bottom] backdrop-blur-xl border-b border-gray-300'
       )}
     >
@@ -36,7 +36,7 @@ const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
                 key={href}
                 className={classNames(
                   'flex items-center cursor-pointer',
-                  `${isActive ? 'opacity-100' : 'opacity-50'}`,
+                  isActive ? 'opacity-100' : 'opacity-50',
                   'text-2xl'
                 )}
                 title={label}
@@ -50,7 +50,7 @@ const SideMenu = ({ children, handleToggleMenu, showMenu }: SideMenuProps) => {
       <div
         className={classNames(
           'flex flex-row items-center justify-between transition-opacity',
-          `${showMenu ? 'opacity-100' : 'opacity-0'}`,
+          showMenu ? 'opacity-100' : 'opacity-0',
           'duration-[1200ms]'
         )}
       >
